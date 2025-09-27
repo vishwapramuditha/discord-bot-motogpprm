@@ -1,0 +1,124 @@
+{
+  "races": [
+    {
+      "name": "Japanese GP",
+      "track": "Twin Ring Motegi",
+      "sessions": {
+        "Free Practice 1": "2025-09-26T07:15:00+05:30",
+        "Practice": "2025-09-26T11:30:00+05:30",
+        "Free Practice 2": "2025-09-27T06:40:00+05:30",
+        "Qualifying 1": "2025-09-27T07:20:00+05:30",
+        "Qualifying 2": "2025-09-27T07:45:00+05:30",
+        "Sprint": "2025-09-27T11:30:00+05:30",
+        "Warm Up": "2025-09-28T06:10:00+05:30",
+        "Race": "2025-09-28T10:30:00+05:30"
+      }
+    },
+    {
+      "name": "Indonesian GP",
+      "track": "Mandala Circuit",
+      "sessions": {
+        "Free Practice 1": "2025-10-03T08:15:00+05:30",
+        "Practice": "2025-10-03T12:30:00+05:30",
+        "Free Practice 2": "2025-10-04T07:40:00+05:30",
+        "Qualifying 1": "2025-10-04T08:20:00+05:30",
+        "Qualifying 2": "2025-10-04T08:45:00+05:30",
+        "Sprint": "2025-10-04T12:30:00+05:30",
+        "Warm Up": "2025-10-05T07:10:00+05:30",
+        "Race": "2025-10-05T11:30:00+05:30"
+      }
+    },
+    {
+      "name": "Australian GP",
+      "track": "Phillip Island",
+      "sessions": {
+        "Free Practice 1": "2025-10-17T05:15:00+05:30",
+        "Practice": "2025-10-17T09:30:00+05:30",
+        "Free Practice 2": "2025-10-18T04:40:00+05:30",
+        "Qualifying 1": "2025-10-18T05:20:00+05:30",
+        "Qualifying 2": "2025-10-18T05:45:00+05:30",
+        "Sprint": "2025-10-18T09:30:00+05:30",
+        "Warm Up": "2025-10-19T04:10:00+05:30",
+        "Race": "2025-10-19T08:30:00+05:30"
+      }
+    },
+    {
+      "name": "Malaysian GP",
+      "track": "Sepang International Circuit",
+      "sessions": {
+        "Free Practice 1": "2025-10-24T08:15:00+05:30",
+        "Practice": "2025-10-24T12:30:00+05:30",
+        "Free Practice 2": "2025-10-25T07:40:00+05:30",
+        "Qualifying 1": "2025-10-25T08:20:00+05:30",
+        "Qualifying 2": "2025-10-25T08:45:00+05:30",
+        "Sprint": "2025-10-25T12:30:00+05:30",
+        "Warm Up": "2025-10-26T07:10:00+05:30",
+        "Race": "2025-10-26T12:30:00+05:30"
+      }
+    },
+    {
+      "name": "Portuguese GP",
+      "track": "Portimão",
+      "sessions": {
+        "Free Practice 1": "2025-11-07T16:15:00+05:30",
+        "Practice": "2025-11-07T20:30:00+05:30",
+        "Free Practice 2": "2025-11-08T15:40:00+05:30",
+        "Qualifying 1": "2025-11-08T16:20:00+05:30",
+        "Qualifying 2": "2025-11-08T16:45:00+05:30",
+        "Sprint": "2025-11-08T20:30:00+05:30",
+        "Warm Up": "2025-11-09T15:10:00+05:30",
+        "Race": "2025-11-09T19:30:00+05:30"
+      }
+    },
+    {
+      "name": "Valencia GP",
+      "track": "Circuit Ricardo Tormo",
+      "sessions": {
+        "Free Practice 1": "2025-11-14T15:15:00+05:30",
+        "Practice": "2025-11-14T19:30:00+05:30",
+        "Free Practice 2": "2025-11-15T14:40:00+05:30",
+        "Qualifying 1": "2025-11-15T15:20:00+05:30",
+        "Qualifying 2": "2025-11-15T15:45:00+05:30",
+        "Sprint": "2025-11-15T19:30:00+05:30",
+        "Warm Up": "2025-11-16T14:10:00+05:30",
+        "Race": "2025-11-16T18:30:00+05:30"
+      }
+    }
+  ],
+  "riders": [
+    { "rank": 1, "name": "🇪🇸 M. Márquez", "team": "Ducati", "points": 512 },
+    { "rank": 2, "name": "🇪🇸 A. Márquez", "team": "Ducati", "points": 330 },
+    { "rank": 3, "name": "🇮🇹 F. Bagnaia", "team": "Ducati", "points": 237 },
+    { "rank": 4, "name": "🇮🇹 M. Bezzecchi", "team": "Aprilia", "points": 229 },
+    { "rank": 5, "name": "🇪🇸 P. Acosta", "team": "KTM", "points": 188 },
+    { "rank": 6, "name": "🇮🇹 F. Morbidelli", "team": "Ducati", "points": 180 },
+    { "rank": 7, "name": "🇮🇹 F. Di Giannantonio", "team": "Ducati", "points": 179 },
+    { "rank": 8, "name": "🇪🇸 F. Aldeguer", "team": "Ducati", "points": 141 },
+    { "rank": 9, "name": "🇫🇷 F. Quartararo", "team": "Yamaha", "points": 137 },
+    { "rank": 10, "name": "🇫🇷 J. Zarco", "team": "Repsol Honda", "points": 117 },
+    { "rank": 11, "name": "🇿🇦 B. Binder", "team": "KTM", "points": 101 },
+    { "rank": 12, "name": "🇮🇹 L. Marini", "team": "Repsol Honda", "points": 94 },
+    { "rank": 13, "name": "🇮🇹 E. Bastianini", "team": "KTM", "points": 84 },
+    { "rank": 14, "name": "🇪🇸 R. Fernández", "team": "Aprilia", "points": 84 },
+    { "rank": 15, "name": "🇪🇸 M. Viñales", "team": "KTM", "points": 72 },
+    { "rank": 16, "name": "🇯🇵 A. Ogura", "team": "Aprilia", "points": 64 },
+    { "rank": 17, "name": "🇦🇺 J. Miller", "team": "Yamaha", "points": 58 },
+    { "rank": 18, "name": "🇪🇸 J. Mir", "team": "Repsol Honda", "points": 50 },
+    { "rank": 19, "name": "🇪🇸 A. Rins", "team": "Yamaha", "points": 45 },
+    { "rank": 20, "name": "🇪🇸 J. Martin", "team": "Aprilia", "points": 34 },
+    { "rank": 21, "name": "🇵🇹 M. Oliveira", "team": "Yamaha", "points": 24 },
+    { "rank": 22, "name": "🇪🇸 P. Espargaró", "team": "KTM", "points": 16 },
+    { "rank": 23, "name": "🇯🇵 T. Nakagami", "team": "Repsol Honda", "points": 10 },
+    { "rank": 24, "name": "🇮🇹 L. Savadori", "team": "Aprilia", "points": 8 },
+    { "rank": 25, "name": "🇪🇸 A. Fernández", "team": "Yamaha", "points": 8 },
+    { "rank": 26, "name": "🇹🇭 S. Chantra", "team": "Repsol Honda", "points": 2 },
+    { "rank": 27, "name": "🇪🇸 A. Espargaró", "team": "Repsol Honda", "points": 0 }
+  ],
+  "constructors": [
+    { "rank": 1, "team": "01 🇮🇹 Ducati", "points": 575 },
+    { "rank": 2, "team": "02 🇮🇹 Aprilia", "points": 271 },
+    { "rank": 3, "team": "03 🇦🇹 KTM", "points": 248 },
+    { "rank": 4, "team": "04 🇯🇵 Repsol Honda", "points": 198 },
+    { "rank": 5, "team": "05 🇯🇵 Yamaha", "points": 168 }
+  ]
+}
