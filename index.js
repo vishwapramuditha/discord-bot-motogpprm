@@ -1,11 +1,8 @@
 require("dotenv").config();
 const {
-  Client,
-  GatewayIntentBits,
-  SlashCommandBuilder,
-  REST,
-  Routes,
-  EmbedBuilder,
+    Client,
+    GatewayIntentBits,
+    EmbedBuilder,
 } = require("discord.js");
 const moment = require("moment-timezone");
 const data = require("./races.json");
@@ -14,192 +11,151 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // ------------------- Bot Ready -------------------
 client.once("ready", () => {
-  console.log(`✅ Logged in as ${client.user.tag}`);
+    console.log(`✅ Logged in as ${client.user.tag}`);
 });
 
 // ------------------- Helper Functions -------------------
 function getNextRace() {
-  const now = moment();
-  return (
-    data.races.find((race) =>
-      Object.values(race.sessions).some((t) => moment(t).isAfter(now)),
-    ) || null
-  );
+    const now = moment();
+    return (
+        data.races.find((race) =>
+            Object.values(race.sessions).some((t) => moment(t).isAfter(now))
+        ) || null
+    );
 }
 
 function formatCountdown(time) {
-  const now = moment();
-  const diff = moment(time).diff(now);
-  if (diff <= 0) return "✅";
+    const now = moment();
+    const diff = moment(time).diff(now);
+    if (diff <= 0) return "✅";
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-  return `${days}d ${hours}h ${minutes}m`;
+    return `${days}d ${hours}h ${minutes}m`;
 }
 
 function sessionEmoji(session) {
-  switch (session.toLowerCase()) {
-    case "free practice 1":
-    case "free practice 2":
-    case "practice":
-      return "🟢";
-    case "qualifying 1":
-    case "qualifying 2":
-    case "qualifying":
-      return "🏎️";
-    case "sprint":
-      return "⚡";
-    case "warm up":
-      return "☀️";
-    case "race":
-      return "🏁";
-    default:
-      return "📌";
-  }
+    switch (session.toLowerCase()) {
+        case "free practice 1":
+        case "free practice 2":
+        case "practice":
+            return "🟢";
+        case "qualifying 1":
+        case "qualifying 2":
+        case "qualifying":
+            return "🏎️";
+        case "sprint":
+            return "⚡";
+        case "warm up":
+            return "☀️";
+        case "race":
+            return "🏁";
+        default:
+            return "📌";
+    }
 }
-
-// ------------------- Slash Commands -------------------
-const commands = [
-  new SlashCommandBuilder()
-    .setName("next")
-    .setDescription(
-      "Shows the full schedule of the next MotoGP weekend in your local time",
-    ),
-  new SlashCommandBuilder()
-    .setName("standings")
-    .setDescription("Shows the current championship standings")
-    .addStringOption((option) =>
-      option
-        .setName("type")
-        .setDescription("Choose riders or constructors")
-        .setRequired(true)
-        .addChoices(
-          { name: "Riders", value: "riders" },
-          { name: "Constructors", value: "constructors" },
-        ),
-    ),
-  new SlashCommandBuilder()
-    .setName("support")
-    .setDescription("Support the developer"),
-].map((cmd) => cmd.toJSON());
-
-// ------------------- Register Commands -------------------
-const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
-(async () => {
-  try {
-    console.log("🚀 Registering commands...");
-    await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
-      body: commands,
-    });
-    console.log("✅ Commands registered!");
-  } catch (error) {
-    console.error(error);
-  }
-})();
 
 // ------------------- Command Handling -------------------
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
 
-  // ---------- /next ----------
-  if (interaction.commandName === "next") {
-    const nextRace = getNextRace();
-    if (!nextRace) return interaction.reply("🎉 No upcoming races!");
+    // ---------- /next ----------
+    if (interaction.commandName === "next") {
+        const nextRace = getNextRace();
+        if (!nextRace) return interaction.reply("🎉 No upcoming races!");
 
-    const embed = new EmbedBuilder()
-      .setTitle(`🏁 ${nextRace.name} - ${nextRace.track}`)
-      .setColor("#FF0000")
-      .setFooter({ text: "MotoGP 2025 Schedule" });
+        const embed = new EmbedBuilder()
+            .setTitle(`🏁 ${nextRace.name} - ${nextRace.track}`)
+            .setColor("#FF0000")
+            .setFooter({ text: "MotoGP 2025 Schedule" });
 
-    for (const [session, time] of Object.entries(nextRace.sessions)) {
-      const sessionTime = moment(time).tz(moment.tz.guess());
-      const unixTime = Math.floor(sessionTime.valueOf() / 1000);
-      const displayTime = `<t:${unixTime}:f>`;
-      const countdown = formatCountdown(sessionTime);
-      const emoji = sessionEmoji(session);
+        for (const [session, time] of Object.entries(nextRace.sessions)) {
+            const sessionTime = moment(time).tz(moment.tz.guess());
+            const unixTime = Math.floor(sessionTime.valueOf() / 1000);
+            const displayTime = `<t:${unixTime}:f>`;
+            const countdown = formatCountdown(sessionTime);
+            const emoji = sessionEmoji(session);
 
-      embed.addFields({
-        name: `${emoji} ${session}`,
-        value: `${displayTime} | ⏱ ${countdown}`,
-        inline: false,
-      });
+            embed.addFields({
+                name: `${emoji} ${session}`,
+                value: `${displayTime} | ⏱ ${countdown}`,
+                inline: false,
+            });
+        }
+
+        return interaction.reply({ embeds: [embed] });
     }
 
-    return interaction.reply({ embeds: [embed] });
-  }
+    // ---------- /standings ----------
+    if (interaction.commandName === "standings") {
+        const type = interaction.options.getString("type");
 
-  // ---------- /standings ----------
-  if (interaction.commandName === "standings") {
-    const type = interaction.options.getString("type");
+        if (type === "riders") {
+            const riders = data.riders;
+            const embeds = [];
 
-    if (type === "riders") {
-      const riders = data.riders;
-      const embeds = [];
+            // Split into two embeds if more than 15 riders
+            const firstEmbed = new EmbedBuilder()
+                .setTitle("🏆 Riders Championship Standings (1-15)")
+                .setColor("#FFD700")
+                .setFooter({ text: "MotoGP 2025 Championship" });
 
-      // Split into two embeds if more than 15 riders
-      const firstEmbed = new EmbedBuilder()
-        .setTitle("🏆 Riders Championship Standings (1-15)")
-        .setColor("#FFD700")
-        .setFooter({ text: "MotoGP 2025 Championship" });
+            riders.slice(0, 15).forEach((driver) => {
+                firstEmbed.addFields({
+                    name: `#${driver.rank} ${driver.name} (${driver.team})`,
+                    value: `Points: ${driver.points}`,
+                    inline: true,
+                });
+            });
 
-      riders.slice(0, 15).forEach((driver) => {
-        firstEmbed.addFields({
-          name: `#${driver.rank} ${driver.name} (${driver.team})`,
-          value: `Points: ${driver.points}`,
-          inline: true,
-        });
-      });
+            embeds.push(firstEmbed);
 
-      embeds.push(firstEmbed);
+            if (riders.length > 15) {
+                const secondEmbed = new EmbedBuilder()
+                    .setTitle(`🏆 Riders Championship Standings (${16}-${riders.length})`)
+                    .setColor("#FFD700")
+                    .setFooter({ text: "MotoGP 2025 Championship" });
 
-      if (riders.length > 15) {
-        const secondEmbed = new EmbedBuilder()
-          .setTitle(`🏆 Riders Championship Standings (${16}-${riders.length})`)
-          .setColor("#FFD700")
-          .setFooter({ text: "MotoGP 2025 Championship" });
+                riders.slice(15).forEach((driver) => {
+                    secondEmbed.addFields({
+                        name: `#${driver.rank} ${driver.name} (${driver.team})`,
+                        value: `Points: ${driver.points}`,
+                        inline: true,
+                    });
+                });
 
-        riders.slice(15).forEach((driver) => {
-          secondEmbed.addFields({
-            name: `#${driver.rank} ${driver.name} (${driver.team})`,
-            value: `Points: ${driver.points}`,
-            inline: true,
-          });
-        });
+                embeds.push(secondEmbed);
+            }
 
-        embeds.push(secondEmbed);
-      }
+            return interaction.reply({ embeds: embeds });
+        } else if (type === "constructors") {
+            const embed = new EmbedBuilder()
+                .setTitle("🏎️ Constructors Championship Standings")
+                .setColor("#FFD700")
+                .setFooter({ text: "MotoGP 2025 Championship" });
 
-      return interaction.reply({ embeds: embeds });
+            data.constructors.forEach((team) => {
+                embed.addFields({
+                    name: `${team.team}`,
+                    value: `Points: ${team.points}`,
+                    inline: true,
+                });
+            });
+
+            return interaction.reply({ embeds: [embed] });
+        }
     }
 
-    else if (type === "constructors") {
-      const embed = new EmbedBuilder()
-        .setTitle("🏎️ Constructors Championship Standings")
-        .setColor("#FFD700")
-        .setFooter({ text: "MotoGP 2025 Championship" });
-
-      data.constructors.forEach((team) => {
-        embed.addFields({
-          name: `${team.team}`,
-          value: `Points: ${team.points}`,
-          inline: true,
+    // ---------- /support ----------
+    if (interaction.commandName === "support") {
+        return interaction.reply({
+            content:
+                "☕ Support the developer:\n[Buy me a coffee](https://buymeacoffee.com/pramu.cc)\n🌐 Website: [vishwapramuditha.com](https://vishwapramuditha.com)",
+            ephemeral: true,
         });
-      });
-
-      return interaction.reply({ embeds: [embed] });
     }
-  }
-
-  // ---------- /support ----------
-  if (interaction.commandName === "support") {
-    return interaction.reply({
-      content:
-        "☕ Support the developer:\n[Buy me a coffee](https://buymeacoffee.com/pramu.cc)\n🌐 Website: [vishwapramuditha.com](https://vishwapramuditha.com)",
-      ephemeral: true,
-    });
-  }
 });
 
 client.login(process.env.TOKEN);
