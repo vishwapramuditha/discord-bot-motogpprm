@@ -85,7 +85,6 @@
       }
     }
   ],
- {
   "riders": [
     { "rank": 1, "name": "🇪🇸 M. Márquez", "team": "Ducati", "points": 541 },
     { "rank": 2, "name": "🇪🇸 A. Márquez", "team": "Ducati", "points": 340 },
@@ -121,8 +120,5 @@
     { "rank": 3, "team": "03 🇦🇹 KTM", "points": 260 },
     { "rank": 4, "team": "04 🇯🇵 Repsol Honda", "points": 220 },
     { "rank": 5, "team": "05 🇯🇵 Yamaha", "points": 180 }
-  ]
-}
-
   ]
 }
