@@ -85,40 +85,44 @@
       }
     }
   ],
+ {
   "riders": [
-    { "rank": 1, "name": "🇪🇸 M. Márquez", "team": "Ducati", "points": 512 },
-    { "rank": 2, "name": "🇪🇸 A. Márquez", "team": "Ducati", "points": 330 },
-    { "rank": 3, "name": "🇮🇹 F. Bagnaia", "team": "Ducati", "points": 237 },
-    { "rank": 4, "name": "🇮🇹 M. Bezzecchi", "team": "Aprilia", "points": 229 },
-    { "rank": 5, "name": "🇪🇸 P. Acosta", "team": "KTM", "points": 188 },
-    { "rank": 6, "name": "🇮🇹 F. Morbidelli", "team": "Ducati", "points": 180 },
-    { "rank": 7, "name": "🇮🇹 F. Di Giannantonio", "team": "Ducati", "points": 179 },
-    { "rank": 8, "name": "🇪🇸 F. Aldeguer", "team": "Ducati", "points": 141 },
-    { "rank": 9, "name": "🇫🇷 F. Quartararo", "team": "Yamaha", "points": 137 },
-    { "rank": 10, "name": "🇫🇷 J. Zarco", "team": "Repsol Honda", "points": 117 },
-    { "rank": 11, "name": "🇿🇦 B. Binder", "team": "KTM", "points": 101 },
-    { "rank": 12, "name": "🇮🇹 L. Marini", "team": "Repsol Honda", "points": 94 },
-    { "rank": 13, "name": "🇮🇹 E. Bastianini", "team": "KTM", "points": 84 },
-    { "rank": 14, "name": "🇪🇸 R. Fernández", "team": "Aprilia", "points": 84 },
-    { "rank": 15, "name": "🇪🇸 M. Viñales", "team": "KTM", "points": 72 },
-    { "rank": 16, "name": "🇯🇵 A. Ogura", "team": "Aprilia", "points": 64 },
-    { "rank": 17, "name": "🇦🇺 J. Miller", "team": "Yamaha", "points": 58 },
-    { "rank": 18, "name": "🇪🇸 J. Mir", "team": "Repsol Honda", "points": 50 },
+    { "rank": 1, "name": "🇪🇸 M. Márquez", "team": "Ducati", "points": 541 },
+    { "rank": 2, "name": "🇪🇸 A. Márquez", "team": "Ducati", "points": 340 },
+    { "rank": 3, "name": "🇮🇹 F. Bagnaia", "team": "Ducati", "points": 274 },
+    { "rank": 4, "name": "🇮🇹 M. Bezzecchi", "team": "Aprilia", "points": 242 },
+    { "rank": 5, "name": "🇮🇹 F. Morbidelli", "team": "Ducati", "points": 196 },
+    { "rank": 6, "name": "🇪🇸 P. Acosta", "team": "KTM", "points": 195 },
+    { "rank": 7, "name": "🇮🇹 F. Di Giannantonio", "team": "Ducati", "points": 182 },
+    { "rank": 8, "name": "🇫🇷 F. Quartararo", "team": "Yamaha", "points": 149 },
+    { "rank": 9, "name": "🇪🇸 F. Aldeguer", "team": "Ducati", "points": 147 },
+    { "rank": 10, "name": "🇫🇷 J. Zarco", "team": "Repsol Honda", "points": 124 },
+    { "rank": 11, "name": "🇿🇦 B. Binder", "team": "KTM", "points": 105 },
+    { "rank": 12, "name": "🇮🇹 L. Marini", "team": "Repsol Honda", "points": 97 },
+    { "rank": 13, "name": "🇪🇸 R. Fernández", "team": "Aprilia", "points": 95 },
+    { "rank": 14, "name": "🇮🇹 E. Bastianini", "team": "KTM", "points": 89 },
+    { "rank": 15, "name": "🇪🇸 J. Mir", "team": "Repsol Honda", "points": 72 },
+    { "rank": 16, "name": "🇪🇸 M. Viñales", "team": "KTM", "points": 72 },
+    { "rank": 17, "name": "🇯🇵 A. Ogura", "team": "Aprilia", "points": 70 },
+    { "rank": 18, "name": "🇦🇺 J. Miller", "team": "Yamaha", "points": 58 },
     { "rank": 19, "name": "🇪🇸 A. Rins", "team": "Yamaha", "points": 45 },
     { "rank": 20, "name": "🇪🇸 J. Martin", "team": "Aprilia", "points": 34 },
-    { "rank": 21, "name": "🇵🇹 M. Oliveira", "team": "Yamaha", "points": 24 },
+    { "rank": 21, "name": "🇵🇹 M. Oliveira", "team": "Yamaha", "points": 26 },
     { "rank": 22, "name": "🇪🇸 P. Espargaró", "team": "KTM", "points": 16 },
     { "rank": 23, "name": "🇯🇵 T. Nakagami", "team": "Repsol Honda", "points": 10 },
     { "rank": 24, "name": "🇮🇹 L. Savadori", "team": "Aprilia", "points": 8 },
-    { "rank": 25, "name": "🇪🇸 A. Fernández", "team": "Yamaha", "points": 8 },
-    { "rank": 26, "name": "🇹🇭 S. Chantra", "team": "Repsol Honda", "points": 2 },
+    { "rank": 25, "name": "🇪🇸 A. Fernández", "team": "Yamaha", "points": 6 },
+    { "rank": 26, "name": "🇹🇭 S. Chantra", "team": "Repsol Honda", "points": 3 },
     { "rank": 27, "name": "🇪🇸 A. Espargaró", "team": "Repsol Honda", "points": 0 }
   ],
   "constructors": [
-    { "rank": 1, "team": "01 🇮🇹 Ducati", "points": 575 },
-    { "rank": 2, "team": "02 🇮🇹 Aprilia", "points": 271 },
-    { "rank": 3, "team": "03 🇦🇹 KTM", "points": 248 },
-    { "rank": 4, "team": "04 🇯🇵 Repsol Honda", "points": 198 },
-    { "rank": 5, "team": "05 🇯🇵 Yamaha", "points": 168 }
+    { "rank": 1, "team": "01 🇮🇹 Ducati", "points": 612 },
+    { "rank": 2, "team": "02 🇮🇹 Aprilia", "points": 286 },
+    { "rank": 3, "team": "03 🇦🇹 KTM", "points": 260 },
+    { "rank": 4, "team": "04 🇯🇵 Repsol Honda", "points": 220 },
+    { "rank": 5, "team": "05 🇯🇵 Yamaha", "points": 180 }
+  ]
+}
+
   ]
 }
