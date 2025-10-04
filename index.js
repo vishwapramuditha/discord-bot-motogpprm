@@ -85,9 +85,9 @@ client.on("interactionCreate", async (interaction) => {
 
                 let status = "";
                 if (now.isAfter(sessionStart) && now.isBefore(sessionEnd)) {
-                    status = "🟠 **LIVE NOW**";
+                    status = "🟠**LIVE NOW**";
                 } else if (now.isAfter(sessionEnd)) {
-                    status = "✅ Finished";
+                    status = "✅";
                 } else {
                     const countdown = formatCountdown(sessionTime);
                     status = `⏱ ${countdown}`;
