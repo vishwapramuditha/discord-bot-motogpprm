@@ -5,7 +5,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 const commands = [
     new SlashCommandBuilder()
         .setName("next")
-        .setDescription("Shows the full schedule of the next MotoGP weekend in your local time (auto-updating countdown)"),
+        .setDescription("Shows the next MotoGP weekend schedule with live updating countdowns"),
     new SlashCommandBuilder()
         .setName("standings")
         .setDescription("Shows the current championship standings")
