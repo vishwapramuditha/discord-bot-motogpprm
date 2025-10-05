@@ -7,9 +7,8 @@ const {
 const moment = require("moment-timezone");
 const data = require("./races.json");
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
-// ------------------- Bot Ready -------------------
 client.once("ready", () => {
     console.log(`✅ Logged in as ${client.user.tag}`);
 });
@@ -57,6 +56,43 @@ function sessionEmoji(session) {
     }
 }
 
+function createRaceEmbed(nextRace) {
+    const embed = new EmbedBuilder()
+        .setTitle(`🏁 ${nextRace.name} - ${nextRace.track}`)
+        .setColor("#FF0000")
+        .setFooter({ text: "MotoGP 2025 Schedule" })
+        .setTimestamp();
+
+    const now = moment();
+
+    for (const [session, time] of Object.entries(nextRace.sessions)) {
+        const sessionStart = moment(time);
+        const sessionEnd = moment(time).add(1, "hours"); // assume 1-hour duration
+        const sessionTime = sessionStart.tz(moment.tz.guess());
+        const unixTime = Math.floor(sessionTime.valueOf() / 1000);
+        const displayTime = `<t:${unixTime}:f>`;
+        const emoji = sessionEmoji(session);
+
+        let status = "";
+        if (now.isAfter(sessionStart) && now.isBefore(sessionEnd)) {
+            status = "🟠 **LIVE NOW**";
+        } else if (now.isAfter(sessionEnd)) {
+            status = "✅ Finished";
+        } else {
+            const countdown = formatCountdown(sessionTime);
+            status = `⏱ ${countdown}`;
+        }
+
+        embed.addFields({
+            name: `${emoji} ${session}`,
+            value: `${displayTime} | ${status}`,
+            inline: false,
+        });
+    }
+
+    return embed;
+}
+
 // ------------------- Command Handling -------------------
 client.on("interactionCreate", async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
@@ -66,66 +102,31 @@ client.on("interactionCreate", async (interaction) => {
         const nextRace = getNextRace();
         if (!nextRace) return interaction.reply("🎉 No upcoming races!");
 
-        const updateEmbed = () => {
-            const embed = new EmbedBuilder()
-                .setTitle(`🏁 ${nextRace.name} - ${nextRace.track}`)
-                .setColor("#FF0000")
-                .setFooter({ text: "MotoGP 2025 Schedule" })
-                .setTimestamp();
+        await interaction.deferReply();
+        const embed = createRaceEmbed(nextRace);
+        const message = await interaction.editReply({ embeds: [embed] });
 
-            const now = moment();
-
-            for (const [session, time] of Object.entries(nextRace.sessions)) {
-                const sessionStart = moment(time);
-                const sessionEnd = moment(time).add(1, "hours"); // assume 1h duration
-                const sessionTime = sessionStart.tz(moment.tz.guess());
-                const unixTime = Math.floor(sessionTime.valueOf() / 1000);
-                const displayTime = `<t:${unixTime}:f>`;
-                const emoji = sessionEmoji(session);
-
-                let status = "";
-                if (now.isAfter(sessionStart) && now.isBefore(sessionEnd)) {
-                    status = "🟠**LIVE NOW**";
-                } else if (now.isAfter(sessionEnd)) {
-                    status = "✅";
-                } else {
-                    const countdown = formatCountdown(sessionTime);
-                    status = `⏱ ${countdown}`;
-                }
-
-                embed.addFields({
-                    name: `${emoji} ${session}`,
-                    value: `${displayTime} | ${status}`,
-                    inline: false,
-                });
-            }
-
-            return embed;
-        };
-
-        const replyMessage = await interaction.reply({
-            embeds: [updateEmbed()],
-            fetchReply: true,
-        });
-
-        // Auto update every 60 seconds
+        // Auto-update countdowns every 60 seconds
         const interval = setInterval(async () => {
             const now = moment();
-            const nextSessions = Object.values(nextRace.sessions).filter((t) =>
+            const hasFuture = Object.values(nextRace.sessions).some((t) =>
                 moment(t).isAfter(now)
             );
 
-            // Stop updating if all sessions done
-            if (nextSessions.length === 0) {
+            // Stop updating if all sessions finished
+            if (!hasFuture) {
                 clearInterval(interval);
-                const finalEmbed = updateEmbed();
-                await replyMessage.edit({ embeds: [finalEmbed] });
+                await message.edit({ embeds: [createRaceEmbed(nextRace)] });
                 return;
             }
 
-            // Refresh countdowns
-            await replyMessage.edit({ embeds: [updateEmbed()] });
-        }, 60000); // 60 seconds
+            try {
+                await message.edit({ embeds: [createRaceEmbed(nextRace)] });
+            } catch (err) {
+                clearInterval(interval);
+                console.error("Stopped updating (message deleted or bot restarted)");
+            }
+        }, 60000); // every minute
     }
 
     // ---------- /standings ----------
@@ -168,7 +169,7 @@ client.on("interactionCreate", async (interaction) => {
                 embeds.push(secondEmbed);
             }
 
-            return interaction.reply({ embeds: embeds });
+            return interaction.reply({ embeds });
         } else if (type === "constructors") {
             const embed = new EmbedBuilder()
                 .setTitle("🏎️ Constructors Championship Standings")
