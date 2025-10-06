@@ -4,39 +4,21 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 
 const commands = [
     new SlashCommandBuilder()
-        .setName("nextmotogp")
-        .setDescription("Shows the next MotoGP weekend schedule with live countdowns"),
-
+        .setName("next")
+        .setDescription("Shows the next MotoGP weekend schedule with live updating countdowns"),
     new SlashCommandBuilder()
-        .setName("nextf1")
-        .setDescription("Shows the next Formula 1 race"),
-
-    new SlashCommandBuilder()
-        .setName("standingsmotogp")
-        .setDescription("Shows MotoGP championship standings")
-        .addStringOption((o) =>
-            o.setName("type")
-                .setDescription("Choose standings type")
+        .setName("standings")
+        .setDescription("Shows the current championship standings")
+        .addStringOption((option) =>
+            option
+                .setName("type")
+                .setDescription("Choose riders or constructors")
                 .setRequired(true)
                 .addChoices(
                     { name: "Riders", value: "riders" },
                     { name: "Constructors", value: "constructors" }
                 )
         ),
-
-    new SlashCommandBuilder()
-        .setName("standingsf1")
-        .setDescription("Shows Formula 1 championship standings")
-        .addStringOption((o) =>
-            o.setName("type")
-                .setDescription("Choose standings type")
-                .setRequired(true)
-                .addChoices(
-                    { name: "Drivers", value: "drivers" },
-                    { name: "Constructors", value: "constructors" }
-                )
-        ),
-
     new SlashCommandBuilder()
         .setName("support")
         .setDescription("Support the developer"),
@@ -47,8 +29,10 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 (async () => {
     try {
         console.log("🚀 Registering commands...");
-        await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands });
-        console.log("✅ Commands registered successfully!");
+        await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
+            body: commands,
+        });
+        console.log("✅ Commands registered!");
     } catch (error) {
         console.error(error);
     }
