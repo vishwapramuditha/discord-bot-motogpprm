@@ -7,7 +7,12 @@ const {
 const moment = require("moment-timezone");
 const data = require("./races.json");
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
+const client = new Client({ 
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] 
+});
+
+// Store active intervals to prevent memory leaks
+const activeIntervals = new Map();
 
 client.once("ready", () => {
     console.log(`✅ Logged in as ${client.user.tag}`);
@@ -25,34 +30,46 @@ function getNextRace() {
 
 function formatCountdown(time) {
     const now = moment();
-    const diff = moment(time).diff(now);
-    if (diff <= 0) return "✅";
+    const target = moment(time);
+    const diff = target.diff(now);
+    
+    if (diff <= 0) return "✅ Finished";
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const duration = moment.duration(diff);
+    const days = Math.floor(duration.asDays());
+    const hours = duration.hours();
+    const minutes = duration.minutes();
 
-    return `${days}d ${hours}h ${minutes}m`;
+    if (days > 0) {
+        return `⏱ ${days}d ${hours}h ${minutes}m`;
+    } else if (hours > 0) {
+        return `⏱ ${hours}h ${minutes}m`;
+    } else {
+        return `⏱ ${minutes}m`;
+    }
 }
 
 function sessionEmoji(session) {
-    switch (session.toLowerCase()) {
-        case "free practice 1":
-        case "free practice 2":
-        case "practice":
-            return "🟢";
-        case "qualifying 1":
-        case "qualifying 2":
-        case "qualifying":
-            return "🏎️";
-        case "sprint":
-            return "⚡";
-        case "warm up":
-            return "☀️";
-        case "race":
-            return "🏁";
-        default:
-            return "📌";
+    const sessionLower = session.toLowerCase();
+    
+    if (sessionLower.includes("practice")) return "🟢";
+    if (sessionLower.includes("qualifying")) return "🏎️";
+    if (sessionLower.includes("sprint")) return "⚡";
+    if (sessionLower.includes("warm up")) return "☀️";
+    if (sessionLower.includes("race")) return "🏁";
+    
+    return "📌";
+}
+
+function getSessionStatus(sessionStart, sessionEnd) {
+    const now = moment();
+    
+    if (now.isBefore(sessionStart)) {
+        return formatCountdown(sessionStart);
+    } else if (now.isBetween(sessionStart, sessionEnd)) {
+        return "🟠 **LIVE NOW**";
+    } else {
+        return "✅ Finished";
     }
 }
 
@@ -63,25 +80,13 @@ function createRaceEmbed(nextRace) {
         .setFooter({ text: "MotoGP 2025 Schedule" })
         .setTimestamp();
 
-    const now = moment();
-
     for (const [session, time] of Object.entries(nextRace.sessions)) {
         const sessionStart = moment(time);
-        const sessionEnd = moment(time).add(1, "hours"); // assume 1-hour duration
-        const sessionTime = sessionStart.tz(moment.tz.guess());
-        const unixTime = Math.floor(sessionTime.valueOf() / 1000);
+        const sessionEnd = moment(time).add(1, "hours");
+        const unixTime = Math.floor(sessionStart.valueOf() / 1000);
         const displayTime = `<t:${unixTime}:f>`;
         const emoji = sessionEmoji(session);
-
-        let status = "";
-        if (now.isAfter(sessionStart) && now.isBefore(sessionEnd)) {
-            status = "🟠 **LIVE NOW**";
-        } else if (now.isAfter(sessionEnd)) {
-            status = "✅ Finished";
-        } else {
-            const countdown = formatCountdown(sessionTime);
-            status = `⏱ ${countdown}`;
-        }
+        const status = getSessionStatus(sessionStart, sessionEnd);
 
         embed.addFields({
             name: `${emoji} ${session}`,
@@ -93,6 +98,15 @@ function createRaceEmbed(nextRace) {
     return embed;
 }
 
+function clearMessageInterval(messageId) {
+    const interval = activeIntervals.get(messageId);
+    if (interval) {
+        clearInterval(interval);
+        activeIntervals.delete(messageId);
+        console.log(`🧹 Cleared interval for message ${messageId}`);
+    }
+}
+
 // ------------------- Command Handling -------------------
 client.on("interactionCreate", async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
@@ -100,11 +114,16 @@ client.on("interactionCreate", async (interaction) => {
     // ---------- /next ----------
     if (interaction.commandName === "next") {
         const nextRace = getNextRace();
-        if (!nextRace) return interaction.reply("🎉 No upcoming races!");
+        if (!nextRace) {
+            return interaction.reply("🎉 No upcoming races!");
+        }
 
         await interaction.deferReply();
         const embed = createRaceEmbed(nextRace);
         const message = await interaction.editReply({ embeds: [embed] });
+
+        // Clear any existing interval for this message
+        clearMessageInterval(message.id);
 
         // Auto-update countdowns every 60 seconds
         const interval = setInterval(async () => {
@@ -115,18 +134,24 @@ client.on("interactionCreate", async (interaction) => {
 
             // Stop updating if all sessions finished
             if (!hasFuture) {
-                clearInterval(interval);
-                await message.edit({ embeds: [createRaceEmbed(nextRace)] });
+                clearMessageInterval(message.id);
+                try {
+                    await message.edit({ embeds: [createRaceEmbed(nextRace)] });
+                } catch (err) {
+                    console.error("Failed final update:", err.message);
+                }
                 return;
             }
 
             try {
                 await message.edit({ embeds: [createRaceEmbed(nextRace)] });
             } catch (err) {
-                clearInterval(interval);
-                console.error("Stopped updating (message deleted or bot restarted)");
+                clearMessageInterval(message.id);
+                console.error("Stopped updating:", err.message);
             }
         }, 60000); // every minute
+
+        activeIntervals.set(message.id, interval);
     }
 
     // ---------- /standings ----------
@@ -135,17 +160,21 @@ client.on("interactionCreate", async (interaction) => {
 
         if (type === "riders") {
             const riders = data.riders;
-            const embeds = [];
+            
+            if (!riders || riders.length === 0) {
+                return interaction.reply("❌ No rider data available.");
+            }
 
+            const embeds = [];
             const firstEmbed = new EmbedBuilder()
                 .setTitle("🏆 Riders Championship Standings (1-15)")
                 .setColor("#FFD700")
                 .setFooter({ text: "MotoGP 2025 Championship" });
 
-            riders.slice(0, 15).forEach((driver) => {
+            riders.slice(0, 15).forEach((rider) => {
                 firstEmbed.addFields({
-                    name: `#${driver.rank} ${driver.name} (${driver.team})`,
-                    value: `Points: ${driver.points}`,
+                    name: `#${rider.rank} ${rider.name}`,
+                    value: `Team: ${rider.team}\nPoints: ${rider.points}`,
                     inline: true,
                 });
             });
@@ -154,14 +183,14 @@ client.on("interactionCreate", async (interaction) => {
 
             if (riders.length > 15) {
                 const secondEmbed = new EmbedBuilder()
-                    .setTitle(`🏆 Riders Championship Standings (${16}-${riders.length})`)
+                    .setTitle(`🏆 Riders Championship Standings (16-${riders.length})`)
                     .setColor("#FFD700")
                     .setFooter({ text: "MotoGP 2025 Championship" });
 
-                riders.slice(15).forEach((driver) => {
+                riders.slice(15).forEach((rider) => {
                     secondEmbed.addFields({
-                        name: `#${driver.rank} ${driver.name} (${driver.team})`,
-                        value: `Points: ${driver.points}`,
+                        name: `#${rider.rank} ${rider.name}`,
+                        value: `Team: ${rider.team}\nPoints: ${rider.points}`,
                         inline: true,
                     });
                 });
@@ -170,15 +199,20 @@ client.on("interactionCreate", async (interaction) => {
             }
 
             return interaction.reply({ embeds });
+            
         } else if (type === "constructors") {
+            if (!data.constructors || data.constructors.length === 0) {
+                return interaction.reply("❌ No constructor data available.");
+            }
+
             const embed = new EmbedBuilder()
                 .setTitle("🏎️ Constructors Championship Standings")
                 .setColor("#FFD700")
                 .setFooter({ text: "MotoGP 2025 Championship" });
 
-            data.constructors.forEach((team) => {
+            data.constructors.forEach((team, index) => {
                 embed.addFields({
-                    name: `${team.team}`,
+                    name: `#${index + 1} ${team.team}`,
                     value: `Points: ${team.points}`,
                     inline: true,
                 });
@@ -196,6 +230,15 @@ client.on("interactionCreate", async (interaction) => {
             ephemeral: true,
         });
     }
+});
+
+// Clean up intervals on shutdown
+process.on("SIGINT", () => {
+    console.log("🛑 Shutting down gracefully...");
+    activeIntervals.forEach((interval) => clearInterval(interval));
+    activeIntervals.clear();
+    client.destroy();
+    process.exit(0);
 });
 
 client.login(process.env.TOKEN);
