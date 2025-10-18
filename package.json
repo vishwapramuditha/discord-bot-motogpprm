@@ -1,20 +1,17 @@
 {
-  "name": "racing-discord-bot",
+  "name": "motogp",
   "version": "1.0.0",
-  "description": "F1 & MotoGP Discord Bot - Track races and standings",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "test": "echo "Error: no test specified" && exit 1"
   },
-  "keywords": ["discord", "bot", "f1", "motogp", "racing"],
+  "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "discord.js": "^14.22.1",
+    "dotenv": "^17.2.2",
+    "moment-timezone": "^0.6.0"
   }
 }
