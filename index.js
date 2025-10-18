@@ -11,9 +11,6 @@ const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] 
 });
 
-// Store active intervals to prevent memory leaks
-const activeIntervals = new Map();
-
 client.once("ready", () => {
     console.log(`✅ Logged in as ${client.user.tag}`);
 });
@@ -26,27 +23,6 @@ function getNextRace() {
             Object.values(race.sessions).some((t) => moment(t).isAfter(now))
         ) || null
     );
-}
-
-function formatCountdown(time) {
-    const now = moment();
-    const target = moment(time);
-    const diff = target.diff(now);
-    
-    if (diff <= 0) return "✅ Finished";
-
-    const duration = moment.duration(diff);
-    const days = Math.floor(duration.asDays());
-    const hours = duration.hours();
-    const minutes = duration.minutes();
-
-    if (days > 0) {
-        return `⏱ ${days}d ${hours}h ${minutes}m`;
-    } else if (hours > 0) {
-        return `⏱ ${hours}h ${minutes}m`;
-    } else {
-        return `⏱ ${minutes}m`;
-    }
 }
 
 function sessionEmoji(session) {
@@ -65,7 +41,7 @@ function getSessionStatus(sessionStart, sessionEnd) {
     const now = moment();
     
     if (now.isBefore(sessionStart)) {
-        return formatCountdown(sessionStart);
+        return "⏳ Upcoming";
     } else if (now.isBetween(sessionStart, sessionEnd)) {
         return "🟠 **LIVE NOW**";
     } else {
@@ -98,15 +74,6 @@ function createRaceEmbed(nextRace) {
     return embed;
 }
 
-function clearMessageInterval(messageId) {
-    const interval = activeIntervals.get(messageId);
-    if (interval) {
-        clearInterval(interval);
-        activeIntervals.delete(messageId);
-        console.log(`🧹 Cleared interval for message ${messageId}`);
-    }
-}
-
 // ------------------- Command Handling -------------------
 client.on("interactionCreate", async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
@@ -118,40 +85,8 @@ client.on("interactionCreate", async (interaction) => {
             return interaction.reply("🎉 No upcoming races!");
         }
 
-        await interaction.deferReply();
         const embed = createRaceEmbed(nextRace);
-        const message = await interaction.editReply({ embeds: [embed] });
-
-        // Clear any existing interval for this message
-        clearMessageInterval(message.id);
-
-        // Auto-update countdowns every 60 seconds
-        const interval = setInterval(async () => {
-            const now = moment();
-            const hasFuture = Object.values(nextRace.sessions).some((t) =>
-                moment(t).isAfter(now)
-            );
-
-            // Stop updating if all sessions finished
-            if (!hasFuture) {
-                clearMessageInterval(message.id);
-                try {
-                    await message.edit({ embeds: [createRaceEmbed(nextRace)] });
-                } catch (err) {
-                    console.error("Failed final update:", err.message);
-                }
-                return;
-            }
-
-            try {
-                await message.edit({ embeds: [createRaceEmbed(nextRace)] });
-            } catch (err) {
-                clearMessageInterval(message.id);
-                console.error("Stopped updating:", err.message);
-            }
-        }, 60000); // every minute
-
-        activeIntervals.set(message.id, interval);
+        return interaction.reply({ embeds: [embed] });
     }
 
     // ---------- /standings ----------
@@ -230,15 +165,6 @@ client.on("interactionCreate", async (interaction) => {
             ephemeral: true,
         });
     }
-});
-
-// Clean up intervals on shutdown
-process.on("SIGINT", () => {
-    console.log("🛑 Shutting down gracefully...");
-    activeIntervals.forEach((interval) => clearInterval(interval));
-    activeIntervals.clear();
-    client.destroy();
-    process.exit(0);
 });
 
 client.login(process.env.TOKEN);
