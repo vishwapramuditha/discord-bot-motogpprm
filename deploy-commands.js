@@ -1,38 +1,33 @@
 require("dotenv").config();
 const { REST, Routes } = require("discord.js");
-const { SlashCommandBuilder } = require("@discordjs/builders");
+const fs = require("fs");
+const path = require("path");
 
-const commands = [
-    new SlashCommandBuilder()
-        .setName("next")
-        .setDescription("Shows the next MotoGP weekend schedule with live updating countdowns"),
-    new SlashCommandBuilder()
-        .setName("standings")
-        .setDescription("Shows the current championship standings")
-        .addStringOption((option) =>
-            option
-                .setName("type")
-                .setDescription("Choose riders or constructors")
-                .setRequired(true)
-                .addChoices(
-                    { name: "Riders", value: "riders" },
-                    { name: "Constructors", value: "constructors" }
-                )
-        ),
-    new SlashCommandBuilder()
-        .setName("support")
-        .setDescription("Support the developer"),
-].map((cmd) => cmd.toJSON());
+const commands = [];
+const commandsPath = path.join(__dirname, "src/commands");
+const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+    const command = require(path.join(commandsPath, file));
+    if ("data" in command && "execute" in command) {
+        commands.push(command.data.toJSON());
+    } else {
+        console.log(`[WARNING] The command at ${file} is missing a required "data" or "execute" property.`);
+    }
+}
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
 (async () => {
     try {
-        console.log("🚀 Registering commands...");
-        await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
-            body: commands,
-        });
-        console.log("✅ Commands registered!");
+        console.log(`🚀 Started refreshing ${commands.length} application (/) commands.`);
+
+        const data = await rest.put(
+            Routes.applicationCommands(process.env.CLIENT_ID),
+            { body: commands },
+        );
+
+        console.log(`✅ Successfully reloaded ${data.length} application (/) commands.`);
     } catch (error) {
         console.error(error);
     }
