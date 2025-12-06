@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 const { getNextRace: getNextF1 } = require("../services/f1Service");
 const { getNextMotoGPRace } = require("../services/motogpService");
+const { getNextF3Race } = require("../services/f3Service");
 const { createBaseEmbed } = require("../utils/embedUtils");
 const moment = require("moment-timezone");
 
@@ -10,11 +11,12 @@ module.exports = {
         .setDescription("Get when and where the next Grand Prix takes place")
         .addStringOption(option =>
             option.setName("series")
-                .setDescription("Choose F1 or MotoGP")
+                .setDescription("Choose F1, MotoGP or F3")
                 .setRequired(true)
                 .addChoices(
                     { name: "Formula 1", value: "f1" },
-                    { name: "MotoGP", value: "motogp" }
+                    { name: "MotoGP", value: "motogp" },
+                    { name: "Formula 3", value: "f3" }
                 )
         ),
 
@@ -56,7 +58,7 @@ module.exports = {
 
             return interaction.editReply({ embeds: [embed] });
 
-        } else {
+        } else if (series === "motogp") {
             // MotoGP
             const race = getNextMotoGPRace();
             if (!race) return interaction.editReply("🎉 No upcoming MotoGP races found.");
@@ -72,6 +74,37 @@ module.exports = {
                 const time = moment(timeStr);
                 const formatted = time.format("MMMM D, YYYY h:mm A");
                 sessionText += `${name.padEnd(16)}: ${formatted}\n`;
+            }
+            sessionText += "```";
+
+            embed.addFields({ name: "Sessions", value: sessionText });
+
+            return interaction.editReply({ embeds: [embed] });
+        } else {
+            // F3
+            const race = getNextF3Race();
+            if (!race) return interaction.editReply("🎉 No upcoming F3 races found.");
+
+            const embed = createBaseEmbed("Race Schedule")
+                .setColor("#151F45") // F3 Blue-ish
+                .setDescription(`**2025 Season**\n\n**${race.name}**\nRound ${race.round}`);
+
+            let sessionText = "```text\n";
+            // F3 sessions might only be Feature and Sprint in my data
+            const sortedSessions = Object.entries(race.sessions).sort(([, a], [, b]) => moment(a).diff(moment(b)));
+
+            for (const [name, timeStr] of sortedSessions) {
+                const time = moment(timeStr);
+                const formatted = time.format("MMMM D, YYYY h:mm A");
+                // Since times are 00:00:00Z, maybe we should warn or just display date?
+                // User said "times still not reveal", so dates are accurate.
+                // We'll display date and time (which is 00:00).
+                // Maybe improvement: check if time is 00:00:00 and only show date.
+                let displayStr = formatted;
+                if (timeStr.includes("00:00:00")) {
+                    displayStr = time.format("MMMM D, YYYY");
+                }
+                sessionText += `${name.padEnd(16)}: ${displayStr}\n`;
             }
             sessionText += "```";
 

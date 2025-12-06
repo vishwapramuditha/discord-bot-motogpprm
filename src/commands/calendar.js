@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 const { getCalendar: getF1Calendar } = require("../services/f1Service");
 const { getMotoGPCalendar } = require("../services/motogpService");
+const { getF3Calendar } = require("../services/f3Service");
 const { createBaseEmbed } = require("../utils/embedUtils");
 
 module.exports = {
@@ -13,7 +14,8 @@ module.exports = {
                 .setRequired(true)
                 .addChoices(
                     { name: "Formula 1", value: "f1" },
-                    { name: "MotoGP", value: "motogp" }
+                    { name: "MotoGP", value: "motogp" },
+                    { name: "Formula 3", value: "f3" }
                 )
         )
         .addStringOption(option =>
@@ -47,13 +49,30 @@ module.exports = {
 
             return interaction.editReply({ embeds: [embed] });
 
-        } else {
+        } else if (series === "motogp") {
             // MotoGP
             const races = getMotoGPCalendar();
             if (!races || races.length === 0) return interaction.editReply("❌ No MotoGP calendar data available.");
 
             const embed = createBaseEmbed(`📅 MotoGP Calendar 2025`)
                 .setColor("#000000");
+
+            let description = "";
+            races.forEach(race => {
+                // Use the country flag from our data
+                description += `**${race.round}** ${race.country} ${race.name} — ${race.date}\n`;
+            });
+
+            embed.setDescription(description);
+
+            return interaction.editReply({ embeds: [embed] });
+        } else {
+            // F3 series
+            const races = getF3Calendar();
+            if (!races || races.length === 0) return interaction.editReply("❌ No F3 calendar data available.");
+
+            const embed = createBaseEmbed(`📅 F3 Calendar 2025`)
+                .setColor("#151F45");
 
             let description = "";
             races.forEach(race => {

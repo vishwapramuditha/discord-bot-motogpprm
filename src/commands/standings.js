@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 const { getStandings: getF1Standings } = require("../services/f1Service");
 const { getMotoGPStandings } = require("../services/motogpService");
+const { getF3Standings } = require("../services/f3Service");
 const { createBaseEmbed } = require("../utils/embedUtils");
 const { getFlag } = require("../utils/nationalityUtils");
 
@@ -14,7 +15,8 @@ module.exports = {
                 .setRequired(true)
                 .addChoices(
                     { name: "Formula 1", value: "f1" },
-                    { name: "MotoGP", value: "motogp" }
+                    { name: "MotoGP", value: "motogp" },
+                    { name: "Formula 3", value: "f3" }
                 )
         )
         .addStringOption(option =>
@@ -72,7 +74,7 @@ module.exports = {
             embed.setDescription(embed.data.description + standingsText);
             return interaction.editReply({ embeds: [embed] });
 
-        } else {
+        } else if (series === "motogp") {
             // MotoGP
             const motoType = type === 'driver' ? 'riders' : 'constructors';
             const data = getMotoGPStandings(motoType);
@@ -90,15 +92,8 @@ module.exports = {
                 const points = item.points;
 
                 if (motoType === 'riders') {
-                    // MotoGP data already has flag in name string: "🇪🇸 J. Martin"
-                    // We can try to split it if we want strict formatting, but using it directly is fine if it matches the style.
-                    // The user wants: Rank Flag Name — Points
-                    // Our data: "🇪🇸 J. Martin"
-                    // Let's assume the name string starts with the flag.
                     standingsText += `**${rank}** ${item.name} — ${points} pts\n`;
                 } else {
-                    // Constructors: "Ducati" (no flag in our JSON currently)
-                    // We can map common manufacturers manually or just show name
                     const manufacturerFlags = {
                         "Ducati": "🇮🇹",
                         "KTM": "🇦🇹",
@@ -109,6 +104,30 @@ module.exports = {
                     const flag = manufacturerFlags[item.name] || "🏳️";
                     standingsText += `**${rank}** ${flag} **${item.name}** — ${points} pts\n`;
                 }
+            });
+
+            embed.setDescription(embed.data.description + standingsText);
+            return interaction.editReply({ embeds: [embed] });
+        } else {
+            // F3
+            const f3Type = type === 'driver' ? 'drivers' : 'teams'; // JSON keys: "drivers", "teams"
+            const data = getF3Standings(f3Type);
+
+            if (!data || data.length === 0) return interaction.editReply("❌ No F3 standings data available.");
+
+            const title = type === 'driver' ? 'Driver Standings' : 'Team Standings';
+            const embed = createBaseEmbed(title)
+                .setColor("#151F45")
+                .setDescription(`**2025 Season**\n\n`);
+
+            let standingsText = "";
+            data.forEach(item => {
+                const rank = item.rank;
+                const points = item.points;
+                const name = item.name;
+
+                // Assuming we don't have detailed flag/team info in simple placeholder yet
+                standingsText += `**${rank}** ${name} — ${points} pts\n`;
             });
 
             embed.setDescription(embed.data.description + standingsText);

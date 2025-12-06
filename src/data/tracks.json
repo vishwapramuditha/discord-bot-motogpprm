@@ -1,0 +1,902 @@
+[
+    {
+        "id": "catalunya",
+        "identifiers": [
+            "catalunya",
+            "barcelona",
+            "spain",
+            "montmelo"
+        ],
+        "name": "Circuit de Barcelona-Catalunya",
+        "location": "Montmeló, Spain",
+        "countryCode": "🇪🇸",
+        "firstGP": 1991,
+        "lapRecord": {
+            "time": "1:18.149",
+            "driver": "Max Verstappen",
+            "year": 2021
+        },
+        "length": "4.657 km (2.894 mi)",
+        "turns": 14,
+        "laps": 66,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Lewis Hamilton",
+                "team": "Mercedes"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Catalunya_2021.svg/1200px-Catalunya_2021.svg.png"
+    },
+    {
+        "id": "bahrain",
+        "identifiers": [
+            "bahrain",
+            "sakhir"
+        ],
+        "name": "Bahrain International Circuit",
+        "location": "Sakhir, Bahrain",
+        "countryCode": "🇧🇭",
+        "firstGP": 2004,
+        "lapRecord": {
+            "time": "1:31.447",
+            "driver": "Pedro de la Rosa",
+            "year": 2005
+        },
+        "length": "5.412 km (3.363 mi)",
+        "turns": 15,
+        "laps": 57,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Sergio Perez",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Bahrain_International_Circuit--Grand_Prix_Layout.svg/1200px-Bahrain_International_Circuit--Grand_Prix_Layout.svg.png"
+    },
+    {
+        "id": "albert_park",
+        "identifiers": [
+            "albert_park",
+            "melbourne",
+            "australia"
+        ],
+        "name": "Albert Park Circuit",
+        "location": "Melbourne, Australia",
+        "countryCode": "🇦🇺",
+        "firstGP": 1996,
+        "lapRecord": {
+            "time": "1:19.813",
+            "driver": "Charles Leclerc",
+            "year": 2024
+        },
+        "length": "5.278 km (3.280 mi)",
+        "turns": 14,
+        "laps": 58,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            },
+            {
+                "position": 2,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            },
+            {
+                "position": 3,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Albert_Park_Circuit_2021.svg/1200px-Albert_Park_Circuit_2021.svg.png"
+    },
+    {
+        "id": "suzuka",
+        "identifiers": [
+            "suzuka",
+            "japan"
+        ],
+        "name": "Suzuka International Racing Course",
+        "location": "Suzuka, Japan",
+        "countryCode": "🇯🇵",
+        "firstGP": 1987,
+        "lapRecord": {
+            "time": "1:30.983",
+            "driver": "Lewis Hamilton",
+            "year": 2019
+        },
+        "length": "5.807 km (3.608 mi)",
+        "turns": 18,
+        "laps": 53,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Sergio Perez",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Suzuka_circuit_map_2005.svg/1200px-Suzuka_circuit_map_2005.svg.png"
+    },
+    {
+        "id": "shanghai",
+        "identifiers": [
+            "shanghai",
+            "china"
+        ],
+        "name": "Shanghai International Circuit",
+        "location": "Shanghai, China",
+        "countryCode": "🇨🇳",
+        "firstGP": 2004,
+        "lapRecord": {
+            "time": "1:32.238",
+            "driver": "Michael Schumacher",
+            "year": 2004
+        },
+        "length": "5.451 km (3.387 mi)",
+        "turns": 16,
+        "laps": 56,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Sergio Perez",
+                "team": "Red Bull Racing"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Shanghai_International_Circuit_%282004%E2%80%93present%29.svg/1200px-Shanghai_International_Circuit_%282004%E2%80%93present%29.svg.png"
+    },
+    {
+        "id": "miami",
+        "identifiers": [
+            "miami",
+            "usa"
+        ],
+        "name": "Miami International Autodrome",
+        "location": "Miami Gardens, USA",
+        "countryCode": "🇺🇸",
+        "firstGP": 2022,
+        "lapRecord": {
+            "time": "1:29.708",
+            "driver": "Max Verstappen",
+            "year": 2023
+        },
+        "length": "5.412 km (3.363 mi)",
+        "turns": 19,
+        "laps": 57,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 2,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Miami_International_Autodrome_2022.svg/1200px-Miami_International_Autodrome_2022.svg.png"
+    },
+    {
+        "id": "imola",
+        "identifiers": [
+            "imola",
+            "emilia_romagna",
+            "italy"
+        ],
+        "name": "Autodromo Internazionale Enzo e Dino Ferrari",
+        "location": "Imola, Italy",
+        "countryCode": "🇮🇹",
+        "firstGP": 1980,
+        "lapRecord": {
+            "time": "1:15.484",
+            "driver": "Lewis Hamilton",
+            "year": 2020
+        },
+        "length": "4.909 km (3.050 mi)",
+        "turns": 19,
+        "laps": 63,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Imola_2009.svg/1200px-Imola_2009.svg.png"
+    },
+    {
+        "id": "monaco",
+        "identifiers": [
+            "monaco",
+            "monte_carlo"
+        ],
+        "name": "Circuit de Monaco",
+        "location": "Monte Carlo, Monaco",
+        "countryCode": "🇲🇨",
+        "firstGP": 1950,
+        "lapRecord": {
+            "time": "1:12.909",
+            "driver": "Lewis Hamilton",
+            "year": 2021
+        },
+        "length": "3.337 km (2.074 mi)",
+        "turns": 19,
+        "laps": 78,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            },
+            {
+                "position": 2,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Monte_Carlo_Formula_1_track_map.svg/1200px-Monte_Carlo_Formula_1_track_map.svg.png"
+    },
+    {
+        "id": "villeneuve",
+        "identifiers": [
+            "villeneuve",
+            "montreal",
+            "canada"
+        ],
+        "name": "Circuit Gilles Villeneuve",
+        "location": "Montreal, Canada",
+        "countryCode": "🇨🇦",
+        "firstGP": 1978,
+        "lapRecord": {
+            "time": "1:13.078",
+            "driver": "Valtteri Bottas",
+            "year": 2019
+        },
+        "length": "4.361 km (2.710 mi)",
+        "turns": 14,
+        "laps": 70,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "George Russell",
+                "team": "Mercedes"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Circuit_Gilles_Villeneuve.svg/1200px-Circuit_Gilles_Villeneuve.svg.png"
+    },
+    {
+        "id": "red_bull_ring",
+        "identifiers": [
+            "red_bull_ring",
+            "austria",
+            "spielberg"
+        ],
+        "name": "Red Bull Ring",
+        "location": "Spielberg, Austria",
+        "countryCode": "🇦🇹",
+        "firstGP": 1970,
+        "lapRecord": {
+            "time": "1:05.619",
+            "driver": "Carlos Sainz",
+            "year": 2020
+        },
+        "length": "4.318 km (2.683 mi)",
+        "turns": 10,
+        "laps": 71,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "George Russell",
+                "team": "Mercedes"
+            },
+            {
+                "position": 2,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Red_Bull_Ring_2022.svg/1200px-Red_Bull_Ring_2022.svg.png"
+    },
+    {
+        "id": "silverstone",
+        "identifiers": [
+            "silverstone",
+            "uk",
+            "britain"
+        ],
+        "name": "Silverstone Circuit",
+        "location": "Silverstone, UK",
+        "countryCode": "🇬🇧",
+        "firstGP": 1950,
+        "lapRecord": {
+            "time": "1:27.097",
+            "driver": "Max Verstappen",
+            "year": 2020
+        },
+        "length": "5.891 km (3.661 mi)",
+        "turns": 18,
+        "laps": 52,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Lewis Hamilton",
+                "team": "Mercedes"
+            },
+            {
+                "position": 2,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Silverstone_Circuit_2020.svg/1200px-Silverstone_Circuit_2020.svg.png"
+    },
+    {
+        "id": "hungaroring",
+        "identifiers": [
+            "hungaroring",
+            "hungary",
+            "budapest"
+        ],
+        "name": "Hungaroring",
+        "location": "Mogyoród, Hungary",
+        "countryCode": "🇭🇺",
+        "firstGP": 1986,
+        "lapRecord": {
+            "time": "1:16.627",
+            "driver": "Lewis Hamilton",
+            "year": 2020
+        },
+        "length": "4.381 km (2.722 mi)",
+        "turns": 14,
+        "laps": 70,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            },
+            {
+                "position": 2,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Lewis Hamilton",
+                "team": "Mercedes"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hungaroring.svg/1200px-Hungaroring.svg.png"
+    },
+    {
+        "id": "spa",
+        "identifiers": [
+            "spa",
+            "belgium",
+            "francorchamps"
+        ],
+        "name": "Circuit de Spa-Francorchamps",
+        "location": "Stavelot, Belgium",
+        "countryCode": "🇧🇪",
+        "firstGP": 1950,
+        "lapRecord": {
+            "time": "1:46.286",
+            "driver": "Valtteri Bottas",
+            "year": 2018
+        },
+        "length": "7.004 km (4.352 mi)",
+        "turns": 19,
+        "laps": 44,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Lewis Hamilton",
+                "team": "Mercedes"
+            },
+            {
+                "position": 2,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Spa-Francorchamps_of_Belgium.svg/1200px-Spa-Francorchamps_of_Belgium.svg.png"
+    },
+    {
+        "id": "zandvoort",
+        "identifiers": [
+            "zandvoort",
+            "netherlands",
+            "dutch"
+        ],
+        "name": "Circuit Zandvoort",
+        "location": "Zandvoort, Netherlands",
+        "countryCode": "🇳🇱",
+        "firstGP": 1952,
+        "lapRecord": {
+            "time": "1:11.097",
+            "driver": "Lewis Hamilton",
+            "year": 2021
+        },
+        "length": "4.259 km (2.646 mi)",
+        "turns": 14,
+        "laps": 72,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 2,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Circuit_Zandvoort_2020.svg/1200px-Circuit_Zandvoort_2020.svg.png"
+    },
+    {
+        "id": "monza",
+        "identifiers": [
+            "monza",
+            "italy"
+        ],
+        "name": "Autodromo Nazionale Monza",
+        "location": "Monza, Italy",
+        "countryCode": "🇮🇹",
+        "firstGP": 1950,
+        "lapRecord": {
+            "time": "1:21.046",
+            "driver": "Rubens Barrichello",
+            "year": 2004
+        },
+        "length": "5.793 km (3.600 mi)",
+        "turns": 11,
+        "laps": 53,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            },
+            {
+                "position": 2,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Monza_track_map.svg/1200px-Monza_track_map.svg.png"
+    },
+    {
+        "id": "baku",
+        "identifiers": [
+            "baku",
+            "azerbaijan"
+        ],
+        "name": "Baku City Circuit",
+        "location": "Baku, Azerbaijan",
+        "countryCode": "🇦🇿",
+        "firstGP": 2016,
+        "lapRecord": {
+            "time": "1:43.009",
+            "driver": "Charles Leclerc",
+            "year": 2019
+        },
+        "length": "6.003 km (3.730 mi)",
+        "turns": 20,
+        "laps": 51,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            },
+            {
+                "position": 2,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            },
+            {
+                "position": 3,
+                "driver": "George Russell",
+                "team": "Mercedes"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Baku_City_Circuit.svg/1200px-Baku_City_Circuit.svg.png"
+    },
+    {
+        "id": "singapore",
+        "identifiers": [
+            "singapore",
+            "marina_bay"
+        ],
+        "name": "Marina Bay Street Circuit",
+        "location": "Marina Bay, Singapore",
+        "countryCode": "🇸🇬",
+        "firstGP": 2008,
+        "lapRecord": {
+            "time": "1:35.867",
+            "driver": "Lewis Hamilton",
+            "year": 2023
+        },
+        "length": "4.940 km (3.069 mi)",
+        "turns": 19,
+        "laps": 62,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 2,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Marina_Bay_Street_Circuit_2023.svg/1200px-Marina_Bay_Street_Circuit_2023.svg.png"
+    },
+    {
+        "id": "austin",
+        "identifiers": [
+            "austin",
+            "usa",
+            "americas"
+        ],
+        "name": "Circuit of The Americas",
+        "location": "Austin, USA",
+        "countryCode": "🇺🇸",
+        "firstGP": 2012,
+        "lapRecord": {
+            "time": "1:36.169",
+            "driver": "Charles Leclerc",
+            "year": 2019
+        },
+        "length": "5.513 km (3.426 mi)",
+        "turns": 20,
+        "laps": 56,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            },
+            {
+                "position": 2,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            },
+            {
+                "position": 3,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Austin_circuit.svg/1200px-Austin_circuit.svg.png"
+    },
+    {
+        "id": "mexico",
+        "identifiers": [
+            "mexico",
+            "hermanos_rodriguez"
+        ],
+        "name": "Autódromo Hermanos Rodríguez",
+        "location": "Mexico City, Mexico",
+        "countryCode": "🇲🇽",
+        "firstGP": 1963,
+        "lapRecord": {
+            "time": "1:17.774",
+            "driver": "Valtteri Bottas",
+            "year": 2021
+        },
+        "length": "4.304 km (2.674 mi)",
+        "turns": 17,
+        "laps": 71,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            },
+            {
+                "position": 2,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez_2015.svg/1200px-Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez_2015.svg.png"
+    },
+    {
+        "id": "interlagos",
+        "identifiers": [
+            "interlagos",
+            "brazil",
+            "sao_paulo"
+        ],
+        "name": "Autódromo José Carlos Pace",
+        "location": "São Paulo, Brazil",
+        "countryCode": "🇧🇷",
+        "firstGP": 1973,
+        "lapRecord": {
+            "time": "1:10.540",
+            "driver": "Valtteri Bottas",
+            "year": 2018
+        },
+        "length": "4.309 km (2.677 mi)",
+        "turns": 15,
+        "laps": 71,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Esteban Ocon",
+                "team": "Alpine"
+            },
+            {
+                "position": 3,
+                "driver": "Pierre Gasly",
+                "team": "Alpine"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Circuit_Interlagos_2007.svg/1200px-Circuit_Interlagos_2007.svg.png"
+    },
+    {
+        "id": "las_vegas",
+        "identifiers": [
+            "las_vegas",
+            "vegas"
+        ],
+        "name": "Las Vegas Strip Circuit",
+        "location": "Las Vegas, USA",
+        "countryCode": "🇺🇸",
+        "firstGP": 2023,
+        "lapRecord": {
+            "time": "1:35.490",
+            "driver": "Oscar Piastri",
+            "year": 2023
+        },
+        "length": "6.201 km (3.853 mi)",
+        "turns": 17,
+        "laps": 50,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "George Russell",
+                "team": "Mercedes"
+            },
+            {
+                "position": 2,
+                "driver": "Lewis Hamilton",
+                "team": "Mercedes"
+            },
+            {
+                "position": 3,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Las_Vegas_Strip_Circuit_2023.svg/1200px-Las_Vegas_Strip_Circuit_2023.svg.png"
+    },
+    {
+        "id": "losail",
+        "identifiers": [
+            "losail",
+            "qatar"
+        ],
+        "name": "Lusail International Circuit",
+        "location": "Lusail, Qatar",
+        "countryCode": "🇶🇦",
+        "firstGP": 2021,
+        "lapRecord": {
+            "time": "1:24.319",
+            "driver": "Max Verstappen",
+            "year": 2023
+        },
+        "length": "5.419 km (3.367 mi)",
+        "turns": 16,
+        "laps": 57,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            },
+            {
+                "position": 3,
+                "driver": "Oscar Piastri",
+                "team": "McLaren"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Losail_International_Circuit.svg/1200px-Losail_International_Circuit.svg.png"
+    },
+    {
+        "id": "yas_marina",
+        "identifiers": [
+            "yas_marina",
+            "abu_dhabi"
+        ],
+        "name": "Yas Marina Circuit",
+        "location": "Abu Dhabi, UAE",
+        "countryCode": "🇦🇪",
+        "firstGP": 2009,
+        "lapRecord": {
+            "time": "1:26.103",
+            "driver": "Max Verstappen",
+            "year": 2021
+        },
+        "length": "5.281 km (3.281 mi)",
+        "turns": 16,
+        "laps": 58,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Lando Norris",
+                "team": "McLaren"
+            },
+            {
+                "position": 2,
+                "driver": "Carlos Sainz",
+                "team": "Ferrari"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Yas_Marina_Circuit_2021.svg/1200px-Yas_Marina_Circuit_2021.svg.png"
+    },
+    {
+        "id": "jeddah",
+        "identifiers": [
+            "jeddah",
+            "saudi_arabia"
+        ],
+        "name": "Jeddah Corniche Circuit",
+        "location": "Jeddah, Saudi Arabia",
+        "countryCode": "🇸🇦",
+        "firstGP": 2021,
+        "lapRecord": {
+            "time": "1:30.734",
+            "driver": "Lewis Hamilton",
+            "year": 2021
+        },
+        "length": "6.174 km (3.836 mi)",
+        "turns": 27,
+        "laps": 50,
+        "podium2024": [
+            {
+                "position": 1,
+                "driver": "Max Verstappen",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 2,
+                "driver": "Sergio Perez",
+                "team": "Red Bull Racing"
+            },
+            {
+                "position": 3,
+                "driver": "Charles Leclerc",
+                "team": "Ferrari"
+            }
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Jeddah_Street_Circuit_2021.svg/1200px-Jeddah_Street_Circuit_2021.svg.png"
+    }
+]

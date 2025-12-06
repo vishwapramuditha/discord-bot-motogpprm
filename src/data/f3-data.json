@@ -1,0 +1,140 @@
+{
+    "races": [
+        {
+            "round": 1,
+            "name": "Australian GP",
+            "circuit": "Albert Park Circuit",
+            "country": "🇦🇺",
+            "date": "2025-03-08",
+            "sessions": {
+                "Sprint": "2025-03-07T00:00:00Z",
+                "Feature": "2025-03-08T00:00:00Z"
+            }
+        },
+        {
+            "round": 2,
+            "name": "Bahrain GP",
+            "circuit": "Bahrain International Circuit",
+            "country": "🇧🇭",
+            "date": "2025-04-12",
+            "sessions": {
+                "Sprint": "2025-04-11T00:00:00Z",
+                "Feature": "2025-04-12T00:00:00Z"
+            }
+        },
+        {
+            "round": 3,
+            "name": "Monaco GP",
+            "circuit": "Circuit de Monaco",
+            "country": "🇲🇨",
+            "date": "2025-06-07",
+            "sessions": {
+                "Sprint": "2025-06-06T00:00:00Z",
+                "Feature": "2025-06-07T00:00:00Z"
+            }
+        },
+        {
+            "round": 4,
+            "name": "Spanish GP",
+            "circuit": "Circuit de Barcelona-Catalunya",
+            "country": "🇪🇸",
+            "date": "2025-06-14",
+            "sessions": {
+                "Sprint": "2025-06-13T00:00:00Z",
+                "Feature": "2025-06-14T00:00:00Z"
+            }
+        },
+        {
+            "round": 5,
+            "name": "Austrian GP",
+            "circuit": "Red Bull Ring",
+            "country": "🇦🇹",
+            "date": "2025-06-28",
+            "sessions": {
+                "Sprint": "2025-06-27T00:00:00Z",
+                "Feature": "2025-06-28T00:00:00Z"
+            }
+        },
+        {
+            "round": 6,
+            "name": "British GP",
+            "circuit": "Silverstone Circuit",
+            "country": "🇬🇧",
+            "date": "2025-07-05",
+            "sessions": {
+                "Sprint": "2025-07-04T00:00:00Z",
+                "Feature": "2025-07-05T00:00:00Z"
+            }
+        },
+        {
+            "round": 7,
+            "name": "Belgian GP",
+            "circuit": "Circuit de Spa-Francorchamps",
+            "country": "🇧🇪",
+            "date": "2025-07-19",
+            "sessions": {
+                "Sprint": "2025-07-18T00:00:00Z",
+                "Feature": "2025-07-19T00:00:00Z"
+            }
+        },
+        {
+            "round": 8,
+            "name": "Hungarian GP",
+            "circuit": "Hungaroring",
+            "country": "🇭🇺",
+            "date": "2025-07-26",
+            "sessions": {
+                "Sprint": "2025-07-25T00:00:00Z",
+                "Feature": "2025-07-26T00:00:00Z"
+            }
+        },
+        {
+            "round": 9,
+            "name": "Italian GP",
+            "circuit": "Monza Circuit",
+            "country": "🇮🇹",
+            "date": "2025-09-06",
+            "sessions": {
+                "Sprint": "2025-09-05T00:00:00Z",
+                "Feature": "2025-09-06T00:00:00Z"
+            }
+        },
+        {
+            "round": 10,
+            "name": "Madrid GP",
+            "circuit": "Madring",
+            "country": "🇪🇸",
+            "date": "2025-09-13",
+            "sessions": {
+                "Sprint": "2025-09-12T00:00:00Z",
+                "Feature": "2025-09-13T00:00:00Z"
+            }
+        }
+    ],
+    "drivers": [
+        {
+            "rank": 1,
+            "name": "Driver 1",
+            "team": "Team A",
+            "points": 0
+        },
+        {
+            "rank": 2,
+            "name": "Driver 2",
+            "team": "Team B",
+            "points": 0
+        }
+    ],
+    "teams": [
+        {
+            "rank": 1,
+            "name": "Team A",
+            "points": 0
+        },
+        {
+            "rank": 2,
+            "name": "Team B",
+            "points": 0
+        }
+    ]
+}
