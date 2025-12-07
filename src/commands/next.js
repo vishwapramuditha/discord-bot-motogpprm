@@ -41,20 +41,18 @@ module.exports = {
                 "Grand Prix": { date: race.date, time: race.time }
             };
 
-            let sessionText = "```text\n";
+            let sessionText = "";
             for (const [name, session] of Object.entries(sessions)) {
                 if (session) {
                     const dateTimeStr = `${session.date}T${session.time}`;
                     const time = moment(dateTimeStr);
-                    // Format: "Free Practice 1: December 5, 2025 3:00 PM"
-                    // We use padding to align
-                    const timeStr = time.format("MMMM D, YYYY h:mm A");
-                    sessionText += `${name.padEnd(16)}: ${timeStr}\n`;
+                    // Use Discord timestamp for automatic timezone conversion
+                    const timestamp = `<t:${time.unix()}:F>`;
+                    sessionText += `**${name}**: ${timestamp}\n`;
                 }
             }
-            sessionText += "```";
 
-            embed.addFields({ name: "Sessions", value: sessionText });
+            embed.addFields({ name: "Sessions", value: sessionText || "No session data available" });
 
             return interaction.editReply({ embeds: [embed] });
 
@@ -67,17 +65,17 @@ module.exports = {
                 .setColor("#000000")
                 .setDescription(`**2025 Season**\n\n**${race.name}**\nRound ${race.round}`);
 
-            let sessionText = "```text\n";
+            let sessionText = "";
             const sortedSessions = Object.entries(race.sessions).sort(([, a], [, b]) => moment(a).diff(moment(b)));
 
             for (const [name, timeStr] of sortedSessions) {
                 const time = moment(timeStr);
-                const formatted = time.format("MMMM D, YYYY h:mm A");
-                sessionText += `${name.padEnd(16)}: ${formatted}\n`;
+                // Use Discord timestamp for automatic timezone conversion
+                const timestamp = `<t:${time.unix()}:F>`;
+                sessionText += `**${name}**: ${timestamp}\n`;
             }
-            sessionText += "```";
 
-            embed.addFields({ name: "Sessions", value: sessionText });
+            embed.addFields({ name: "Sessions", value: sessionText || "No session data available" });
 
             return interaction.editReply({ embeds: [embed] });
         } else {
@@ -89,26 +87,23 @@ module.exports = {
                 .setColor("#151F45") // F3 Blue-ish
                 .setDescription(`**2025 Season**\n\n**${race.name}**\nRound ${race.round}`);
 
-            let sessionText = "```text\n";
-            // F3 sessions might only be Feature and Sprint in my data
+            let sessionText = "";
             const sortedSessions = Object.entries(race.sessions).sort(([, a], [, b]) => moment(a).diff(moment(b)));
 
             for (const [name, timeStr] of sortedSessions) {
                 const time = moment(timeStr);
-                const formatted = time.format("MMMM D, YYYY h:mm A");
-                // Since times are 00:00:00Z, maybe we should warn or just display date?
-                // User said "times still not reveal", so dates are accurate.
-                // We'll display date and time (which is 00:00).
-                // Maybe improvement: check if time is 00:00:00 and only show date.
-                let displayStr = formatted;
+                // Use Discord timestamp for automatic timezone conversion
+                // Check if time is midnight (00:00:00) - if so, use date-only format
+                let timestamp;
                 if (timeStr.includes("00:00:00")) {
-                    displayStr = time.format("MMMM D, YYYY");
+                    timestamp = `<t:${time.unix()}:D>`; // Date only format
+                } else {
+                    timestamp = `<t:${time.unix()}:F>`; // Full date and time
                 }
-                sessionText += `${name.padEnd(16)}: ${displayStr}\n`;
+                sessionText += `**${name}**: ${timestamp}\n`;
             }
-            sessionText += "```";
 
-            embed.addFields({ name: "Sessions", value: sessionText });
+            embed.addFields({ name: "Sessions", value: sessionText || "No session data available" });
 
             return interaction.editReply({ embeds: [embed] });
         }
