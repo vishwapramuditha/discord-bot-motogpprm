@@ -1,10 +1,10 @@
-# GridScout - F1 Discord Bot 🏎️
+# MotoGP PRM - F1/MotoGP Discord Bot 🏎️
 
-GridScout is a feature-rich Discord bot designed to bring the world of Formula 1 directly to your server. Built with **Node.js** and **Discord.js**, it provides real-time data, statistics, race information, and historic insights using the Ergast F1 API (via Jolpica).
+MotoGP PRM is a feature-rich Discord bot designed to bring the world of Formula 1 directly to your server. Built with **Node.js** and **Discord.js**, it provides real-time data, statistics, race information, and historic insights using the Ergast F1 API (via Jolpica).
 
 ## 🚀 Features
 
-GridScout comes packed with improved commands to keep you updated:
+MotoGP PRM comes packed with improved commands to keep you updated:
 
 ### 🏁 Race Data
 - **/next**: Get a countdown and details for the upcoming Grand Prix.
@@ -38,7 +38,7 @@ GridScout comes packed with improved commands to keep you updated:
 
 ## ⚙️ Installation & Setup
 
-Follow these steps to host GridScout yourself or contribute to development.
+Follow these steps to host MotoGP PRM yourself or contribute to development.
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v16.9.0 or higher)
@@ -104,3 +104,5 @@ Contributions are welcome! If you have ideas for new features (like live timing 
 ## 📄 License
 
 This project is licensed under the ISC License.
+
+Vishwa Pramuditha 2025
