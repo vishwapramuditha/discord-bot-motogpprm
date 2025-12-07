@@ -46,7 +46,7 @@ module.exports = {
     },
     "alpine": {
         fullName: "BWT Alpine F1 Team",
-        color: "#0090ff",
+        color: "#ff00eaff",
         engine: "Renault E-Tech RE24",
         chassis: "A524",
         championships: 2,
