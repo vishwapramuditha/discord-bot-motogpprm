@@ -23,47 +23,40 @@ module.exports = {
         .setDescription("Get detailed information on an F1 team")
         .addStringOption(option =>
             option.setName("name")
-                .setDescription("Team name (e.g. 'ferrari', 'red bull')")
+                .setDescription("Team name")
                 .setRequired(true)
+                .addChoices(
+                    { name: "Oracle Red Bull Racing", value: "red_bull" },
+                    { name: "Scuderia Ferrari", value: "ferrari" },
+                    { name: "Mercedes-AMG BENZ F1 Team", value: "mercedes" },
+                    { name: "McLaren Formula 1 Team", value: "mclaren" },
+                    { name: "Aston Martin Aramco F1 Team", value: "aston_martin" },
+                    { name: "BWT Alpine F1 Team", value: "alpine" },
+                    { name: "Williams Racing", value: "williams" },
+                    { name: "Visa Cash App RB F1 Team", value: "rb" },
+                    { name: "Kick Sauber F1 Team", value: "sauber" },
+                    { name: "MoneyGram Haas F1 Team", value: "haas" }
+                )
         ),
 
     async execute(interaction) {
         await interaction.deferReply();
-        let nameInput = interaction.options.getString("name").toLowerCase().trim().replace(/\s+/g, "_");
+        const teamId = interaction.options.getString("name");
 
-        // Manual mapping for common aliases to ensure we hit our constants keys
-        const aliasMap = {
-            "rbr": "red_bull", "redbull": "red_bull",
-            "merc": "mercedes",
-            "aston": "aston_martin", "amr": "aston_martin",
-            "visa": "rb", "alpha_tauri": "rb", "alphatauri": "rb", "toro_rosso": "rb",
-            "stake": "sauber", "alfa": "sauber", "alfa_romeo": "sauber",
-            "alpine_f1": "alpine"
-        };
+        // 1. Fetch Basic API Info
+        // teamId is now guaranteed to be one of our keys from teamConstants
+        let teamInfo = await getTeamInfo(teamId);
 
-        if (aliasMap[nameInput]) nameInput = aliasMap[nameInput];
-
-        // 1. Fetch Basic API Info first to validate existence/get ID
-        let teamInfo = await getTeamInfo(nameInput);
-
-        // If API fails matching "red_bull" exactly, try to find it in our constants keys to use that ID
-        if (!teamInfo && teamConstants[nameInput]) {
-            // If input matches our key, assume that's the ID we want to try for API
-            teamInfo = await getTeamInfo(nameInput);
+        if (!teamInfo && teamConstants[teamId]) {
+            // Fallback if API fails but we have data
+            teamInfo = { constructorId: teamId, name: teamConstants[teamId].fullName, nationality: "Unknown", url: "" };
         }
 
         if (!teamInfo) {
-            // Try searching drivers list or vague match? No, just fail for now.
-            // One last try: if key exists in constants, use it even if API failed (maybe API down?)
-            // But we need API for recent results.
-            if (teamConstants[nameInput]) {
-                teamInfo = { constructorId: nameInput, name: teamConstants[nameInput].fullName, nationality: "Unknown", url: "" };
-            } else {
-                return interaction.editReply(`❌ Team '${nameInput}' not found. Please try full names like 'Ferrari' or 'McLaren'.`);
-            }
+            return interaction.editReply(`❌ Team information for '${teamId}' could not be retrieved.`);
         }
 
-        const teamId = teamInfo.constructorId;
+
         const constantData = teamConstants[teamId] || {
             fullName: teamInfo.name,
             color: "#ffffff",

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType } = require("discord.js");
 const { createBaseEmbed } = require("../utils/embedUtils");
 
 // Hardcoded trivia questions for now
@@ -21,26 +21,51 @@ module.exports = {
         const options = [...question.options].sort(() => Math.random() - 0.5);
 
         const embed = createBaseEmbed("❓ F1 Trivia")
-            .setDescription(`**${question.q}**\n\n${options.map((opt, i) => `${i + 1}. ${opt}`).join("\n")}`)
-            .setFooter({ text: "Reply with the correct answer! (You have 15 seconds)" });
+            .setDescription(`**${question.q}**`)
+            .setFooter({ text: "Click the correct answer! (You have 15 seconds)" });
 
-        await interaction.reply({ embeds: [embed] });
+        // Create buttons
+        const row = new ActionRowBuilder()
+            .addComponents(
+                options.map((opt, i) =>
+                    new ButtonBuilder()
+                        .setCustomId(`trivia_${i}`)
+                        .setLabel(opt)
+                        .setStyle(ButtonStyle.Primary)
+                )
+            );
 
-        const filter = response => {
-            return response.author.id === interaction.user.id;
-        };
+        const response = await interaction.reply({ embeds: [embed], components: [row] });
 
-        try {
-            const collected = await interaction.channel.awaitMessages({ filter, max: 1, time: 15000, errors: ['time'] });
-            const answer = collected.first().content;
+        const collector = response.createMessageComponentCollector({ componentType: ComponentType.Button, time: 15_000 });
 
-            if (answer.toLowerCase().includes(question.a.toLowerCase())) {
-                await interaction.followUp(`✅ Correct! The answer was **${question.a}**.`);
-            } else {
-                await interaction.followUp(`❌ Wrong! The correct answer was **${question.a}**.`);
+        collector.on('collect', async i => {
+            if (i.user.id !== interaction.user.id) {
+                return i.reply({ content: 'These buttons are not for you!', ephemeral: true });
             }
-        } catch (e) {
-            await interaction.followUp(`⏰ Time's up! The correct answer was **${question.a}**.`);
-        }
+
+            const selectedIndex = parseInt(i.customId.split('_')[1]);
+            const selectedAnswer = options[selectedIndex];
+
+            // Acknowledge the answer first
+            await i.update({ content: `⏳ You selected **${selectedAnswer}**... checking your answer!`, components: [], embeds: [] });
+
+            // Wait 3 seconds before revealing the answer
+            setTimeout(async () => {
+                if (selectedAnswer === question.a) {
+                    await interaction.editReply({ content: `✅ Correct! The answer was **${question.a}**.`, components: [], embeds: [] });
+                } else {
+                    await interaction.editReply({ content: `❌ Wrong! The correct answer was **${question.a}**.`, components: [], embeds: [] });
+                }
+            }, 3000);
+
+            collector.stop("answered");
+        });
+
+        collector.on('end', (collected, reason) => {
+            if (reason !== "answered") {
+                interaction.editReply({ content: `⏰ Time's up! The correct answer was **${question.a}**.`, components: [], embeds: [] });
+            }
+        });
     }
 };
