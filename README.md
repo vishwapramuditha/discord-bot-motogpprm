@@ -1,4 +1,7 @@
-# MotoGP PRM - F1/MotoGP Discord Bot 🏎️
+# MotoGP PRM - F1/MotoGP Discord Bot 
+<p align="center">
+  <img src="./banner.png" alt="MotoGP PRM Banner" width="700"/>
+</p>
 
 MotoGP PRM is a feature-rich Discord bot designed to bring the world of Formula 1 directly to your server. Built with **Node.js** and **Discord.js**, it provides real-time data, statistics, race information, and historic insights using the Ergast F1 API (via Jolpica).
 
