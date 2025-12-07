@@ -157,11 +157,38 @@ async function getCircuitList() {
     }
 }
 
+async function getTeamDrivers(constructorId) {
+    try {
+        const response = await axios.get(`${BASE_URL}/current/constructors/${constructorId}/drivers.json`);
+        return response.data.MRData.DriverTable.Drivers;
+    } catch (error) {
+        console.error("Error fetching team drivers:", error);
+        return [];
+    }
+}
+
+async function getTeamRecentResults(constructorId, limit = 5) {
+    try {
+        // Fetch last N results for the team
+        // We can't easily "sort desc" via API URL standardly in Ergast, but we can fetch the last race or current season.
+        // Strategy: Get current season results for the team.
+        const response = await axios.get(`${BASE_URL}/current/constructors/${constructorId}/results.json?limit=100`);
+        const races = response.data.MRData.RaceTable.Races;
+        // Return the last 'limit' races (which contain results for both drivers)
+        return races.slice(-limit).reverse();
+    } catch (error) {
+        console.error("Error fetching team recent results:", error);
+        return [];
+    }
+}
+
 module.exports = {
     getNextRace,
     getStandings,
     getDriverInfo,
     getTeamInfo,
+    getTeamDrivers,
+    getTeamRecentResults,
     getCalendar,
     getRaceResult,
     getDriverList,

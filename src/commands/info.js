@@ -20,7 +20,7 @@ module.exports = {
                 { name: "Users", value: `${client.users.cache.size}`, inline: true },
                 { name: "Uptime", value: `${days}d ${hours}h ${minutes}m`, inline: true },
                 { name: "Library", value: "Discord.js v14", inline: true },
-                { name: "Developer", value: "Vishwapramuditha", inline: true }
+                { name: "Developer", value: "Vishwa Pramuditha", inline: true }
             );
 
         await interaction.reply({ embeds: [embed] });
