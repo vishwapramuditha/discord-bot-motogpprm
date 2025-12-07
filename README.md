@@ -1,4 +1,4 @@
-# MotoGP PRM - F1/MotoGP Discord Bot 🏎️
+# MotoGP PRM - F1/MotoGP Discord Bot 
 <p align="center">
   <img src="./banner.png" alt="MotoGP PRM Banner" width="700"/>
 </p>
