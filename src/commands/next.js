@@ -3,7 +3,6 @@ const { getNextRace: getNextF1 } = require("../services/f1Service");
 const { getNextMotoGPRace } = require("../services/motogpService");
 const { getNextF3Race } = require("../services/f3Service");
 const { createBaseEmbed } = require("../utils/embedUtils");
-const { getCircuitBanner } = require("../utils/bannerUtils");
 const moment = require("moment-timezone");
 
 module.exports = {
@@ -29,22 +28,9 @@ module.exports = {
             const race = await getNextF1();
             if (!race) return interaction.editReply("❌ Could not fetch next F1 race info.");
 
-            // Get the first session time for countdown
-            const firstSession = race.FirstPractice || race.Qualifying || { date: race.date, time: race.time };
-            const firstSessionTime = moment(`${firstSession.date}T${firstSession.time}`);
-            const daysUntil = moment(race.date).diff(moment(), 'days');
-
-            const embed = createBaseEmbed("🏁 Race Schedule")
+            const embed = createBaseEmbed("Race Schedule")
                 .setColor("#FF1801")
-                .setDescription(`**${race.season} Season**\n\n**${race.raceName}** (in ${daysUntil} days)\nRound ${race.round}`);
-
-            // Add countdown to race week start (first session)
-            const countdownTimestamp = `<t:${firstSessionTime.unix()}:R>`;
-            embed.addFields({
-                name: "⏱️ Race Week Starts",
-                value: countdownTimestamp,
-                inline: false
-            });
+                .setDescription(`**${race.season} Season**\n\n**${race.raceName}** (in ${moment(race.date).diff(moment(), 'days')} days)\nRound ${race.round}`);
 
             const sessions = {
                 "Free Practice 1": race.FirstPractice,
@@ -66,16 +52,7 @@ module.exports = {
                 }
             }
 
-            embed.addFields({ name: "📅 Sessions", value: sessionText || "No session data available" });
-
-            // Add circuit banner if available
-            const circuitId = race.Circuit?.circuitId;
-            const banner = getCircuitBanner(circuitId);
-
-            if (banner) {
-                embed.setImage(`attachment://${banner.name}`);
-                return interaction.editReply({ embeds: [embed], files: [banner] });
-            }
+            embed.addFields({ name: "Sessions", value: sessionText || "No session data available" });
 
             return interaction.editReply({ embeds: [embed] });
 
@@ -84,23 +61,12 @@ module.exports = {
             const race = getNextMotoGPRace();
             if (!race) return interaction.editReply("🎉 No upcoming MotoGP races found.");
 
-            const embed = createBaseEmbed("🏁 Race Schedule")
+            const embed = createBaseEmbed("Race Schedule")
                 .setColor("#000000")
                 .setDescription(`**2025 Season**\n\n**${race.name}**\nRound ${race.round}`);
 
             let sessionText = "";
             const sortedSessions = Object.entries(race.sessions).sort(([, a], [, b]) => moment(a).diff(moment(b)));
-
-            // Add countdown to first session
-            if (sortedSessions.length > 0) {
-                const firstSessionTime = moment(sortedSessions[0][1]);
-                const countdownTimestamp = `<t:${firstSessionTime.unix()}:R>`;
-                embed.addFields({
-                    name: "⏱️ Race Week Starts",
-                    value: countdownTimestamp,
-                    inline: false
-                });
-            }
 
             for (const [name, timeStr] of sortedSessions) {
                 const time = moment(timeStr);
@@ -117,23 +83,12 @@ module.exports = {
             const race = getNextF3Race();
             if (!race) return interaction.editReply("🙅🏼‍♂️ No upcoming F3 races found.");
 
-            const embed = createBaseEmbed("🏁 Race Schedule")
+            const embed = createBaseEmbed("Race Schedule")
                 .setColor("#151F45") // F3 Blue-ish
                 .setDescription(`**2025 Season**\n\n**${race.name}**\nRound ${race.round}`);
 
             let sessionText = "";
             const sortedSessions = Object.entries(race.sessions).sort(([, a], [, b]) => moment(a).diff(moment(b)));
-
-            // Add countdown to first session
-            if (sortedSessions.length > 0) {
-                const firstSessionTime = moment(sortedSessions[0][1]);
-                const countdownTimestamp = `<t:${firstSessionTime.unix()}:R>`;
-                embed.addFields({
-                    name: "⏱️ Race Week Starts",
-                    value: countdownTimestamp,
-                    inline: false
-                });
-            }
 
             for (const [name, timeStr] of sortedSessions) {
                 const time = moment(timeStr);
