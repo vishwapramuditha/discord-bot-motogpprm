@@ -1,111 +1,128 @@
-# MotoGP PRM - F1/MotoGP Discord Bot 
+# MotoGP PRM - F1 & MotoGP Discord Bot
+
 <p align="center">
-  <img src="./banner.png" alt="MotoGP PRM Banner" width="700"/>
+  <img src="./banner.png" alt="MotoGP PRM Banner" width="100%" />
 </p>
 
-MotoGP PRM is a feature-rich Discord bot designed to bring the world of Formula 1 directly to your server. Built with **Node.js** and **Discord.js**, it provides real-time data, statistics, race information, and historic insights using the Ergast F1 API (via Jolpica).
+<p align="center">
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-v16.9%2B-green?style=flat&logo=node.js" alt="Node.js Badge"></a>
+  <a href="https://discord.js.org/"><img src="https://img.shields.io/badge/Discord.js-v14-blue?style=flat&logo=discord" alt="Discord.js Badge"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-ISC-yellow.svg" alt="License Badge"></a>
+</p>
+
+**MotoGP PRM** is a comprehensive Discord bot designed for motorsport enthusiasts. It brings real-time data, detailed statistics, and live updates for **Formula 1**, **MotoGP**, and **Formula 3** directly to your Discord server.
 
 ## 🚀 Features
 
-MotoGP PRM comes packed with improved commands to keep you updated:
+*   **🏎️ Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
+*   **📊 Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
+*   **🏆 Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
+*   **🎮 Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
+*   **🔔 Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
 
-### 🏁 Race Data
-- **/next**: Get a countdown and details for the upcoming Grand Prix.
-- **/calendar**: View the full season calendar with race start times (converted to your timezone).
-- **/results**: Fetch results for any recent race.
-- **/standings**: View current Driver and Constructor championship standings.
+---
 
-### 📊 Encyclopedia & Stats
-- **/driver**: Search for any driver (past or present) to view their detailed profile, stats, and helmet.
-- **/team**: **(New!)** View comprehensive team profiles including technical specs (Engine/Chassis), current driver lineups, and recent race performance.
-- **/circuit**: Get detailed circuit information and layout maps.
-- **/info**: Bot status and general information.
+## �️ Command Reference
 
-### 🎮 Fun & Community
-- **/trivia**: Test your F1 knowledge with random trivia questions.
-- **/vote**: Create polls for the community.
-- **/quote**: Get an iconic F1 quote.
-- **/gif**: Search for F1-related GIFs.
+Here is the complete list of available commands. All commands start with `/`.
 
-### 🛠️ Utilities
-- **/help**: List all available commands.
-- **/support**: Get link to the support server or developer contact.
-- **/news**: (Experimental) Get latest F1 headlines.
+### 🏁 Race Tracking
+| Command | Options | Description |
+| :--- | :--- | :--- |
+| `/next` | `series` (F1, MotoGP, F3) | Get a detailed schedule for the upcoming Grand Prix, including all session times. |
+| `/countdown` | `series` (F1, MotoGP, F3) | Displays a live countdown timer to the start of the race week and the main race. |
+| `/calendar` | — | View the full season calendar with dates and statuses. |
+| `/notify` | — | Manage your personal notification settings for race alerts. |
 
-## 🛠️ Technology Stack
+### 📊 Statistics & Data
+| Command | Options | Description |
+| :--- | :--- | :--- |
+| `/results` | `series`, `year`, `round` | Fetch race results for a specific round. |
+| `/standings` | `series`, `type` (Driver/Constructor), `year` | View current or historical championship standings. |
+| `/driver` | `name` | Search for a driver's profile, career stats, and helmet design. |
+| `/team` | `name` | **NEW!** Detailed team profile including tech specs, driver lineup, and recent form. |
+| `/circuit` | `name` | Get circuit layout, statistics, and lap record information. |
 
-- **Runtime**: Node.js
-- **Framework**: Discord.js v14
-- **Data Source**: [Jolpica / Ergast F1 API](https://jolpica.com/) for racing data.
-- **Utilities**: `axios`, `moment-timezone`, `rss-parser`.
+### 🎮 Fun & Utility
+| Command | Options | Description |
+| :--- | :--- | :--- |
+| `/trivia` | — | Challenge yourself effectively with a random F1 trivia question. |
+| `/vote` | — | Create a poll for your server members. |
+| `/quote` | — | Get an iconic random quote from the world of F1. |
+| `/gif` | `query` | Search for motorsport-related GIFs to share. |
+| `/news` | — | (Experimental) Fetch the latest F1 news headlines. |
+| `/help` | — | Show a list of all commands and bot information. |
+| `/info` | — | View bot status, uptime, and server count. |
+| `/support` | — | Get links to the support server or developer contact. |
+
+---
 
 ## ⚙️ Installation & Setup
 
-Follow these steps to host MotoGP PRM yourself or contribute to development.
+Follow these steps to host your own instance of the bot.
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16.9.0 or higher)
-- A generic code editor (VS Code recommended)
-- A Discord Bot Token (created via the [Discord Developer Portal](https://discord.com/developers/applications))
 
-### Steps
+*   [Node.js](https://nodejs.org/) (Version 16.9.0 or higher)
+*   [Git](https://git-scm.com/)
+*   A textual code editor (e.g., VS Code)
+*   A Discord Bot Token from the [Discord Developer Portal](https://discord.com/developers/applications).
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Start-05/discord-bot-motogpprm.git
-   cd discord-bot-motogpprm
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure Environment**
-   Create a `.env` file in the root directory (same level as `package.json`) and add your secrets:
-   ```env
-   TOKEN=your_discord_bot_token_here
-   CLIENT_ID=your_bot_application_id
-   GUILD_ID=your_test_server_id_optional
-   ```
-
-4. **Deploy Slash Commands**
-   Register the commands with Discord so they appear in your server:
-   ```bash
-   node deploy-commands.js
-   ```
-
-5. **Start the Bot**
-   ```bash
-   npm start
-   ```
-
-## 📂 Project Structure
-
+### 1. Clone the Repository
+Open your terminal and run:
+```bash
+git clone https://github.com/Start-05/discord-bot-motogpprm.git
+cd discord-bot-motogpprm
 ```
-├── src/
-│   ├── commands/       # Slash command logic (team.js, driver.js, etc.)
-│   ├── events/         # Event handlers (ready.js, interactionCreate.js)
-│   ├── services/       # API interaction layer (f1Service.js)
-│   ├── data/           # Static data (teamConstants.js)
-│   └── utils/          # Helper functions (embedUtils.js)
-├── deploy-commands.js  # Script to register commands
-├── index.js            # Main entry point
-└── package.json        # Dependencies and scripts
+
+### 2. Install Dependencies
+Install the required Node.js packages:
+```bash
+npm install
 ```
+
+### 3. Configure Variables
+Create a file named `.env` in the root directory and populate it with your credentials:
+```env
+TOKEN=your_discord_bot_token_here
+CLIENT_ID=your_application_id_here
+GUILD_ID=optional_test_server_id
+```
+> **Note:** `GUILD_ID` is optional but recommended for instantly updating commands in a specific server during development.
+
+### 4. Deploy Commands
+Register the slash commands with Discord:
+```bash
+node deploy-commands.js
+```
+*You should see a success message indicating the number of commands loaded.*
+
+### 5. Start the Bot
+Run the bot:
+```bash
+npm start
+```
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you have ideas for new features (like live timing integration or prediction markets):
+Contributions are welcome! If you'd like to improve the bot:
 
-1. Fork the project.
-2. Create feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+1.  **Fork** the repository.
+2.  Create a **Feature Branch** (`git checkout -b feature/NewCoolAction`).
+3.  **Commit** your changes (`git commit -m 'Added NewCoolAction'`).
+4.  **Push** to the branch (`git push origin feature/NewCoolAction`).
+5.  Open a **Pull Request**.
+
+---
 
 ## 📄 License
 
-This project is licensed under the ISC License.
+This project is licensed under the [ISC License](./LICENSE).
 
-Vishwa Pramuditha 2025
+---
+
+<p align="center">
+  Made with ❤️ by <b>Vishwa Pramuditha</b>
+</p>
