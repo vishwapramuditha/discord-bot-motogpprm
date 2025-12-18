@@ -1,7 +1,7 @@
 # MotoGP PRM - F1 & MotoGP Discord Bot
 
 <p align="center">
-  <img src="./banner.png" alt="MotoGP PRM Banner" width="100%" />
+  <img src="src/assets/banners/banner (1).png" alt="MotoGP PRM Banner" width="100%" />
 </p>
 
 <p align="center">
