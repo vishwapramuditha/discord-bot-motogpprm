@@ -12,13 +12,13 @@
 
 **MotoGP PRM** is a comprehensive Discord bot designed for motorsport enthusiasts. It brings real-time data, detailed statistics, and live updates for **Formula 1**, **MotoGP**, and **Formula 3** directly to your Discord server.
 
-## 🚀 Features
+## Features
 
-*   **🏎️ Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
-*   **📊 Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
-*   **🏆 Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
-*   **🎮 Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
-*   **🔔 Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
+*   ** Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
+*   ** Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
+*   ** Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
+*   ** Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
+*   ** Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
 
 ---
 
