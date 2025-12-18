@@ -14,11 +14,11 @@
 
 ## Features
 
-*   ** Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
-*   ** Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
-*   ** Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
-*   ** Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
-*   ** Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
+*   **Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
+*   **Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
+*   **Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
+*   **Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
+*   **Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
 
 ---
 
