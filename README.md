@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-v16.9%2B-green?style=flat&logo=node.js" alt="Node.js Badge"></a>
   <a href="https://discord.js.org/"><img src="https://img.shields.io/badge/Discord.js-v14-blue?style=flat&logo=discord" alt="Discord.js Badge"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-ISC-yellow.svg" alt="License Badge"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License Badge"></a>
 </p>
 
 **MotoGP PRM** is a comprehensive Discord bot designed for motorsport enthusiasts. It brings real-time data, detailed statistics, and live updates for **Formula 1**, **MotoGP**, and **Formula 3** directly to your Discord server.
