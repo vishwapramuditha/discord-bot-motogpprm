@@ -1,135 +1,144 @@
 const fs = require('fs');
 const path = require('path');
-const schedule = require('node-schedule');
 const moment = require('moment-timezone');
 const { getNextRace: getNextF1 } = require('./f1Service');
 const { getNextMotoGPRace } = require('./motogpService');
-const { createBaseEmbed } = require('../utils/embedUtils');
+const { getNextF3Race } = require('./f3Service');
 
 const SUBSCRIBERS_FILE = path.join(__dirname, '../data/subscribers.json');
 
-// --- Data Management ---
-function loadSubscribers() {
+// Helper to read subscribers
+function getSubscribers() {
     try {
         if (!fs.existsSync(SUBSCRIBERS_FILE)) return [];
         const data = fs.readFileSync(SUBSCRIBERS_FILE, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error("Error loading subscribers:", error);
+        return JSON.parse(data).users || [];
+    } catch (e) {
+        console.error("Error reading subscribers:", e);
         return [];
     }
 }
 
-function saveSubscribers(subscribers) {
+// Helper to write subscribers
+function saveSubscribers(users) {
     try {
-        fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify(subscribers, null, 2));
-    } catch (error) {
-        console.error("Error saving subscribers:", error);
+        fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify({ users }, null, 4));
+    } catch (e) {
+        console.error("Error saving subscribers:", e);
     }
 }
 
 function addSubscriber(userId) {
-    const subs = loadSubscribers();
-    if (!subs.includes(userId)) {
-        subs.push(userId);
-        saveSubscribers(subs);
+    const users = getSubscribers();
+    if (!users.includes(userId)) {
+        users.push(userId);
+        saveSubscribers(users);
         return true;
     }
     return false;
 }
 
 function removeSubscriber(userId) {
-    const subs = loadSubscribers();
-    const newSubs = subs.filter(id => id !== userId);
-    if (newSubs.length !== subs.length) {
-        saveSubscribers(newSubs);
+    const users = getSubscribers();
+    const newUsers = users.filter(id => id !== userId);
+    if (newUsers.length !== users.length) {
+        saveSubscribers(newUsers);
         return true;
     }
     return false;
 }
 
-// --- Notification Logic ---
-// We need to track sent notifications to avoid duplicates
-const sentNotifications = new Set();
+// Track notified sessions to avoid spamming (simple memory cache, resets on restart)
+const notifiedSessions = new Set();
+// Key format: "series_round_session"
 
-async function checkAndSendNotifications(client) {
+function startScheduler(client) {
+    console.log("Starting Notification Scheduler...");
+
+    // Check every minute
+    setInterval(async () => {
+        await checkAndNotify(client);
+    }, 60 * 1000);
+}
+
+async function checkAndNotify(client) {
+    // 1. Get Next Races
+    const f1Next = await getNextF1();
+    const motoNext = getNextMotoGPRace();
+    const f3Next = getNextF3Race();
+
+    const races = [
+        { series: 'F1', data: f1Next },
+        { series: 'MotoGP', data: motoNext },
+        { series: 'F3', data: f3Next }
+    ];
+
     const now = moment();
-    const subscribers = loadSubscribers();
-    if (subscribers.length === 0) return;
 
-    // 1. Check F1
-    const f1Race = await getNextF1();
-    if (f1Race) {
-        await checkRaceSessions(client, subscribers, f1Race, 'F1');
-    }
+    for (const { series, data } of races) {
+        if (!data) continue;
 
-    // 2. Check MotoGP
-    const motoRace = getNextMotoGPRace();
-    if (motoRace) {
-        // Normalize MotoGP object to match F1 structure slightly for the helper
-        // MotoGP sessions are just key-value pairs in our JSON
-        const sessions = [];
-        for (const [name, timeStr] of Object.entries(motoRace.sessions)) {
-            sessions.push({ name: name, time: moment(timeStr) });
+        // Determine sessions to check
+        // F1: data.FirstPractice, .Qualifying, etc.
+        // MotoGP: data.sessions (Race, Sprint, etc.)
+        // F3: data.sessions (Feature, Sprint)
+
+        let sessions = [];
+        if (series === 'F1') {
+            if (data.FirstPractice) sessions.push({ name: 'Free Practice 1', time: `${data.FirstPractice.date}T${data.FirstPractice.time}` });
+            if (data.Qualifying) sessions.push({ name: 'Qualifying', time: `${data.Qualifying.date}T${data.Qualifying.time}` });
+            if (data.Sprint) sessions.push({ name: 'Sprint', time: `${data.Sprint.date}T${data.Sprint.time}` });
+            if (data.date && data.time) sessions.push({ name: 'Race', time: `${data.date}T${data.time}` });
+        } else if (series === 'MotoGP') {
+            // data.sessions is an object like { "Race": "...", "Sprint": "..." }
+            if (data.sessions) {
+                Object.entries(data.sessions).forEach(([name, isoDate]) => {
+                    sessions.push({ name, time: isoDate });
+                });
+            }
+        } else if (series === 'F3') {
+            if (data.sessions) {
+                Object.entries(data.sessions).forEach(([name, isoDate]) => {
+                    sessions.push({ name, time: isoDate });
+                });
+            }
         }
 
         for (const session of sessions) {
-            await processSession(client, subscribers, session.name, session.time, motoRace.name, 'MotoGP');
-        }
-    }
-}
+            const time = moment(session.time); // Assumes UTC ISO or similar
+            if (!time.isValid()) continue;
 
-async function checkRaceSessions(client, subscribers, race, series) {
-    const sessions = [
-        { name: "Qualifying", time: race.Qualifying ? moment(`${race.Qualifying.date}T${race.Qualifying.time}`) : null },
-        { name: "Sprint", time: race.Sprint ? moment(`${race.Sprint.date}T${race.Sprint.time}`) : null },
-        { name: "Race", time: moment(`${race.date}T${race.time}`) }
-    ];
+            const diffMinutes = time.diff(now, 'minutes');
+            const roundId = data.round || data.name; // Unique ID for session
+            const notificationKey = `${series}_${roundId}_${session.name}`;
 
-    for (const session of sessions) {
-        if (session.time) {
-            await processSession(client, subscribers, session.name, session.time, race.raceName, series);
-        }
-    }
-}
+            // Notify if exactly 60 minutes left (+/- 1 min buffer) or whatever logic.
+            // Better: Notify if between 59 and 61 minutes left AND haven't notified yet.
+            if (diffMinutes >= 59 && diffMinutes <= 61 && !notifiedSessions.has(notificationKey)) {
 
-async function processSession(client, subscribers, sessionName, sessionTime, raceName, series) {
-    const now = moment();
-    const diffMinutes = sessionTime.diff(now, 'minutes');
-    const notificationId = `${series}-${raceName}-${sessionName}`;
+                // SEND NOTIFICATIONS
+                const subscribers = getSubscribers();
+                console.log(`Sending alerts for ${notificationKey} to ${subscribers.length} users.`);
 
-    // Notify if 60 minutes away (window of 55-65 mins) and not sent yet
-    if (diffMinutes >= 55 && diffMinutes <= 65 && !sentNotifications.has(notificationId)) {
-        console.log(`Sending notification for ${notificationId}`);
-        sentNotifications.add(notificationId);
+                // Add to notified set immediately
+                notifiedSessions.add(notificationKey);
 
-        // Clear old IDs from set to prevent memory leak (simple logic: clear if > 100 items)
-        if (sentNotifications.size > 100) sentNotifications.clear();
+                const message = `🔔 **${series} Alert!**\n**${data.name || data.raceName} - ${session.name}** starts in **1 hour**! (<t:${time.unix()}:R>)`;
 
-        const embed = createBaseEmbed(`⏰ Upcoming ${series} Session`)
-            .setColor(series === 'F1' ? '#FF1801' : '#000000')
-            .setDescription(`**${raceName} - ${sessionName}** starts in **1 hour**!`)
-            .addFields({ name: "Start Time", value: `<t:${sessionTime.unix()}:F> (<t:${sessionTime.unix()}:R>)` });
-
-        for (const userId of subscribers) {
-            try {
-                const user = await client.users.fetch(userId);
-                if (user) {
-                    await user.send({ embeds: [embed] });
+                for (const userId of subscribers) {
+                    try {
+                        const user = await client.users.fetch(userId);
+                        if (user) await user.send(message);
+                    } catch (err) {
+                        console.error(`Failed to DM user ${userId}:`, err.message);
+                        if (err.code === 50007) { // Cannot send messages to this user
+                            // Optionally remove them? No, maybe temporary.
+                        }
+                    }
                 }
-            } catch (error) {
-                console.error(`Failed to send DM to ${userId}:`, error.message);
             }
         }
     }
-}
-
-function startScheduler(client) {
-    // Run every 5 minutes
-    schedule.scheduleJob('*/5 * * * *', () => {
-        checkAndSendNotifications(client);
-    });
-    console.log("📅 Notification scheduler started.");
 }
 
 module.exports = {

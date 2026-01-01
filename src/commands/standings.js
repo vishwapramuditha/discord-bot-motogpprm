@@ -39,7 +39,9 @@ module.exports = {
 
         const series = interaction.options.getString("series");
         const type = interaction.options.getString("type");
-        const year = interaction.options.getString("year") || "current";
+        const currentYear = new Date().getFullYear();
+        const lastYear = currentYear - 1;
+        const year = interaction.options.getString("year") || lastYear.toString();
 
         if (series === "f1") {
             const data = await getF1Standings(year, type);
@@ -84,7 +86,7 @@ module.exports = {
             const title = motoType === 'riders' ? 'Rider Standings' : 'Constructor Standings';
             const embed = createBaseEmbed(title)
                 .setColor("#000000") // MotoGP Black
-                .setDescription(`**2025 Season**\n\n`);
+                .setDescription(`**${year} Season**\n\n`);
 
             let standingsText = "";
             data.forEach(item => {
@@ -118,7 +120,7 @@ module.exports = {
             const title = type === 'driver' ? 'Driver Standings' : 'Team Standings';
             const embed = createBaseEmbed(title)
                 .setColor("#151F45")
-                .setDescription(`**2025 Season**\n\n`);
+                .setDescription(`**${year} Season**\n\n`);
 
             let standingsText = "";
             data.forEach(item => {

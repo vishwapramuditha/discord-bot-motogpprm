@@ -3,7 +3,7 @@
         {
             "round": 1,
             "name": "Australian GP",
-            "circuit": "Albert Park Circuit",
+            "circuit": "Albert Park",
             "country": "🇦🇺",
             "date": "2026-03-08",
             "sessions": {
@@ -46,7 +46,7 @@
         },
         {
             "round": 5,
-            "name": "Austrian GP",
+            "name": "Austria GP",
             "circuit": "Red Bull Ring",
             "country": "🇦🇹",
             "date": "2026-06-28",
@@ -57,8 +57,8 @@
         },
         {
             "round": 6,
-            "name": "British GP",
-            "circuit": "Silverstone Circuit",
+            "name": "Great Britain GP",
+            "circuit": "Silverstone",
             "country": "🇬🇧",
             "date": "2026-07-05",
             "sessions": {
@@ -68,8 +68,8 @@
         },
         {
             "round": 7,
-            "name": "Belgian GP",
-            "circuit": "Circuit de Spa-Francorchamps",
+            "name": "Belgium GP",
+            "circuit": "Spa-Francorchamps",
             "country": "🇧🇪",
             "date": "2026-07-19",
             "sessions": {
@@ -79,7 +79,7 @@
         },
         {
             "round": 8,
-            "name": "Hungarian GP",
+            "name": "Hungary GP",
             "circuit": "Hungaroring",
             "country": "🇭🇺",
             "date": "2026-07-26",
@@ -90,8 +90,8 @@
         },
         {
             "round": 9,
-            "name": "Italian GP",
-            "circuit": "Monza Circuit",
+            "name": "Italy GP",
+            "circuit": "Monza",
             "country": "🇮🇹",
             "date": "2026-09-06",
             "sessions": {
@@ -101,8 +101,8 @@
         },
         {
             "round": 10,
-            "name": "Madrid GP",
-            "circuit": "Madring",
+            "name": "Spain (Madrid) GP",
+            "circuit": "Madrid",
             "country": "🇪🇸",
             "date": "2026-09-13",
             "sessions": {

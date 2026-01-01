@@ -1,0 +1,701 @@
+{
+    "season": 2026,
+    "races": [
+        {
+            "round": 1,
+            "name": "Australian Grand Prix",
+            "circuit": {
+                "circuitId": "albert_park",
+                "circuitName": "Albert Park Grand Prix Circuit",
+                "Location": {
+                    "country": "Australia"
+                }
+            },
+            "date": "2026-03-08",
+            "time": "05:00:00Z",
+            "FirstPractice": {
+                "date": "2026-03-06",
+                "time": "02:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-03-06",
+                "time": "06:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-03-07",
+                "time": "02:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-03-07",
+                "time": "06:00:00Z"
+            }
+        },
+        {
+            "round": 2,
+            "name": "Chinese Grand Prix",
+            "circuit": {
+                "circuitId": "shanghai",
+                "circuitName": "Shanghai International Circuit",
+                "Location": {
+                    "country": "China"
+                }
+            },
+            "date": "2026-03-15",
+            "time": "12:00:00Z",
+            "FirstPractice": {
+                "date": "2026-03-13",
+                "time": "04:30:00Z"
+            },
+            "SprintShootout": {
+                "date": "2026-03-13",
+                "time": "08:30:00Z"
+            },
+            "Sprint": {
+                "date": "2026-03-14",
+                "time": "06:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-03-14",
+                "time": "12:00:00Z"
+            }
+        },
+        {
+            "round": 3,
+            "name": "Japanese Grand Prix",
+            "circuit": {
+                "circuitId": "suzuka",
+                "circuitName": "Suzuka Circuit",
+                "Location": {
+                    "country": "Japan"
+                }
+            },
+            "date": "2026-03-29",
+            "time": "11:00:00Z",
+            "FirstPractice": {
+                "date": "2026-03-27",
+                "time": "03:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-03-27",
+                "time": "07:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-03-28",
+                "time": "03:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-03-28",
+                "time": "12:00:00Z"
+            }
+        },
+        {
+            "round": 4,
+            "name": "Bahrain Grand Prix",
+            "circuit": {
+                "circuitId": "bahrain",
+                "circuitName": "Bahrain International Circuit",
+                "Location": {
+                    "country": "Bahrain"
+                }
+            },
+            "date": "2026-04-12",
+            "time": "17:00:00Z",
+            "FirstPractice": {
+                "date": "2026-04-10",
+                "time": "11:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-04-10",
+                "time": "15:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-04-11",
+                "time": "12:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-04-11",
+                "time": "18:00:00Z"
+            }
+        },
+        {
+            "round": 5,
+            "name": "Saudi Arabian Grand Prix",
+            "circuit": {
+                "circuitId": "jeddah",
+                "circuitName": "Jeddah Corniche Circuit",
+                "Location": {
+                    "country": "Saudi Arabia"
+                }
+            },
+            "date": "2026-04-19",
+            "time": "17:00:00Z",
+            "FirstPractice": {
+                "date": "2026-04-17",
+                "time": "13:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-04-17",
+                "time": "17:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-04-18",
+                "time": "13:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-04-18",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 6,
+            "name": "Miami Grand Prix",
+            "circuit": {
+                "circuitId": "miami",
+                "circuitName": "Miami International Autodrome",
+                "Location": {
+                    "country": "USA"
+                }
+            },
+            "date": "2026-05-03",
+            "time": "17:00:00Z",
+            "FirstPractice": {
+                "date": "2026-05-01",
+                "time": "16:30:00Z"
+            },
+            "SprintShootout": {
+                "date": "2026-05-01",
+                "time": "20:30:00Z"
+            },
+            "Sprint": {
+                "date": "2026-05-02",
+                "time": "12:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-05-02",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 7,
+            "name": "Canadian Grand Prix",
+            "circuit": {
+                "circuitId": "villeneuve",
+                "circuitName": "Circuit Gilles Villeneuve",
+                "Location": {
+                    "country": "Canada"
+                }
+            },
+            "date": "2026-05-24",
+            "time": "17:00:00Z",
+            "FirstPractice": {
+                "date": "2026-05-22",
+                "time": "16:30:00Z"
+            },
+            "SprintShootout": {
+                "date": "2026-05-22",
+                "time": "20:30:00Z"
+            },
+            "Sprint": {
+                "date": "2026-05-23",
+                "time": "12:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-05-23",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 8,
+            "name": "Monaco Grand Prix",
+            "circuit": {
+                "circuitId": "monaco",
+                "circuitName": "Circuit de Monaco",
+                "Location": {
+                    "country": "Monaco"
+                }
+            },
+            "date": "2026-06-07",
+            "time": "16:00:00Z",
+            "FirstPractice": {
+                "date": "2026-06-05",
+                "time": "13:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-06-05",
+                "time": "17:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-06-06",
+                "time": "12:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-06-06",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 9,
+            "name": "Spanish Grand Prix",
+            "circuit": {
+                "circuitId": "catalunya",
+                "circuitName": "Circuit de Barcelona-Catalunya",
+                "Location": {
+                    "country": "Spain"
+                }
+            },
+            "date": "2026-06-14",
+            "time": "16:00:00Z",
+            "FirstPractice": {
+                "date": "2026-06-12",
+                "time": "13:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-06-12",
+                "time": "17:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-06-13",
+                "time": "12:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-06-13",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 10,
+            "name": "Austrian Grand Prix",
+            "circuit": {
+                "circuitId": "red_bull_ring",
+                "circuitName": "Red Bull Ring",
+                "Location": {
+                    "country": "Austria"
+                }
+            },
+            "date": "2026-06-28",
+            "time": "16:00:00Z",
+            "FirstPractice": {
+                "date": "2026-06-26",
+                "time": "13:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-06-26",
+                "time": "17:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-06-27",
+                "time": "12:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-06-27",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 11,
+            "name": "British Grand Prix",
+            "circuit": {
+                "circuitId": "silverstone",
+                "circuitName": "Silverstone Circuit",
+                "Location": {
+                    "country": "UK"
+                }
+            },
+            "date": "2026-07-05",
+            "time": "14:30:00Z",
+            "FirstPractice": {
+                "date": "2026-07-03",
+                "time": "11:30:00Z"
+            },
+            "SprintShootout": {
+                "date": "2026-07-03",
+                "time": "15:30:00Z"
+            },
+            "Sprint": {
+                "date": "2026-07-04",
+                "time": "11:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-07-04",
+                "time": "15:30:00Z"
+            }
+        },
+        {
+            "round": 12,
+            "name": "Belgian Grand Prix",
+            "circuit": {
+                "circuitId": "spa",
+                "circuitName": "Circuit de Spa-Francorchamps",
+                "Location": {
+                    "country": "Belgium"
+                }
+            },
+            "date": "2026-07-19",
+            "time": "13:30:00Z",
+            "FirstPractice": {
+                "date": "2026-07-17",
+                "time": "11:00:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-07-17",
+                "time": "14:30:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-07-18",
+                "time": "10:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-07-18",
+                "time": "14:30:00Z"
+            }
+        },
+        {
+            "round": 13,
+            "name": "Hungarian Grand Prix",
+            "circuit": {
+                "circuitId": "hungaroring",
+                "circuitName": "Hungaroring",
+                "Location": {
+                    "country": "Hungary"
+                }
+            },
+            "date": "2026-07-26",
+            "time": "13:30:00Z",
+            "FirstPractice": {
+                "date": "2026-07-24",
+                "time": "11:00:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-07-24",
+                "time": "14:30:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-07-25",
+                "time": "10:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-07-25",
+                "time": "14:30:00Z"
+            }
+        },
+        {
+            "round": 14,
+            "name": "Dutch Grand Prix",
+            "circuit": {
+                "circuitId": "zandvoort",
+                "circuitName": "Circuit Zandvoort",
+                "Location": {
+                    "country": "Netherlands"
+                }
+            },
+            "date": "2026-08-23",
+            "time": "14:30:00Z",
+            "FirstPractice": {
+                "date": "2026-08-21",
+                "time": "12:00:00Z"
+            },
+            "SprintShootout": {
+                "date": "2026-08-21",
+                "time": "16:00:00Z"
+            },
+            "Sprint": {
+                "date": "2026-08-22",
+                "time": "11:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-08-22",
+                "time": "16:00:00Z"
+            }
+        },
+        {
+            "round": 15,
+            "name": "Italian Grand Prix",
+            "circuit": {
+                "circuitId": "monza",
+                "circuitName": "Autodromo Nazionale Monza",
+                "Location": {
+                    "country": "Italy"
+                }
+            },
+            "date": "2026-09-06",
+            "time": "13:30:00Z",
+            "FirstPractice": {
+                "date": "2026-09-04",
+                "time": "11:00:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-09-04",
+                "time": "14:30:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-09-05",
+                "time": "10:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-09-05",
+                "time": "14:30:00Z"
+            }
+        },
+        {
+            "round": 16,
+            "name": "Spanish Grand Prix (Madrid)",
+            "circuit": {
+                "circuitId": "madrid",
+                "circuitName": "Madrid Street Circuit",
+                "Location": {
+                    "country": "Spain"
+                }
+            },
+            "date": "2026-09-13",
+            "time": "13:30:00Z",
+            "FirstPractice": {
+                "date": "2026-09-11",
+                "time": "11:00:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-09-11",
+                "time": "14:30:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-09-12",
+                "time": "10:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-09-12",
+                "time": "14:30:00Z"
+            }
+        },
+        {
+            "round": 17,
+            "name": "Azerbaijan Grand Prix",
+            "circuit": {
+                "circuitId": "baku",
+                "circuitName": "Baku City Circuit",
+                "Location": {
+                    "country": "Azerbaijan"
+                }
+            },
+            "date": "2026-09-27",
+            "time": "13:30:00Z",
+            "FirstPractice": {
+                "date": "2026-09-25",
+                "time": "11:00:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-09-25",
+                "time": "14:30:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-09-26",
+                "time": "10:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-09-26",
+                "time": "14:30:00Z"
+            }
+        },
+        {
+            "round": 18,
+            "name": "Singapore Grand Prix",
+            "circuit": {
+                "circuitId": "marina_bay",
+                "circuitName": "Marina Bay Street Circuit",
+                "Location": {
+                    "country": "Singapore"
+                }
+            },
+            "date": "2026-10-11",
+            "time": "13:00:00Z",
+            "FirstPractice": {
+                "date": "2026-10-09",
+                "time": "08:00:00Z"
+            },
+            "SprintShootout": {
+                "date": "2026-10-09",
+                "time": "12:00:00Z"
+            },
+            "Sprint": {
+                "date": "2026-10-10",
+                "time": "10:00:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-10-10",
+                "time": "14:00:00Z"
+            }
+        },
+        {
+            "round": 19,
+            "name": "United States Grand Prix",
+            "circuit": {
+                "circuitId": "americas",
+                "circuitName": "Circuit of the Americas",
+                "Location": {
+                    "country": "USA"
+                }
+            },
+            "date": "2026-10-25",
+            "time": "16:00:00Z",
+            "FirstPractice": {
+                "date": "2026-10-23",
+                "time": "13:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-10-23",
+                "time": "17:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-10-24",
+                "time": "12:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-10-24",
+                "time": "17:00:00Z"
+            }
+        },
+        {
+            "round": 20,
+            "name": "Mexico City Grand Prix",
+            "circuit": {
+                "circuitId": "rodriguez",
+                "circuitName": "Autódromo Hermanos Rodríguez",
+                "Location": {
+                    "country": "Mexico"
+                }
+            },
+            "date": "2026-11-01",
+            "time": "15:00:00Z",
+            "FirstPractice": {
+                "date": "2026-10-30",
+                "time": "12:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-10-30",
+                "time": "16:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-10-31",
+                "time": "11:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-10-31",
+                "time": "16:00:00Z"
+            }
+        },
+        {
+            "round": 21,
+            "name": "São Paulo Grand Prix",
+            "circuit": {
+                "circuitId": "interlagos",
+                "circuitName": "Autódromo José Carlos Pace",
+                "Location": {
+                    "country": "Brazil"
+                }
+            },
+            "date": "2026-11-08",
+            "time": "15:00:00Z",
+            "FirstPractice": {
+                "date": "2026-11-06",
+                "time": "12:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-11-06",
+                "time": "16:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-11-07",
+                "time": "11:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-11-07",
+                "time": "16:00:00Z"
+            }
+        },
+        {
+            "round": 22,
+            "name": "Las Vegas Grand Prix",
+            "circuit": {
+                "circuitId": "las_vegas",
+                "circuitName": "Las Vegas Strip Circuit",
+                "Location": {
+                    "country": "USA"
+                }
+            },
+            "date": "2026-11-21",
+            "time": "22:00:00Z",
+            "FirstPractice": {
+                "date": "2026-11-19",
+                "time": "19:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-11-19",
+                "time": "23:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-11-20",
+                "time": "18:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-11-20",
+                "time": "22:00:00Z"
+            }
+        },
+        {
+            "round": 23,
+            "name": "Qatar Grand Prix",
+            "circuit": {
+                "circuitId": "losail",
+                "circuitName": "Lusail International Circuit",
+                "Location": {
+                    "country": "Qatar"
+                }
+            },
+            "date": "2026-11-29",
+            "time": "16:00:00Z",
+            "FirstPractice": {
+                "date": "2026-11-27",
+                "time": "13:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-11-27",
+                "time": "17:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-11-28",
+                "time": "12:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-11-28",
+                "time": "18:00:00Z"
+            }
+        },
+        {
+            "round": 24,
+            "name": "Abu Dhabi Grand Prix",
+            "circuit": {
+                "circuitId": "yas_marina",
+                "circuitName": "Yas Marina Circuit",
+                "Location": {
+                    "country": "UAE"
+                }
+            },
+            "date": "2026-12-06",
+            "time": "17:00:00Z",
+            "FirstPractice": {
+                "date": "2026-12-04",
+                "time": "14:30:00Z"
+            },
+            "SecondPractice": {
+                "date": "2026-12-04",
+                "time": "18:00:00Z"
+            },
+            "ThirdPractice": {
+                "date": "2026-12-05",
+                "time": "13:30:00Z"
+            },
+            "Qualifying": {
+                "date": "2026-12-05",
+                "time": "18:00:00Z"
+            }
+        }
+    ]
+}

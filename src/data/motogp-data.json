@@ -5,47 +5,29 @@
             "name": "Thai GP",
             "circuit": "Chang International Circuit",
             "country": "🇹🇭",
-            "date": "2026-03-02",
+            "date": "2026-03-01",
             "sessions": {
-                "Free Practice 1": "2026-02-28T09:00:00Z",
-                "Practice": "2026-02-28T13:15:00Z",
-                "Free Practice 2": "2026-03-01T08:30:00Z",
-                "Qualifying 1": "2026-03-01T09:10:00Z",
-                "Qualifying 2": "2026-03-01T09:35:00Z",
-                "Sprint": "2026-03-01T13:00:00Z",
-                "Race": "2026-03-02T14:00:00Z"
+                "Race": "2026-03-01T08:00:00Z"
             }
         },
         {
             "round": 2,
-            "name": "Argentine GP",
-            "circuit": "Termas de Río Hondo",
-            "country": "🇦🇷",
-            "date": "2026-03-16",
+            "name": "Brazilian GP",
+            "circuit": "Autódromo Internacional Ayrton Senna",
+            "country": "🇧🇷",
+            "date": "2026-03-22",
             "sessions": {
-                "Free Practice 1": "2026-03-14T13:45:00Z",
-                "Practice": "2026-03-14T18:00:00Z",
-                "Free Practice 2": "2026-03-15T13:10:00Z",
-                "Qualifying 1": "2026-03-15T13:50:00Z",
-                "Qualifying 2": "2026-03-15T14:15:00Z",
-                "Sprint": "2026-03-15T18:00:00Z",
-                "Race": "2026-03-16T18:00:00Z"
+                "Race": "2026-03-22T17:00:00Z"
             }
         },
         {
             "round": 3,
             "name": "Americas GP",
-            "circuit": "Circuit of The Americas",
+            "circuit": "Circuit of the Americas",
             "country": "🇺🇸",
-            "date": "2026-03-30",
+            "date": "2026-03-29",
             "sessions": {
-                "Free Practice 1": "2026-03-28T15:45:00Z",
-                "Practice": "2026-03-28T20:00:00Z",
-                "Free Practice 2": "2026-03-29T15:10:00Z",
-                "Qualifying 1": "2026-03-29T15:50:00Z",
-                "Qualifying 2": "2026-03-29T16:15:00Z",
-                "Sprint": "2026-03-29T20:00:00Z",
-                "Race": "2026-03-30T19:00:00Z"
+                "Race": "2026-03-29T19:00:00Z"
             }
         },
         {
@@ -53,239 +35,149 @@
             "name": "Qatar GP",
             "circuit": "Lusail International Circuit",
             "country": "🇶🇦",
-            "date": "2026-04-13",
+            "date": "2026-04-12",
             "sessions": {
-                "Free Practice 1": "2026-04-11T12:45:00Z",
-                "Practice": "2026-04-11T17:00:00Z",
-                "Free Practice 2": "2026-04-12T12:10:00Z",
-                "Qualifying 1": "2026-04-12T12:50:00Z",
-                "Qualifying 2": "2026-04-12T13:15:00Z",
-                "Sprint": "2026-04-12T17:00:00Z",
-                "Race": "2026-04-13T17:00:00Z"
+                "Race": "2026-04-12T17:00:00Z"
             }
         },
         {
             "round": 5,
             "name": "Spanish GP",
-            "circuit": "Jerez",
+            "circuit": "Jerez-Ángel Nieto",
             "country": "🇪🇸",
-            "date": "2026-04-27",
+            "date": "2026-04-26",
             "sessions": {
-                "Free Practice 1": "2026-04-25T08:45:00Z",
-                "Practice": "2026-04-25T13:00:00Z",
-                "Free Practice 2": "2026-04-26T08:10:00Z",
-                "Qualifying 1": "2026-04-26T08:50:00Z",
-                "Qualifying 2": "2026-04-26T09:15:00Z",
-                "Sprint": "2026-04-26T13:00:00Z",
-                "Race": "2026-04-27T12:00:00Z"
+                "Race": "2026-04-26T12:00:00Z"
             }
         },
         {
             "round": 6,
             "name": "French GP",
-            "circuit": "Le Mans",
+            "circuit": "Le Mans Bugatti",
             "country": "🇫🇷",
-            "date": "2026-05-11",
+            "date": "2026-05-10",
             "sessions": {
-                "Free Practice 1": "2026-05-09T08:45:00Z",
-                "Practice": "2026-05-09T13:00:00Z",
-                "Free Practice 2": "2026-05-10T08:10:00Z",
-                "Qualifying 1": "2026-05-10T08:50:00Z",
-                "Qualifying 2": "2026-05-10T09:15:00Z",
-                "Sprint": "2026-05-10T13:00:00Z",
-                "Race": "2026-05-11T12:00:00Z"
+                "Race": "2026-05-10T12:00:00Z"
             }
         },
         {
             "round": 7,
-            "name": "British GP",
-            "circuit": "Silverstone",
-            "country": "🇬🇧",
-            "date": "2026-05-25",
+            "name": "Catalan GP",
+            "circuit": "Barcelona-Catalunya",
+            "country": "🇪🇸",
+            "date": "2026-05-17",
             "sessions": {
-                "Free Practice 1": "2026-05-23T09:45:00Z",
-                "Practice": "2026-05-23T14:00:00Z",
-                "Free Practice 2": "2026-05-24T09:10:00Z",
-                "Qualifying 1": "2026-05-24T09:50:00Z",
-                "Qualifying 2": "2026-05-24T10:15:00Z",
-                "Sprint": "2026-05-24T14:00:00Z",
-                "Race": "2026-05-25T13:00:00Z"
+                "Race": "2026-05-17T12:00:00Z"
             }
         },
         {
             "round": 8,
-            "name": "Aragon GP",
-            "circuit": "MotorLand Aragon",
-            "country": "🇪🇸",
-            "date": "2026-06-08",
+            "name": "Italian GP",
+            "circuit": "Mugello",
+            "country": "🇮🇹",
+            "date": "2026-05-31",
             "sessions": {
-                "Free Practice 1": "2026-06-06T08:45:00Z",
-                "Practice": "2026-06-06T13:00:00Z",
-                "Free Practice 2": "2026-06-07T08:10:00Z",
-                "Qualifying 1": "2026-06-07T08:50:00Z",
-                "Qualifying 2": "2026-06-07T09:15:00Z",
-                "Sprint": "2026-06-07T13:00:00Z",
-                "Race": "2026-06-08T12:00:00Z"
+                "Race": "2026-05-31T12:00:00Z"
             }
         },
         {
             "round": 9,
-            "name": "Italian GP",
-            "circuit": "Mugello",
-            "country": "🇮🇹",
-            "date": "2026-06-22",
+            "name": "Hungarian GP",
+            "circuit": "Balaton Park Circuit",
+            "country": "🇭🇺",
+            "date": "2026-06-07",
             "sessions": {
-                "Free Practice 1": "2026-06-20T08:45:00Z",
-                "Practice": "2026-06-20T13:00:00Z",
-                "Free Practice 2": "2026-06-21T08:10:00Z",
-                "Qualifying 1": "2026-06-21T08:50:00Z",
-                "Qualifying 2": "2026-06-21T09:15:00Z",
-                "Sprint": "2026-06-21T13:00:00Z",
-                "Race": "2026-06-22T12:00:00Z"
+                "Race": "2026-06-07T12:00:00Z"
             }
         },
         {
             "round": 10,
-            "name": "Dutch GP",
-            "circuit": "Assen",
-            "country": "🇳🇱",
-            "date": "2026-06-29",
+            "name": "Czech GP",
+            "circuit": "Automotodrom Brno",
+            "country": "🇨🇿",
+            "date": "2026-06-21",
             "sessions": {
-                "Free Practice 1": "2026-06-27T08:45:00Z",
-                "Practice": "2026-06-27T13:00:00Z",
-                "Free Practice 2": "2026-06-28T08:10:00Z",
-                "Qualifying 1": "2026-06-28T08:50:00Z",
-                "Qualifying 2": "2026-06-28T09:15:00Z",
-                "Sprint": "2026-06-28T13:00:00Z",
-                "Race": "2026-06-29T12:00:00Z"
+                "Race": "2026-06-21T12:00:00Z"
             }
         },
         {
             "round": 11,
-            "name": "German GP",
-            "circuit": "Sachsenring",
-            "country": "🇩🇪",
-            "date": "2026-07-13",
+            "name": "Dutch TT",
+            "circuit": "TT Circuit Assen",
+            "country": "🇳🇱",
+            "date": "2026-06-28",
             "sessions": {
-                "Free Practice 1": "2026-07-11T08:45:00Z",
-                "Practice": "2026-07-11T13:00:00Z",
-                "Free Practice 2": "2026-07-12T08:10:00Z",
-                "Qualifying 1": "2026-07-12T08:50:00Z",
-                "Qualifying 2": "2026-07-12T09:15:00Z",
-                "Sprint": "2026-07-12T13:00:00Z",
-                "Race": "2026-07-13T12:00:00Z"
+                "Race": "2026-06-28T12:00:00Z"
             }
         },
         {
             "round": 12,
-            "name": "Czech GP",
-            "circuit": "Brno",
-            "country": "🇨🇿",
-            "date": "2026-07-20",
+            "name": "German GP",
+            "circuit": "Sachsenring",
+            "country": "🇩🇪",
+            "date": "2026-07-12",
             "sessions": {
-                "Free Practice 1": "2026-07-18T08:45:00Z",
-                "Practice": "2026-07-18T13:00:00Z",
-                "Free Practice 2": "2026-07-19T08:10:00Z",
-                "Qualifying 1": "2026-07-19T08:50:00Z",
-                "Qualifying 2": "2026-07-19T09:15:00Z",
-                "Sprint": "2026-07-19T13:00:00Z",
-                "Race": "2026-07-20T12:00:00Z"
+                "Race": "2026-07-12T12:00:00Z"
             }
         },
         {
             "round": 13,
-            "name": "Austrian GP",
-            "circuit": "Red Bull Ring",
-            "country": "🇦🇹",
-            "date": "2026-08-17",
+            "name": "British GP",
+            "circuit": "Silverstone",
+            "country": "🇬🇧",
+            "date": "2026-08-09",
             "sessions": {
-                "Free Practice 1": "2026-08-15T08:45:00Z",
-                "Practice": "2026-08-15T13:00:00Z",
-                "Free Practice 2": "2026-08-16T08:10:00Z",
-                "Qualifying 1": "2026-08-16T08:50:00Z",
-                "Qualifying 2": "2026-08-16T09:15:00Z",
-                "Sprint": "2026-08-16T13:00:00Z",
-                "Race": "2026-08-17T12:00:00Z"
+                "Race": "2026-08-09T12:00:00Z"
             }
         },
         {
             "round": 14,
-            "name": "Hungarian GP",
-            "circuit": "Balaton Park",
-            "country": "🇭🇺",
-            "date": "2026-08-24",
+            "name": "Aragon GP",
+            "circuit": "MotorLand Aragón",
+            "country": "🇪🇸",
+            "date": "2026-08-30",
             "sessions": {
-                "Free Practice 1": "2026-08-22T08:45:00Z",
-                "Practice": "2026-08-22T13:00:00Z",
-                "Free Practice 2": "2026-08-23T08:10:00Z",
-                "Qualifying 1": "2026-08-23T08:50:00Z",
-                "Qualifying 2": "2026-08-23T09:15:00Z",
-                "Sprint": "2026-08-23T13:00:00Z",
-                "Race": "2026-08-24T12:00:00Z"
+                "Race": "2026-08-30T12:00:00Z"
             }
         },
         {
             "round": 15,
-            "name": "Catalan GP",
-            "circuit": "Barcelona-Catalunya",
-            "country": "🇪🇸",
-            "date": "2026-09-07",
+            "name": "San Marino GP",
+            "circuit": "Misano World Circuit Marco Simoncelli",
+            "country": "🇮🇹",
+            "date": "2026-09-13",
             "sessions": {
-                "Free Practice 1": "2026-09-05T08:45:00Z",
-                "Practice": "2026-09-05T13:00:00Z",
-                "Free Practice 2": "2026-09-06T08:10:00Z",
-                "Qualifying 1": "2026-09-06T08:50:00Z",
-                "Qualifying 2": "2026-09-06T09:15:00Z",
-                "Sprint": "2026-09-06T13:00:00Z",
-                "Race": "2026-09-07T12:00:00Z"
+                "Race": "2026-09-13T12:00:00Z"
             }
         },
         {
             "round": 16,
-            "name": "San Marino GP",
-            "circuit": "Misano",
-            "country": "🇸🇲",
-            "date": "2026-09-14",
+            "name": "Austrian GP",
+            "circuit": "Red Bull Ring",
+            "country": "🇦🇹",
+            "date": "2026-09-20",
             "sessions": {
-                "Free Practice 1": "2026-09-12T08:45:00Z",
-                "Practice": "2026-09-12T13:00:00Z",
-                "Free Practice 2": "2026-09-13T08:10:00Z",
-                "Qualifying 1": "2026-09-13T08:50:00Z",
-                "Qualifying 2": "2026-09-13T09:15:00Z",
-                "Sprint": "2026-09-13T13:00:00Z",
-                "Race": "2026-09-14T12:00:00Z"
+                "Race": "2026-09-20T12:00:00Z"
             }
         },
         {
             "round": 17,
             "name": "Japanese GP",
-            "circuit": "Motegi",
+            "circuit": "Mobility Resort Motegi",
             "country": "🇯🇵",
-            "date": "2026-09-28",
+            "date": "2026-10-04",
             "sessions": {
-                "Free Practice 1": "2026-09-26T01:45:00Z",
-                "Practice": "2026-09-26T06:00:00Z",
-                "Free Practice 2": "2026-09-27T01:10:00Z",
-                "Qualifying 1": "2026-09-27T01:50:00Z",
-                "Qualifying 2": "2026-09-27T02:15:00Z",
-                "Sprint": "2026-09-27T06:00:00Z",
-                "Race": "2026-09-28T05:00:00Z"
+                "Race": "2026-10-04T05:00:00Z"
             }
         },
         {
             "round": 18,
             "name": "Indonesian GP",
-            "circuit": "Mandalika",
+            "circuit": "Mandalika International Street Circuit",
             "country": "🇮🇩",
-            "date": "2026-10-05",
+            "date": "2026-10-11",
             "sessions": {
-                "Free Practice 1": "2026-10-03T02:45:00Z",
-                "Practice": "2026-10-03T07:00:00Z",
-                "Free Practice 2": "2026-10-04T02:10:00Z",
-                "Qualifying 1": "2026-10-04T02:50:00Z",
-                "Qualifying 2": "2026-10-04T03:15:00Z",
-                "Sprint": "2026-10-04T07:00:00Z",
-                "Race": "2026-10-05T07:00:00Z"
+                "Race": "2026-10-11T07:00:00Z"
             }
         },
         {
@@ -293,15 +185,9 @@
             "name": "Australian GP",
             "circuit": "Phillip Island",
             "country": "🇦🇺",
-            "date": "2026-10-19",
+            "date": "2026-10-25",
             "sessions": {
-                "Free Practice 1": "2026-10-16T23:45:00Z",
-                "Practice": "2026-10-17T04:00:00Z",
-                "Free Practice 2": "2026-10-17T23:10:00Z",
-                "Qualifying 1": "2026-10-17T23:50:00Z",
-                "Qualifying 2": "2026-10-18T00:15:00Z",
-                "Sprint": "2026-10-18T04:00:00Z",
-                "Race": "2026-10-19T03:00:00Z"
+                "Race": "2026-10-25T04:00:00Z"
             }
         },
         {
@@ -309,31 +195,19 @@
             "name": "Malaysian GP",
             "circuit": "Sepang",
             "country": "🇲🇾",
-            "date": "2026-10-26",
+            "date": "2026-11-01",
             "sessions": {
-                "Free Practice 1": "2026-10-24T02:45:00Z",
-                "Practice": "2026-10-24T07:00:00Z",
-                "Free Practice 2": "2026-10-25T02:10:00Z",
-                "Qualifying 1": "2026-10-25T02:50:00Z",
-                "Qualifying 2": "2026-10-25T03:15:00Z",
-                "Sprint": "2026-10-25T07:00:00Z",
-                "Race": "2026-10-26T07:00:00Z"
+                "Race": "2026-11-01T07:00:00Z"
             }
         },
         {
             "round": 21,
             "name": "Portuguese GP",
-            "circuit": "Portimao",
+            "circuit": "Portimão",
             "country": "🇵🇹",
-            "date": "2026-11-09",
+            "date": "2026-11-15",
             "sessions": {
-                "Free Practice 1": "2026-11-07T10:45:00Z",
-                "Practice": "2026-11-07T15:00:00Z",
-                "Free Practice 2": "2026-11-08T10:10:00Z",
-                "Qualifying 1": "2026-11-08T10:50:00Z",
-                "Qualifying 2": "2026-11-08T11:15:00Z",
-                "Sprint": "2026-11-08T15:00:00Z",
-                "Race": "2026-11-09T14:00:00Z"
+                "Race": "2026-11-15T13:00:00Z"
             }
         },
         {
@@ -341,15 +215,9 @@
             "name": "Valencia GP",
             "circuit": "Ricardo Tormo",
             "country": "🇪🇸",
-            "date": "2026-11-16",
+            "date": "2026-11-22",
             "sessions": {
-                "Free Practice 1": "2026-11-14T09:45:00Z",
-                "Practice": "2026-11-14T14:00:00Z",
-                "Free Practice 2": "2026-11-15T09:10:00Z",
-                "Qualifying 1": "2026-11-15T09:50:00Z",
-                "Qualifying 2": "2026-11-15T10:15:00Z",
-                "Sprint": "2026-11-15T14:00:00Z",
-                "Race": "2026-11-16T13:00:00Z"
+                "Race": "2026-11-22T13:00:00Z"
             }
         }
     ],

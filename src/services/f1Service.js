@@ -1,5 +1,6 @@
 const axios = require('axios');
 const moment = require('moment-timezone');
+const f1Data = require('../data/f1-data.json');
 
 const BASE_URL = 'http://api.jolpi.ca/ergast/f1'; // Using Jolpica (Ergast mirror/successor)
 
@@ -43,9 +44,13 @@ const DRIVER_IMAGES = {
 
 async function getNextRace() {
     try {
-        const response = await axios.get(`${BASE_URL}/current/next.json`);
-        const raceData = response.data.MRData.RaceTable.Races[0];
-        return raceData;
+        // Use local data for current season (2026)
+        const now = moment();
+        const nextRace = f1Data.races.find(race => {
+            const raceTime = moment(`${race.date}T${race.time}`);
+            return raceTime.isAfter(now);
+        });
+        return nextRace || null;
     } catch (error) {
         console.error("Error fetching next race:", error);
         return null;
@@ -84,6 +89,9 @@ async function getTeamInfo(constructorId) {
 }
 
 async function getCalendar(year = 'current') {
+    if (year === 'current' || year === '2026' || year === 2026) {
+        return f1Data.races;
+    }
     try {
         const response = await axios.get(`${BASE_URL}/${year}.json`);
         return response.data.MRData.RaceTable.Races;
