@@ -1,24 +1,24 @@
 # MotoGP PRM - F1 & MotoGP Discord Bot
 
 <p align="center">
-  <img src="./banner.png" alt="MotoGP PRM Banner" width="100%" />
+  <img src="src/assets/banners/banner (1).png" alt="MotoGP PRM Banner" width="100%" />
 </p>
 
 <p align="center">
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-v16.9%2B-green?style=flat&logo=node.js" alt="Node.js Badge"></a>
   <a href="https://discord.js.org/"><img src="https://img.shields.io/badge/Discord.js-v14-blue?style=flat&logo=discord" alt="Discord.js Badge"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-ISC-yellow.svg" alt="License Badge"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License Badge"></a>
 </p>
 
 **MotoGP PRM** is a comprehensive Discord bot designed for motorsport enthusiasts. It brings real-time data, detailed statistics, and live updates for **Formula 1**, **MotoGP**, and **Formula 3** directly to your Discord server.
 
-## 🚀 Features
+## Features
 
-*   **🏎️ Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
-*   **📊 Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
-*   **🏆 Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
-*   **🎮 Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
-*   **🔔 Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
+*   **Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
+*   **Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
+*   **Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
+*   **Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
+*   **Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
 
 ---
 
@@ -119,7 +119,7 @@ Contributions are welcome! If you'd like to improve the bot:
 
 ## 📄 License
 
-This project is licensed under the [ISC License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
