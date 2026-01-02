@@ -22,8 +22,17 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
     try {
         console.log(`🚀 Started refreshing ${commands.length} application (/) commands.`);
 
+        let route;
+        if (process.env.GUILD_ID) {
+            console.log("Using Guild Registration (Instant update for this server)");
+            route = Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID);
+        } else {
+            console.log("Using Global Registration (May take up to 1 hour to appear)");
+            route = Routes.applicationCommands(process.env.CLIENT_ID);
+        }
+
         const data = await rest.put(
-            Routes.applicationCommands(process.env.CLIENT_ID),
+            route,
             { body: commands },
         );
 

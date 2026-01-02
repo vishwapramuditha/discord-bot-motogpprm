@@ -98,7 +98,12 @@ module.exports = {
                 timeMoment = moment(t);
             }
 
-            const flag = getFlag(country) || "🏳️";
+            let flag = "🏳️";
+            if (series === "f1") {
+                flag = getFlag(country) || "🏳️";
+            } else {
+                flag = country || "🏳️";
+            }
             const timestamp = timeMoment.isValid() ? `<t:${timeMoment.unix()}:f>` : "TBD"; // Use short date-time format
 
             // Check if upcoming
