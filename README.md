@@ -10,112 +10,89 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License Badge"></a>
 </p>
 
-**MotoGP PRM** is a comprehensive Discord bot designed for motorsport enthusiasts. It brings real-time data, detailed statistics, and live updates for **Formula 1**, **MotoGP**, and **Formula 3** directly to your Discord server.
+**MotoGP PRM** is a comprehensive Discord bot designed for motorsport enthusiasts. It's fully updated for the **2026 Season**, bringing real-time data, detailed statistics, and live updates for **Formula 1**, **MotoGP**, and **Formula 3**.
 
-## Features
+## ✨ What's New for 2026?
 
-*   **Live Race Data:** Instant access to upcoming race schedules, countdowns, and session times converted to your local timezone.
-*   **Comprehensive Stats:** Detailed profiles for Drivers, Teams, and Circuits, including technical specifications and historical records.
-*   **Live Standings & Results:** Up-to-date championship standings and race results for multiple series.
-*   **Community Engagement:** Interactive trivia, polls, and fun commands like random quotes and GIFs.
-*   **Notifications:** Automated alerts 1 hour before every race session so you never miss the action.
+*   **📅 Full Tables:** Confirmed 2026 season calendars for F1, MotoGP, and F3.
+*   **🌍 Localized Times:** All race times automatically convert to your local timezone.
+*   **🏎️ F3 Support:** Complete support for Formula 3, including team and driver profiles.
+*   **⛈️ Weather:** Real-time track weather forecasts with `/weather`.
+*   **📰 News Feed:** Live motorsport headlines delivered via `/news`.
 
 ---
 
-## �️ Command Reference
+## 🛠️ Command Reference
 
 Here is the complete list of available commands. All commands start with `/`.
 
-### 🏁 Race Tracking
-| Command | Options | Description |
-| :--- | :--- | :--- |
-| `/next` | `series` (F1, MotoGP, F3) | Get a detailed schedule for the upcoming Grand Prix, including all session times. |
-| `/countdown` | `series` (F1, MotoGP, F3) | Displays a live countdown timer to the start of the race week and the main race. |
-| `/calendar` | — | View the full season calendar with dates and statuses. |
-| `/notify` | — | Manage your personal notification settings for race alerts. |
+### 🏁 Race Day
+| Command | Description |
+| :--- | :--- |
+| `/next` | Get the schedule for the next Grand Prix with **Country Flags** and **Live Countdowns**. |
+| `/countdown` | A dedicated live timer to the next race start. |
+| `/calendar` | View the full season schedule. Supports **F1**, **MotoGP**, and **F3**. |
+| `/weather` | **NEW!** Get the weather forecast for any race weekend. |
+| `/notify` | Subscribe to receive a DM alert 1 hour before every session. |
 
-### 📊 Statistics & Data
-| Command | Options | Description |
-| :--- | :--- | :--- |
-| `/results` | `series`, `year`, `round` | Fetch race results for a specific round. |
-| `/standings` | `series`, `type` (Driver/Constructor), `year` | View current or historical championship standings. |
-| `/driver` | `name` | Search for a driver's profile, career stats, and helmet design. |
-| `/team` | `name` | **NEW!** Detailed team profile including tech specs, driver lineup, and recent form. |
-| `/circuit` | `name` | Get circuit layout, statistics, and lap record information. |
+### 📊 Grid & Stats
+| Command | Description |
+| :--- | :--- |
+| `/driver` | Search profiles for current drivers and **Legends** (Senna, Rossi, etc.). |
+| `/team` | Detailed team info. Includes an **Interactive Dropdown** to view driver profiles instantly. |
+| `/circuit` | View track maps and stats. Filter by series (F1/MotoGP/F3). |
+| `/standings` | View current Driver or Constructor championship standings. |
+| `/results` | Fetch race results for any round in history. |
+| `/compare` | **NEW!** Head-to-head statistical comparison between two drivers. |
 
-### 🎮 Fun & Utility
-| Command | Options | Description |
-| :--- | :--- | :--- |
-| `/trivia` | — | Challenge yourself effectively with a random F1 trivia question. |
-| `/vote` | — | Create a poll for your server members. |
-| `/quote` | — | Get an iconic random quote from the world of F1. |
-| `/gif` | `query` | Search for motorsport-related GIFs to share. |
-| `/news` | — | (Experimental) Fetch the latest F1 news headlines. |
-| `/help` | — | Show a list of all commands and bot information. |
-| `/info` | — | View bot status, uptime, and server count. |
-| `/support` | — | Get links to the support server or developer contact. |
+### 🔧 Tools & Fun
+| Command | Description |
+| :--- | :--- |
+| `/convert` | **NEW!** Convert race times to different timezones easily. |
+| `/news` | **NEW!** Get the latest motorsport news headlines. |
+| `/trivia` | Test your knowledge with F1 trivia questions. |
+| `/quote` | Get a random famous F1 quote. |
+| `/gif` | Search for motorsport GIFs. |
 
 ---
 
 ## ⚙️ Installation & Setup
 
-Follow these steps to host your own instance of the bot.
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/Start-05/discord-bot-motogpprm.git
+    cd discord-bot-motogpprm
+    ```
 
-### Prerequisites
+2.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-*   [Node.js](https://nodejs.org/) (Version 16.9.0 or higher)
-*   [Git](https://git-scm.com/)
-*   A textual code editor (e.g., VS Code)
-*   A Discord Bot Token from the [Discord Developer Portal](https://discord.com/developers/applications).
+3.  **Configure Environment**:
+    Create a `.env` file:
+    ```env
+    TOKEN=your_discord_bot_token
+    CLIENT_ID=your_application_id
+    GUILD_ID=your_server_id_for_testing
+    ```
 
-### 1. Clone the Repository
-Open your terminal and run:
-```bash
-git clone https://github.com/Start-05/discord-bot-motogpprm.git
-cd discord-bot-motogpprm
-```
+4.  **Deploy Commands**:
+    ```bash
+    node deploy-commands.js
+    ```
+    *Note: Add `GUILD_ID` to `.env` for instant command updates during development.*
 
-### 2. Install Dependencies
-Install the required Node.js packages:
-```bash
-npm install
-```
-
-### 3. Configure Variables
-Create a file named `.env` in the root directory and populate it with your credentials:
-```env
-TOKEN=your_discord_bot_token_here
-CLIENT_ID=your_application_id_here
-GUILD_ID=optional_test_server_id
-```
-> **Note:** `GUILD_ID` is optional but recommended for instantly updating commands in a specific server during development.
-
-### 4. Deploy Commands
-Register the slash commands with Discord:
-```bash
-node deploy-commands.js
-```
-*You should see a success message indicating the number of commands loaded.*
-
-### 5. Start the Bot
-Run the bot:
-```bash
-npm start
-```
+5.  **Start the Bot**:
+    ```bash
+    npm start
+    ```
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to improve the bot:
-
-1.  **Fork** the repository.
-2.  Create a **Feature Branch** (`git checkout -b feature/NewCoolAction`).
-3.  **Commit** your changes (`git commit -m 'Added NewCoolAction'`).
-4.  **Push** to the branch (`git push origin feature/NewCoolAction`).
-5.  Open a **Pull Request**.
-
----
+Contributions are welcome! Please fork the repository and open a Pull Request with your improvements.
 
 ## 📄 License
 
