@@ -30,7 +30,7 @@ module.exports = {
             if (!race) return interaction.editReply("❌ Could not fetch next F1 race info.");
 
             const raceTime = moment(`${race.date}T${race.time}`);
-            const country = race.Circuit.Location.country;
+            const country = (race.Circuit || race.circuit).Location.country;
             const flag = getFlag(country);
 
             const embed = createBaseEmbed("Race Schedule")

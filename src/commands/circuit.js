@@ -10,6 +10,16 @@ module.exports = {
         .setName("circuit")
         .setDescription("Get detailed information on a specific circuit")
         .addStringOption(option =>
+            option.setName("series")
+                .setDescription("Filter by series")
+                .setRequired(false)
+                .addChoices(
+                    { name: "Formula 1", value: "f1" },
+                    { name: "MotoGP", value: "motogp" },
+                    { name: "Formula 3", value: "f3" }
+                )
+        )
+        .addStringOption(option =>
             option.setName("name")
                 .setDescription("Search for a circuit")
                 .setRequired(true)
@@ -18,55 +28,48 @@ module.exports = {
 
     async autocomplete(interaction) {
         const focusedValue = interaction.options.getFocused().toLowerCase();
+        const seriesFilter = interaction.options.getString("series");
+
+        let f1Circuits = [];
+        let motoCircuits = [];
+        let f3Circuits = [];
 
         // 1. Fetch F1 circuits (API)
-        let f1Circuits = await getCircuitList();
+        if (!seriesFilter || seriesFilter === 'f1') {
+            const list = await getCircuitList();
+            f1Circuits = list.map(c => ({
+                name: `🏁 ${c.circuitName} (${c.Location.country})`,
+                value: c.circuitId
+            }));
+        }
 
         // 2. Fetch MotoGP circuits (Local)
-        const motoRaces = getMotoGPCalendar();
-        const motoCircuits = motoRaces.map(r => ({
-            id: `motogp_${r.circuit.replace(/\s+/g, '_').toLowerCase()}`,
-            name: `${r.circuit}`,
-            series: 'MotoGP',
-            country: r.country
-        }));
+        if (!seriesFilter || seriesFilter === 'motogp') {
+            const list = getMotoGPCalendar();
+            motoCircuits = list.map(r => ({
+                name: `🏍️ ${r.circuit} (${r.country})`,
+                value: `motogp_${r.circuit.replace(/\s+/g, '_').toLowerCase()}`
+            }));
+        }
 
         // 3. Fetch F3 circuits (Local)
-        const f3Races = getF3Calendar();
-        const f3Circuits = f3Races.map(r => ({
-            id: `f3_${r.circuit.replace(/\s+/g, '_').toLowerCase()}`,
-            name: `${r.circuit}`,
-            series: 'F3',
-            country: r.country
-        }));
+        if (!seriesFilter || seriesFilter === 'f3') {
+            const list = getF3Calendar();
+            f3Circuits = list.map(r => ({
+                name: `🏎️ ${r.circuit} (${r.country})`,
+                value: `f3_${r.circuit.replace(/\s+/g, '_').toLowerCase()}`
+            }));
+        }
 
-        // Filter and Format
-        // F1
-        const filteredF1 = f1Circuits.filter(c =>
-            c.circuitName.toLowerCase().includes(focusedValue) ||
-            c.Location.country.toLowerCase().includes(focusedValue)
-        ).map(c => ({
-            name: `🏁 ${c.circuitName} (${c.Location.country})`,
-            value: c.circuitId // Ergast ID
-        }));
+        const all = [...f1Circuits, ...motoCircuits, ...f3Circuits];
 
-        // Moto/F3
-        const filterLocal = (list, emoji) => list.filter(c =>
-            c.name.toLowerCase().includes(focusedValue)
-        ).map(c => ({
-            name: `${emoji} ${c.name} ${c.country}`,
-            value: c.id
-        }));
-
-        const filteredMoto = filterLocal(motoCircuits, '🏍️');
-        const filteredF3 = filterLocal(f3Circuits, '🏎️');
-
-        const all = [...filteredF1, ...filteredMoto, ...filteredF3];
+        // Filter by text
+        const filtered = all.filter(c => c.name.toLowerCase().includes(focusedValue));
 
         // Deduplicate
         const unique = [];
         const seen = new Set();
-        for (const item of all) {
+        for (const item of filtered) { // Use filtered list here
             if (!seen.has(item.value)) {
                 unique.push(item);
                 seen.add(item.value);

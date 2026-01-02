@@ -42,6 +42,22 @@ module.exports = {
         const all = [...f1Mapped, ...motoMapped, ...f3Mapped];
         const filtered = all.filter(choice => choice.name.toLowerCase().includes(focusedValue));
 
+        // Add Legends (if search matches)
+        const legends = [
+            { name: "🏆 Legend: Ayrton Senna", value: "senna" },
+            { name: "🏆 Legend: Michael Schumacher", value: "michael_schumacher" },
+            { name: "🏆 Legend: Lewis Hamilton", value: "hamilton" }, // Also active but worth ensuring
+            { name: "🏆 Legend: Sebastian Vettel", value: "vettel" },
+            { name: "🏆 Legend: Niki Lauda", value: "lauda" },
+            { name: "🏆 Legend: Valentino Rossi (MotoGP)", value: "rossi" }, // Might need special handling if not in standings
+            { name: "🏆 Legend: Giacomo Agostini (MotoGP)", value: "agostini" }
+        ];
+
+        const filteredLegends = legends.filter(l => l.name.toLowerCase().includes(focusedValue));
+
+        // Prioritize current drivers, then legends
+        const combined = [...filtered, ...filteredLegends];
+
         await interaction.respond(filtered.slice(0, 25));
     },
 

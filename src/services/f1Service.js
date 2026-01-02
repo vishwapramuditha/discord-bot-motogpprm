@@ -42,6 +42,16 @@ const DRIVER_IMAGES = {
     "antonelli": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/KIMANT01_Kimi_Antonelli/kimant01.png.transform/2col/image.png"
 };
 
+// Helper to normalize local data to match Ergast API structure (Circuit vs circuit)
+function normalizeRace(race) {
+    if (!race) return null;
+    // Ensure Circuit property exists and mimics Ergast capitalization
+    if (race.circuit && !race.Circuit) {
+        race.Circuit = race.circuit;
+    }
+    return race;
+}
+
 async function getNextRace() {
     try {
         // Use local data for current season (2026)
@@ -50,7 +60,7 @@ async function getNextRace() {
             const raceTime = moment(`${race.date}T${race.time}`);
             return raceTime.isAfter(now);
         });
-        return nextRace || null;
+        return normalizeRace(nextRace) || null;
     } catch (error) {
         console.error("Error fetching next race:", error);
         return null;
@@ -90,7 +100,7 @@ async function getTeamInfo(constructorId) {
 
 async function getCalendar(year = 'current') {
     if (year === 'current' || year === '2026' || year === 2026) {
-        return f1Data.races;
+        return f1Data.races.map(normalizeRace);
     }
     try {
         const response = await axios.get(`${BASE_URL}/${year}.json`);
