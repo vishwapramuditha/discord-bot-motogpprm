@@ -49,6 +49,14 @@ function normalizeRace(race) {
     if (race.circuit && !race.Circuit) {
         race.Circuit = race.circuit;
     }
+    // Ensure raceName exists (Ergast uses raceName, local uses name)
+    if (race.name && !race.raceName) {
+        race.raceName = race.name;
+    }
+    // Ensure season exists
+    if (!race.season) {
+        race.season = f1Data.season || 2026;
+    }
     return race;
 }
 

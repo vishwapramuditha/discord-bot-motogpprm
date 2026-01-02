@@ -43,17 +43,17 @@ module.exports = {
 
         if (series === "f1") {
             races = await getF1Calendar(year);
-            title = `🏎️ Formula 1 Calendar (${year})`;
+            title = `Formula 1 Calendar (${year})`;
             color = "#FF1801";
             thumbnail = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1200px-F1.svg.png";
         } else if (series === "motogp") {
             races = getMotoGPCalendar();
-            title = `🏍️ MotoGP Calendar (${year})`;
+            title = `MotoGP Calendar (${year})`;
             color = "#000000";
             thumbnail = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/MotoGP_Logo.svg/1200px-MotoGP_Logo.svg.png";
         } else {
             races = getF3Calendar();
-            title = `🏎️ Formula 3 Calendar (${year})`;
+            title = `Formula 3 Calendar (${year})`;
             color = "#151F45";
             thumbnail = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/FIA_F3_Championship_logo.svg/1200px-FIA_F3_Championship_logo.svg.png";
         }
@@ -98,21 +98,18 @@ module.exports = {
                 timeMoment = moment(t);
             }
 
-            const flag = getFlag(country) || "🏴";
-            const timestamp = timeMoment.isValid() ? `<t:${timeMoment.unix()}:d>` : "TBD"; // Use short date format
+            const flag = getFlag(country) || "🏳️";
+            const timestamp = timeMoment.isValid() ? `<t:${timeMoment.unix()}:f>` : "TBD"; // Use short date-time format
 
             // Check if upcoming
             const isUpcoming = timeMoment.isValid() && timeMoment.isAfter(now);
-            const statusIcon = isUpcoming ? "🗓️" : "✅";
 
             // Mark Next Race specifically
             if (isUpcoming && !nextRaceFound) {
-                description += `Next Up: **${round}. ${flag} ${raceName}** — <t:${timeMoment.unix()}:F> 🏁\n`;
-                // Add a visual separator or bolding
+                description += `**${round}. ${flag} ${raceName}**\nNext Up ➡️ <t:${timeMoment.unix()}:R> (<t:${timeMoment.unix()}:f>)\n\n`;
                 nextRaceFound = true;
             } else {
-                // Formatting: 1 🇧🇭 Bahrain ... Dec 5
-                description += `**${round}.** ${flag} \`${raceName}\` — ${timestamp}\n`;
+                description += `**${round}.** ${flag} **${raceName}**\n${timestamp}\n\n`;
             }
         });
 
