@@ -1,0 +1,194 @@
+﻿commit acfe375f7aca21d6bd412341fd14e584889a9435
+Author: Vishwa Pramuditha <130773494+vishwapramuditha@users.noreply.github.com>
+Date:   Wed Mar 4 17:39:28 2026 +0530
+
+    Modify race schedule and driver/team information
+    
+    Updated session times and added driver and team details for the 2026 season.
+
+diff --git a/src/data/f3-data.json b/src/data/f3-data.json
+index 92ed80b..d63763b 100644
+--- a/src/data/f3-data.json
++++ b/src/data/f3-data.json
+@@ -7,8 +7,8 @@
+             "country": "­ƒçª­ƒç║",
+             "date": "2026-03-08",
+             "sessions": {
+-                "Sprint": "2026-03-07T00:00:00Z",
+-                "Feature": "2026-03-08T00:00:00Z"
++                "Sprint": "2026-03-07T05:45:00+05:30",
++                "Feature": "2026-03-08T03:20:00+05:30"
+             }
+         },
+         {
+@@ -18,8 +18,8 @@
+             "country": "­ƒçº­ƒç¡",
+             "date": "2026-04-12",
+             "sessions": {
+-                "Sprint": "2026-04-11T00:00:00Z",
+-                "Feature": "2026-04-12T00:00:00Z"
++                "Sprint": "2026-04-11T14:45:00+05:30",
++                "Feature": "2026-04-12T14:20:00+05:30"
+             }
+         },
+         {
+@@ -29,8 +29,8 @@
+             "country": "­ƒç▓­ƒç¿",
+             "date": "2026-06-07",
+             "sessions": {
+-                "Sprint": "2026-06-06T00:00:00Z",
+-                "Feature": "2026-06-07T00:00:00Z"
++                "Sprint": "2026-06-06T14:15:00+05:30",
++                "Feature": "2026-06-07T11:30:00+05:30"
+             }
+         },
+         {
+@@ -40,8 +40,8 @@
+             "country": "­ƒç¬­ƒç©",
+             "date": "2026-06-14",
+             "sessions": {
+-                "Sprint": "2026-06-13T00:00:00Z",
+-                "Feature": "2026-06-14T00:00:00Z"
++                "Sprint": "2026-06-13T14:10:00+05:30",
++                "Feature": "2026-06-14T13:35:00+05:30"
+             }
+         },
+         {
+@@ -51,8 +51,8 @@
+             "country": "­ƒçª­ƒç╣",
+             "date": "2026-06-28",
+             "sessions": {
+-                "Sprint": "2026-06-27T00:00:00Z",
+-                "Feature": "2026-06-28T00:00:00Z"
++                "Sprint": "2026-06-27T13:30:00+05:30",
++                "Feature": "2026-06-28T11:55:00+05:30"
+             }
+         },
+         {
+@@ -62,8 +62,8 @@
+             "country": "­ƒç¼­ƒçº",
+             "date": "2026-07-05",
+             "sessions": {
+-                "Sprint": "2026-07-04T00:00:00Z",
+-                "Feature": "2026-07-05T00:00:00Z"
++                "Sprint": "2026-07-04T13:50:00+05:30",
++                "Feature": "2026-07-05T12:50:00+05:30"
+             }
+         },
+         {
+@@ -73,8 +73,8 @@
+             "country": "­ƒçº­ƒç¬",
+             "date": "2026-07-19",
+             "sessions": {
+-                "Sprint": "2026-07-18T00:00:00Z",
+-                "Feature": "2026-07-19T00:00:00Z"
++                "Sprint": "2026-07-18T13:30:00+05:30",
++                "Feature": "2026-07-19T12:00:00+05:30"
+             }
+         },
+         {
+@@ -84,8 +84,8 @@
+             "country": "­ƒç¡­ƒç║",
+             "date": "2026-07-26",
+             "sessions": {
+-                "Sprint": "2026-07-25T00:00:00Z",
+-                "Feature": "2026-07-26T00:00:00Z"
++                "Sprint": "2026-07-25T13:20:00+05:30",
++                "Feature": "2026-07-26T11:55:00+05:30"
+             }
+         },
+         {
+@@ -95,46 +95,64 @@
+             "country": "­ƒç«­ƒç╣",
+             "date": "2026-09-06",
+             "sessions": {
+-                "Sprint": "2026-09-05T00:00:00Z",
+-                "Feature": "2026-09-06T00:00:00Z"
++                "Sprint": "2026-09-05T13:00:00+05:30",
++                "Feature": "2026-09-06T12:00:00+05:30"
+             }
+         },
+         {
+             "round": 10,
+             "name": "Spain (Madrid) GP",
+-            "circuit": "Madrid",
++            "circuit": "Madrid Street Circuit",
+             "country": "­ƒç¬­ƒç©",
+             "date": "2026-09-13",
+             "sessions": {
+-                "Sprint": "2026-09-12T00:00:00Z",
+-                "Feature": "2026-09-13T00:00:00Z"
++                "Sprint": "2026-09-12T13:30:00+05:30",
++                "Feature": "2026-09-13T12:00:00+05:30"
+             }
+         }
+     ],
+     "drivers": [
+-        {
+-            "rank": 1,
+-            "name": "Driver 1",
+-            "team": "Team A",
+-            "points": 0
+-        },
+-        {
+-            "rank": 2,
+-            "name": "Driver 2",
+-            "team": "Team B",
+-            "points": 0
+-        }
++        { "rank": 1, "name": "­ƒç½­ƒçÀ T. Na├½l", "team": "Campos Racing", "points": 0 },
++        { "rank": 2, "name": "­ƒç║­ƒç© U. Ugochukwu", "team": "Campos Racing", "points": 0 },
++        { "rank": 3, "name": "­ƒç▓­ƒç¢ E. Rivera", "team": "Campos Racing", "points": 0 },
++        { "rank": 4, "name": "­ƒç®­ƒç░ N. Str├©msted", "team": "Trident", "points": 0 },
++        { "rank": 5, "name": "­ƒç¼­ƒçº F. Slater", "team": "Trident", "points": 0 },
++        { "rank": 6, "name": "­ƒç«­ƒç╣ M. De Palo", "team": "Trident", "points": 0 },
++        { "rank": 7, "name": "­ƒç«­ƒç╣ M. Colnaghi", "team": "MP Motorsport", "points": 0 },
++        { "rank": 8, "name": "­ƒç½­ƒç« T. Taponen", "team": "MP Motorsport", "points": 0 },
++        { "rank": 9, "name": "­ƒç½­ƒçÀ A. Giusti", "team": "MP Motorsport", "points": 0 },
++        { "rank": 10, "name": "­ƒç»­ƒçÁ T. Kato", "team": "ART Grand Prix", "points": 0 },
++        { "rank": 11, "name": "­ƒçÁ­ƒç▒ M. G┼éadysz", "team": "ART Grand Prix", "points": 0 },
++        { "rank": 12, "name": "­ƒç»­ƒçÁ K. Le", "team": "ART Grand Prix", "points": 0 },
++        { "rank": 13, "name": "­ƒç»­ƒçÁ H. Yamakoshi", "team": "Van Amersfoort Racing", "points": 0 },
++        { "rank": 14, "name": "­ƒç½­ƒçÀ E. Deligny", "team": "Van Amersfoort Racing", "points": 0 },
++        { "rank": 15, "name": "­ƒç¬­ƒç© B. del Pino", "team": "Van Amersfoort Racing", "points": 0 },
++        { "rank": 16, "name": "­ƒçº­ƒçÀ P. Clerot", "team": "Rodin Motorsport", "points": 0 },
++        { "rank": 17, "name": "­ƒç«­ƒç╣ B. Badoer", "team": "Rodin Motorsport", "points": 0 },
++        { "rank": 18, "name": "­ƒç©­ƒç¼ C. Ho", "team": "Rodin Motorsport", "points": 0 },
++        { "rank": 19, "name": "­ƒç│­ƒç┐ L. Sharp", "team": "Prema Racing", "points": 0 },
++        { "rank": 20, "name": "­ƒçª­ƒç║ J. Wharton", "team": "Prema Racing", "points": 0 },
++        { "rank": 21, "name": "­ƒç▓­ƒç¢ J. Garfias", "team": "Prema Racing", "points": 0 },
++        { "rank": 22, "name": "­ƒç░­ƒçÀ M. Shin", "team": "Hitech TGR", "points": 0 },
++        { "rank": 23, "name": "­ƒç«­ƒç¬ F. McLaughlin", "team": "Hitech TGR", "points": 0 },
++        { "rank": 24, "name": "­ƒç»­ƒçÁ J. Nakamura", "team": "Hitech TGR", "points": 0 },
++        { "rank": 25, "name": "­ƒç║­ƒç© B. Benavides", "team": "AIX Racing", "points": 0 },
++        { "rank": 26, "name": "­ƒç▒­ƒç░ Y. David", "team": "AIX Racing", "points": 0 },
++        { "rank": 27, "name": "­ƒçº­ƒçÀ F. Barrichello", "team": "AIX Racing", "points": 0 },
++        { "rank": 28, "name": "­ƒç«­ƒç╣ N. Lacorte", "team": "DAMS Lucas Oil", "points": 0 },
++        { "rank": 29, "name": "­ƒç╣­ƒç¡ N. Bhirombhakdi", "team": "DAMS Lucas Oil", "points": 0 },
++        { "rank": 30, "name": "­ƒç¿­ƒç│ G. Xie", "team": "DAMS Lucas Oil", "points": 0 }
+     ],
+     "teams": [
+-        {
+-            "rank": 1,
+-            "name": "Team A",
+-            "points": 0
+-        },
+-        {
+-            "rank": 2,
+-            "name": "Team B",
+-            "points": 0
+-        }
++        { "rank": 1, "name": "Campos Racing", "points": 0 },
++        { "rank": 2, "name": "Trident", "points": 0 },
++        { "rank": 3, "name": "MP Motorsport", "points": 0 },
++        { "rank": 4, "name": "ART Grand Prix", "points": 0 },
++        { "rank": 5, "name": "Van Amersfoort Racing", "points": 0 },
++        { "rank": 6, "name": "Rodin Motorsport", "points": 0 },
++        { "rank": 7, "name": "Prema Racing", "points": 0 },
++        { "rank": 8, "name": "Hitech TGR", "points": 0 },
++        { "rank": 9, "name": "AIX Racing", "points": 0 },
++        { "rank": 10, "name": "DAMS Lucas Oil", "points": 0 }
+     ]
+-}
+\ No newline at end of file
++}
