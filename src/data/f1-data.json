@@ -12,22 +12,22 @@
                 }
             },
             "date": "2026-03-08",
-            "time": "05:00:00Z",
+            "time": "04:00:00Z",
             "FirstPractice": {
                 "date": "2026-03-06",
-                "time": "02:30:00Z"
+                "time": "01:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-03-06",
-                "time": "06:00:00Z"
+                "time": "05:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-03-07",
-                "time": "02:30:00Z"
+                "time": "01:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-03-07",
-                "time": "06:00:00Z"
+                "time": "05:00:00Z"
             }
         },
         {
@@ -41,22 +41,22 @@
                 }
             },
             "date": "2026-03-15",
-            "time": "12:00:00Z",
+            "time": "07:00:00Z",
             "FirstPractice": {
                 "date": "2026-03-13",
-                "time": "04:30:00Z"
+                "time": "03:30:00Z"
             },
             "SprintShootout": {
                 "date": "2026-03-13",
-                "time": "08:30:00Z"
+                "time": "07:30:00Z"
             },
             "Sprint": {
                 "date": "2026-03-14",
-                "time": "06:00:00Z"
+                "time": "03:00:00Z"
             },
             "Qualifying": {
                 "date": "2026-03-14",
-                "time": "12:00:00Z"
+                "time": "07:00:00Z"
             }
         },
         {
@@ -70,22 +70,22 @@
                 }
             },
             "date": "2026-03-29",
-            "time": "11:00:00Z",
+            "time": "05:00:00Z",
             "FirstPractice": {
                 "date": "2026-03-27",
-                "time": "03:30:00Z"
+                "time": "02:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-03-27",
-                "time": "07:00:00Z"
+                "time": "06:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-03-28",
-                "time": "03:30:00Z"
+                "time": "02:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-03-28",
-                "time": "12:00:00Z"
+                "time": "06:00:00Z"
             }
         },
         {
@@ -99,7 +99,7 @@
                 }
             },
             "date": "2026-04-12",
-            "time": "17:00:00Z",
+            "time": "15:00:00Z",
             "FirstPractice": {
                 "date": "2026-04-10",
                 "time": "11:30:00Z"
@@ -114,7 +114,7 @@
             },
             "Qualifying": {
                 "date": "2026-04-11",
-                "time": "18:00:00Z"
+                "time": "16:00:00Z"
             }
         },
         {
@@ -157,7 +157,7 @@
                 }
             },
             "date": "2026-05-03",
-            "time": "17:00:00Z",
+            "time": "20:00:00Z",
             "FirstPractice": {
                 "date": "2026-05-01",
                 "time": "16:30:00Z"
@@ -168,11 +168,11 @@
             },
             "Sprint": {
                 "date": "2026-05-02",
-                "time": "12:00:00Z"
+                "time": "16:00:00Z"
             },
             "Qualifying": {
                 "date": "2026-05-02",
-                "time": "17:00:00Z"
+                "time": "20:00:00Z"
             }
         },
         {
@@ -186,22 +186,22 @@
                 }
             },
             "date": "2026-05-24",
-            "time": "17:00:00Z",
+            "time": "18:00:00Z",
             "FirstPractice": {
                 "date": "2026-05-22",
-                "time": "16:30:00Z"
+                "time": "17:30:00Z"
             },
             "SprintShootout": {
                 "date": "2026-05-22",
-                "time": "20:30:00Z"
+                "time": "21:30:00Z"
             },
             "Sprint": {
                 "date": "2026-05-23",
-                "time": "12:00:00Z"
+                "time": "16:00:00Z"
             },
             "Qualifying": {
                 "date": "2026-05-23",
-                "time": "17:00:00Z"
+                "time": "20:00:00Z"
             }
         },
         {
@@ -215,22 +215,22 @@
                 }
             },
             "date": "2026-06-07",
-            "time": "16:00:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-06-05",
-                "time": "13:30:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-06-05",
-                "time": "17:00:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-06-06",
-                "time": "12:30:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-06-06",
-                "time": "17:00:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -244,22 +244,22 @@
                 }
             },
             "date": "2026-06-14",
-            "time": "16:00:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-06-12",
-                "time": "13:30:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-06-12",
-                "time": "17:00:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-06-13",
-                "time": "12:30:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-06-13",
-                "time": "17:00:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -273,22 +273,22 @@
                 }
             },
             "date": "2026-06-28",
-            "time": "16:00:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-06-26",
-                "time": "13:30:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-06-26",
-                "time": "17:00:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-06-27",
-                "time": "12:30:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-06-27",
-                "time": "17:00:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -302,22 +302,22 @@
                 }
             },
             "date": "2026-07-05",
-            "time": "14:30:00Z",
+            "time": "14:00:00Z",
             "FirstPractice": {
                 "date": "2026-07-03",
-                "time": "11:30:00Z"
+                "time": "12:30:00Z"
             },
             "SprintShootout": {
                 "date": "2026-07-03",
-                "time": "15:30:00Z"
+                "time": "16:30:00Z"
             },
             "Sprint": {
                 "date": "2026-07-04",
-                "time": "11:30:00Z"
+                "time": "11:00:00Z"
             },
             "Qualifying": {
                 "date": "2026-07-04",
-                "time": "15:30:00Z"
+                "time": "15:00:00Z"
             }
         },
         {
@@ -331,22 +331,22 @@
                 }
             },
             "date": "2026-07-19",
-            "time": "13:30:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-07-17",
-                "time": "11:00:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-07-17",
-                "time": "14:30:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-07-18",
-                "time": "10:00:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-07-18",
-                "time": "14:30:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -360,22 +360,22 @@
                 }
             },
             "date": "2026-07-26",
-            "time": "13:30:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-07-24",
-                "time": "11:00:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-07-24",
-                "time": "14:30:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-07-25",
-                "time": "10:00:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-07-25",
-                "time": "14:30:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -389,22 +389,22 @@
                 }
             },
             "date": "2026-08-23",
-            "time": "14:30:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-08-21",
-                "time": "12:00:00Z"
+                "time": "11:30:00Z"
             },
             "SprintShootout": {
                 "date": "2026-08-21",
-                "time": "16:00:00Z"
+                "time": "15:30:00Z"
             },
             "Sprint": {
                 "date": "2026-08-22",
-                "time": "11:30:00Z"
+                "time": "10:00:00Z"
             },
             "Qualifying": {
                 "date": "2026-08-22",
-                "time": "16:00:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -418,22 +418,22 @@
                 }
             },
             "date": "2026-09-06",
-            "time": "13:30:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-09-04",
-                "time": "11:00:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-09-04",
-                "time": "14:30:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-09-05",
-                "time": "10:00:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-09-05",
-                "time": "14:30:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -447,22 +447,22 @@
                 }
             },
             "date": "2026-09-13",
-            "time": "13:30:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-09-11",
-                "time": "11:00:00Z"
+                "time": "11:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-09-11",
-                "time": "14:30:00Z"
+                "time": "15:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-09-12",
-                "time": "10:00:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-09-12",
-                "time": "14:30:00Z"
+                "time": "14:00:00Z"
             }
         },
         {
@@ -476,22 +476,22 @@
                 }
             },
             "date": "2026-09-27",
-            "time": "13:30:00Z",
+            "time": "11:00:00Z",
             "FirstPractice": {
                 "date": "2026-09-25",
-                "time": "11:00:00Z"
+                "time": "09:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-09-25",
-                "time": "14:30:00Z"
+                "time": "13:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-09-26",
-                "time": "10:00:00Z"
+                "time": "08:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-09-26",
-                "time": "14:30:00Z"
+                "time": "12:00:00Z"
             }
         },
         {
@@ -505,22 +505,22 @@
                 }
             },
             "date": "2026-10-11",
-            "time": "13:00:00Z",
+            "time": "12:00:00Z",
             "FirstPractice": {
                 "date": "2026-10-09",
-                "time": "08:00:00Z"
+                "time": "09:30:00Z"
             },
             "SprintShootout": {
                 "date": "2026-10-09",
-                "time": "12:00:00Z"
+                "time": "13:30:00Z"
             },
             "Sprint": {
                 "date": "2026-10-10",
-                "time": "10:00:00Z"
+                "time": "09:00:00Z"
             },
             "Qualifying": {
                 "date": "2026-10-10",
-                "time": "14:00:00Z"
+                "time": "13:00:00Z"
             }
         },
         {
@@ -534,22 +534,22 @@
                 }
             },
             "date": "2026-10-25",
-            "time": "16:00:00Z",
+            "time": "19:00:00Z",
             "FirstPractice": {
                 "date": "2026-10-23",
-                "time": "13:30:00Z"
+                "time": "17:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-10-23",
-                "time": "17:00:00Z"
+                "time": "21:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-10-24",
-                "time": "12:30:00Z"
+                "time": "16:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-10-24",
-                "time": "17:00:00Z"
+                "time": "21:00:00Z"
             }
         },
         {
@@ -563,22 +563,22 @@
                 }
             },
             "date": "2026-11-01",
-            "time": "15:00:00Z",
+            "time": "20:00:00Z",
             "FirstPractice": {
                 "date": "2026-10-30",
-                "time": "12:30:00Z"
+                "time": "18:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-10-30",
-                "time": "16:00:00Z"
+                "time": "22:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-10-31",
-                "time": "11:30:00Z"
+                "time": "17:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-10-31",
-                "time": "16:00:00Z"
+                "time": "21:00:00Z"
             }
         },
         {
@@ -592,22 +592,22 @@
                 }
             },
             "date": "2026-11-08",
-            "time": "15:00:00Z",
+            "time": "17:00:00Z",
             "FirstPractice": {
                 "date": "2026-11-06",
-                "time": "12:30:00Z"
+                "time": "14:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-11-06",
-                "time": "16:00:00Z"
+                "time": "18:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-11-07",
-                "time": "11:30:00Z"
+                "time": "13:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-11-07",
-                "time": "16:00:00Z"
+                "time": "17:00:00Z"
             }
         },
         {
@@ -620,23 +620,23 @@
                     "country": "USA"
                 }
             },
-            "date": "2026-11-21",
-            "time": "22:00:00Z",
+            "date": "2026-11-22",
+            "time": "06:00:00Z",
             "FirstPractice": {
-                "date": "2026-11-19",
-                "time": "19:30:00Z"
+                "date": "2026-11-20",
+                "time": "02:30:00Z"
             },
             "SecondPractice": {
-                "date": "2026-11-19",
-                "time": "23:00:00Z"
+                "date": "2026-11-20",
+                "time": "06:00:00Z"
             },
             "ThirdPractice": {
-                "date": "2026-11-20",
-                "time": "18:30:00Z"
+                "date": "2026-11-21",
+                "time": "02:30:00Z"
             },
             "Qualifying": {
-                "date": "2026-11-20",
-                "time": "22:00:00Z"
+                "date": "2026-11-21",
+                "time": "06:00:00Z"
             }
         },
         {
@@ -650,7 +650,7 @@
                 }
             },
             "date": "2026-11-29",
-            "time": "16:00:00Z",
+            "time": "17:00:00Z",
             "FirstPractice": {
                 "date": "2026-11-27",
                 "time": "13:30:00Z"
@@ -661,11 +661,11 @@
             },
             "ThirdPractice": {
                 "date": "2026-11-28",
-                "time": "12:30:00Z"
+                "time": "13:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-11-28",
-                "time": "18:00:00Z"
+                "time": "17:00:00Z"
             }
         },
         {
@@ -679,22 +679,22 @@
                 }
             },
             "date": "2026-12-06",
-            "time": "17:00:00Z",
+            "time": "13:00:00Z",
             "FirstPractice": {
                 "date": "2026-12-04",
-                "time": "14:30:00Z"
+                "time": "09:30:00Z"
             },
             "SecondPractice": {
                 "date": "2026-12-04",
-                "time": "18:00:00Z"
+                "time": "13:00:00Z"
             },
             "ThirdPractice": {
                 "date": "2026-12-05",
-                "time": "13:30:00Z"
+                "time": "10:30:00Z"
             },
             "Qualifying": {
                 "date": "2026-12-05",
-                "time": "18:00:00Z"
+                "time": "14:00:00Z"
             }
         }
     ]
