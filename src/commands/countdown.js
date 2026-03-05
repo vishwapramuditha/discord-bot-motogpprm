@@ -87,7 +87,7 @@ module.exports = {
 
             const embed = createBaseEmbed("🏁 Race Week Countdown")
                 .setColor("#000000")
-                .setDescription(`**2025 ${race.name}**\nRound ${race.round}`);
+                .setDescription(`**2026 ${race.name}**\nRound ${race.round}`);
 
             const countdownToStart = `<t:${firstSessionTime.unix()}:R>`;
             const countdownToRace = `<t:${lastSessionTime.unix()}:R>`;
@@ -122,7 +122,7 @@ module.exports = {
 
             const embed = createBaseEmbed("🏁 Race Week Countdown")
                 .setColor("#151F45")
-                .setDescription(`**2025 ${race.name}**\nRound ${race.round}`);
+                .setDescription(`**2026 ${race.name}**\nRound ${race.round}`);
 
             const countdownToStart = `<t:${firstSessionTime.unix()}:R>`;
             const countdownToRace = `<t:${lastSessionTime.unix()}:R>`;
