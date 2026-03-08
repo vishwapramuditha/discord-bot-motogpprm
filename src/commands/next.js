@@ -37,23 +37,26 @@ module.exports = {
                 .setColor("#FF1801")
                 .setDescription(`**${race.season} Season**\n\n${flag} **${race.raceName}** (<t:${raceTime.unix()}:R>)\nRound ${race.round}`);
 
-            const sessions = {
+            const rawSessions = {
                 "Free Practice 1": race.FirstPractice,
                 "Free Practice 2": race.SecondPractice,
                 "Free Practice 3": race.ThirdPractice,
                 "Qualifying": race.Qualifying,
+                "Sprint Qualifying": race.SprintShootout || race.SprintQualifying,
                 "Sprint": race.Sprint,
                 "Grand Prix": { date: race.date, time: race.time }
             };
 
             let sessionText = "";
-            for (const [name, session] of Object.entries(sessions)) {
-                if (session) {
-                    const dateTimeStr = `${session.date}T${session.time}`;
-                    const time = moment(dateTimeStr);
-                    const timestamp = `<t:${time.unix()}:F>`;
-                    sessionText += `**${name}**: ${timestamp}\n`;
-                }
+            const sortedSessions = Object.entries(rawSessions)
+                .filter(([_, session]) => session)
+                .sort(([, a], [, b]) => moment(`${a.date}T${a.time}`).diff(moment(`${b.date}T${b.time}`)));
+
+            for (const [name, session] of sortedSessions) {
+                const dateTimeStr = `${session.date}T${session.time}`;
+                const time = moment(dateTimeStr);
+                const timestamp = `<t:${time.unix()}:F>`;
+                sessionText += `**${name}**: ${timestamp}\n`;
             }
 
             embed.addFields({ name: "Sessions", value: sessionText || "No session data available" });
