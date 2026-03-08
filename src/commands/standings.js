@@ -40,8 +40,7 @@ module.exports = {
         const series = interaction.options.getString("series");
         const type = interaction.options.getString("type");
         const currentYear = new Date().getFullYear();
-        const lastYear = currentYear - 1;
-        const year = interaction.options.getString("year") || lastYear.toString();
+        const year = interaction.options.getString("year") || currentYear.toString();
 
         if (series === "f1") {
             const data = await getF1Standings(year, type);
@@ -61,13 +60,15 @@ module.exports = {
                 const points = item.points;
 
                 if (type === 'driver') {
-                    const name = `${item.Driver.givenName} ${item.Driver.familyName}`;
-                    const flag = getFlag(item.Driver.nationality);
+                    const d = item.Driver || item;
+                    const name = d.givenName ? `${d.givenName} ${d.familyName}` : d.name;
+                    const flag = getFlag(d.nationality);
                     // Format: 1 🇬🇧 Lando Norris — 390 pts
                     standingsText += `**${pos}** ${flag} **${name}** — ${points} pts\n`;
                 } else {
-                    const name = item.Constructor.name;
-                    const flag = getFlag(item.Constructor.nationality);
+                    const c = item.Constructor || item;
+                    const name = c.name;
+                    const flag = getFlag(c.nationality);
                     // Format: 1 🇬🇧 McLaren Racing — 666 pts
                     standingsText += `**${pos}** ${flag} **${name}** — ${points} pts\n`;
                 }

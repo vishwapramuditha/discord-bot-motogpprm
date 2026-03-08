@@ -102,6 +102,7 @@ async function getStandings(year = 'current', type = 'driver') {
                         position: (index + 1).toString(),
                         points: t.points.toString(),
                         Constructor: {
+                            constructorId: t.name.toLowerCase().replace(/ /g, "_"),
                             name: t.name,
                             nationality: t.nationality || "Unknown"
                         }

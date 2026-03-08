@@ -1,4 +1,5 @@
 const NATIONALITY_MAP = {
+    // Demonyms
     "British": "🇬🇧",
     "Dutch": "🇳🇱",
     "Monegasque": "🇲🇨",
@@ -33,7 +34,26 @@ const NATIONALITY_MAP = {
     "South African": "🇿🇦",
     "Colombian": "🇨🇴",
     "Malaysian": "🇲🇾",
-    "Chilean": "🇨🇱"
+    "Chilean": "🇨🇱",
+
+    // 3-Letter Codes
+    "GBR": "🇬🇧",
+    "ITA": "🇮🇹",
+    "MCO": "🇲🇨",
+    "NLD": "🇳🇱",
+    "BRA": "🇧🇷",
+    "FRA": "🇫🇷",
+    "THA": "🇹🇭",
+    "NZL": "🇳🇿",
+    "ARG": "🇦🇷",
+    "ESP": "🇪🇸",
+    "MEX": "🇲🇽",
+    "CAN": "🇨🇦",
+    "FIN": "🇫🇮",
+    "AUS": "🇦🇺",
+    "GER": "🇩🇪",
+    "USA": "🇺🇸",
+    "AUT": "🇦🇹"
 };
 
 function getFlag(nationality) {
