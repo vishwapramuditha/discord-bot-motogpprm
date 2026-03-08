@@ -77,6 +77,39 @@ async function getNextRace() {
 
 async function getStandings(year = 'current', type = 'driver') {
     try {
+        if (year === 'current' || year === '2026' || year === 2026) {
+            // Read from local f1-data.json
+            const season = "2026";
+            if (type === 'driver') {
+                const drivers = f1Data.drivers || [];
+                return {
+                    season,
+                    DriverStandings: drivers.map((d, index) => ({
+                        position: (index + 1).toString(),
+                        points: d.points.toString(),
+                        Driver: {
+                            givenName: d.givenName || d.name.split(" ")[0],
+                            familyName: d.familyName || d.name.split(" ").slice(1).join(" "),
+                            nationality: d.nationality || "Unknown"
+                        }
+                    }))
+                };
+            } else {
+                const teams = f1Data.constructors || [];
+                return {
+                    season,
+                    ConstructorStandings: teams.map((t, index) => ({
+                        position: (index + 1).toString(),
+                        points: t.points.toString(),
+                        Constructor: {
+                            name: t.name,
+                            nationality: t.nationality || "Unknown"
+                        }
+                    }))
+                };
+            }
+        }
+
         const endpoint = type === 'driver' ? 'driverStandings' : 'constructorStandings';
         const response = await axios.get(`${BASE_URL}/${year}/${endpoint}.json`);
         return response.data.MRData.StandingsTable.StandingsLists[0];

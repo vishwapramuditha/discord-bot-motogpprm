@@ -116,152 +116,152 @@
     "drivers": [
         {
             "rank": 1,
-            "name": "🇫🇷 T. Naël",
+            "name": "🇺🇸 U. Ugochukwu",
             "team": "Campos Racing",
-            "points": 0
+            "points": 25
         },
         {
             "rank": 2,
-            "name": "🇺🇸 U. Ugochukwu",
-            "team": "Campos Racing",
-            "points": 0
+            "name": "🇬🇧 F. Slater",
+            "team": "Trident",
+            "points": 18
         },
         {
             "rank": 3,
+            "name": "🇪🇸 B. del Pino",
+            "team": "Van Amersfoort Racing",
+            "points": 18
+        },
+        {
+            "rank": 4,
+            "name": "🇯🇵 T. Kato",
+            "team": "ART Grand Prix",
+            "points": 16
+        },
+        {
+            "rank": 5,
+            "name": "🇫🇷 E. Deligny",
+            "team": "Van Amersfoort Racing",
+            "points": 12
+        },
+        {
+            "rank": 6,
+            "name": "🇵🇱 M. Gładysz",
+            "team": "ART Grand Prix",
+            "points": 10
+        },
+        {
+            "rank": 7,
+            "name": "🇺🇸 B. Benavides",
+            "team": "AIX Racing",
+            "points": 6
+        },
+        {
+            "rank": 8,
+            "name": "🇧🇷 P. Clerot",
+            "team": "Rodin Motorsport",
+            "points": 4
+        },
+        {
+            "rank": 9,
+            "name": "🇮🇹 B. Badoer",
+            "team": "Rodin Motorsport",
+            "points": 3
+        },
+        {
+            "rank": 10,
+            "name": "🇫🇷 T. Naël",
+            "team": "Campos Racing",
+            "points": 2
+        },
+        {
+            "rank": 11,
+            "name": "🇩🇰 N. Strømsted",
+            "team": "Trident",
+            "points": 2
+        },
+        {
+            "rank": 12,
+            "name": "🇯🇵 J. Nakamura",
+            "team": "Hitech TGR",
+            "points": 2
+        },
+        {
+            "rank": 13,
+            "name": "🇮🇹 M. Colnaghi",
+            "team": "MP Motorsport",
+            "points": 1
+        },
+        {
+            "rank": 14,
             "name": "🇲🇽 E. Rivera",
             "team": "Campos Racing",
             "points": 0
         },
         {
-            "rank": 4,
-            "name": "🇩🇰 N. Strømsted",
-            "team": "Trident",
-            "points": 0
-        },
-        {
-            "rank": 5,
-            "name": "🇬🇧 F. Slater",
-            "team": "Trident",
-            "points": 0
-        },
-        {
-            "rank": 6,
+            "rank": 15,
             "name": "🇮🇹 M. De Palo",
             "team": "Trident",
             "points": 0
         },
         {
-            "rank": 7,
-            "name": "🇮🇹 M. Colnaghi",
-            "team": "MP Motorsport",
-            "points": 0
-        },
-        {
-            "rank": 8,
+            "rank": 16,
             "name": "🇫🇮 T. Taponen",
             "team": "MP Motorsport",
             "points": 0
         },
         {
-            "rank": 9,
+            "rank": 17,
             "name": "🇫🇷 A. Giusti",
             "team": "MP Motorsport",
             "points": 0
         },
         {
-            "rank": 10,
-            "name": "🇯🇵 T. Kato",
-            "team": "ART Grand Prix",
-            "points": 0
-        },
-        {
-            "rank": 11,
-            "name": "🇵🇱 M. Gładysz",
-            "team": "ART Grand Prix",
-            "points": 0
-        },
-        {
-            "rank": 12,
+            "rank": 18,
             "name": "🇯🇵 K. Le",
             "team": "ART Grand Prix",
             "points": 0
         },
         {
-            "rank": 13,
+            "rank": 19,
             "name": "🇯🇵 H. Yamakoshi",
             "team": "Van Amersfoort Racing",
             "points": 0
         },
         {
-            "rank": 14,
-            "name": "🇫🇷 E. Deligny",
-            "team": "Van Amersfoort Racing",
-            "points": 0
-        },
-        {
-            "rank": 15,
-            "name": "🇪🇸 B. del Pino",
-            "team": "Van Amersfoort Racing",
-            "points": 0
-        },
-        {
-            "rank": 16,
-            "name": "🇧🇷 P. Clerot",
-            "team": "Rodin Motorsport",
-            "points": 0
-        },
-        {
-            "rank": 17,
-            "name": "🇮🇹 B. Badoer",
-            "team": "Rodin Motorsport",
-            "points": 0
-        },
-        {
-            "rank": 18,
+            "rank": 20,
             "name": "🇸🇬 C. Ho",
             "team": "Rodin Motorsport",
             "points": 0
         },
         {
-            "rank": 19,
+            "rank": 21,
             "name": "🇳🇿 L. Sharp",
             "team": "Prema Racing",
             "points": 0
         },
         {
-            "rank": 20,
+            "rank": 22,
             "name": "🇦🇺 J. Wharton",
             "team": "Prema Racing",
             "points": 0
         },
         {
-            "rank": 21,
+            "rank": 23,
             "name": "🇲🇽 J. Garfias",
             "team": "Prema Racing",
             "points": 0
         },
         {
-            "rank": 22,
+            "rank": 24,
             "name": "🇰🇷 M. Shin",
             "team": "Hitech TGR",
             "points": 0
         },
         {
-            "rank": 23,
+            "rank": 25,
             "name": "🇮🇪 F. McLaughlin",
             "team": "Hitech TGR",
-            "points": 0
-        },
-        {
-            "rank": 24,
-            "name": "🇯🇵 J. Nakamura",
-            "team": "Hitech TGR",
-            "points": 0
-        },
-        {
-            "rank": 25,
-            "name": "🇺🇸 B. Benavides",
-            "team": "AIX Racing",
             "points": 0
         },
         {
@@ -298,47 +298,47 @@
     "teams": [
         {
             "rank": 1,
-            "name": "Campos Racing",
-            "points": 0
+            "name": "Van Amersfoort Racing",
+            "points": 30
         },
         {
             "rank": 2,
-            "name": "Trident",
-            "points": 0
+            "name": "Campos Racing",
+            "points": 27
         },
         {
             "rank": 3,
-            "name": "MP Motorsport",
-            "points": 0
+            "name": "ART Grand Prix",
+            "points": 26
         },
         {
             "rank": 4,
-            "name": "ART Grand Prix",
-            "points": 0
+            "name": "Trident",
+            "points": 20
         },
         {
             "rank": 5,
-            "name": "Van Amersfoort Racing",
-            "points": 0
+            "name": "Rodin Motorsport",
+            "points": 7
         },
         {
             "rank": 6,
-            "name": "Rodin Motorsport",
-            "points": 0
+            "name": "AIX Racing",
+            "points": 6
         },
         {
             "rank": 7,
-            "name": "Prema Racing",
-            "points": 0
+            "name": "Hitech TGR",
+            "points": 2
         },
         {
             "rank": 8,
-            "name": "Hitech TGR",
-            "points": 0
+            "name": "MP Motorsport",
+            "points": 1
         },
         {
             "rank": 9,
-            "name": "AIX Racing",
+            "name": "Prema Racing",
             "points": 0
         },
         {

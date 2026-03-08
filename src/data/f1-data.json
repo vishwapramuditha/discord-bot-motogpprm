@@ -697,5 +697,174 @@
                 "time": "14:00:00Z"
             }
         }
+    ],
+    "drivers": [
+        {
+            "name": "George Russell",
+            "nationality": "GBR",
+            "points": 25
+        },
+        {
+            "name": "Andrea Kimi Antonelli",
+            "nationality": "ITA",
+            "points": 18
+        },
+        {
+            "name": "Charles Leclerc",
+            "nationality": "MCO",
+            "points": 15
+        },
+        {
+            "name": "Lewis Hamilton",
+            "nationality": "GBR",
+            "points": 12
+        },
+        {
+            "name": "Lando Norris",
+            "nationality": "GBR",
+            "points": 10
+        },
+        {
+            "name": "Max Verstappen",
+            "nationality": "NLD",
+            "points": 8
+        },
+        {
+            "name": "Oliver Bearman",
+            "nationality": "GBR",
+            "points": 6
+        },
+        {
+            "name": "Arvid Lindblad",
+            "nationality": "GBR",
+            "points": 4
+        },
+        {
+            "name": "Gabriel Bortoleto",
+            "nationality": "BRA",
+            "points": 2
+        },
+        {
+            "name": "Pierre Gasly",
+            "nationality": "FRA",
+            "points": 1
+        },
+        {
+            "name": "Esteban Ocon",
+            "nationality": "FRA",
+            "points": 0
+        },
+        {
+            "name": "Alexander Albon",
+            "nationality": "THA",
+            "points": 0
+        },
+        {
+            "name": "Liam Lawson",
+            "nationality": "NZL",
+            "points": 0
+        },
+        {
+            "name": "Franco Colapinto",
+            "nationality": "ARG",
+            "points": 0
+        },
+        {
+            "name": "Carlos Sainz",
+            "nationality": "ESP",
+            "points": 0
+        },
+        {
+            "name": "Sergio Pérez",
+            "nationality": "MEX",
+            "points": 0
+        },
+        {
+            "name": "Lance Stroll",
+            "nationality": "CAN",
+            "points": 0
+        },
+        {
+            "name": "Fernando Alonso",
+            "nationality": "ESP",
+            "points": 0
+        },
+        {
+            "name": "Valtteri Bottas",
+            "nationality": "FIN",
+            "points": 0
+        },
+        {
+            "name": "Isack Hadjar",
+            "nationality": "FRA",
+            "points": 0
+        },
+        {
+            "name": "Oscar Piastri",
+            "nationality": "AUS",
+            "points": 0
+        },
+        {
+            "name": "Nico Hülkenberg",
+            "nationality": "GER",
+            "points": 0
+        }
+    ],
+    "constructors": [
+        {
+            "name": "Mercedes",
+            "nationality": "GER",
+            "points": 43
+        },
+        {
+            "name": "Ferrari",
+            "nationality": "ITA",
+            "points": 27
+        },
+        {
+            "name": "McLaren",
+            "nationality": "GBR",
+            "points": 10
+        },
+        {
+            "name": "Red Bull",
+            "nationality": "AUT",
+            "points": 8
+        },
+        {
+            "name": "Haas",
+            "nationality": "USA",
+            "points": 6
+        },
+        {
+            "name": "Racing Bulls",
+            "nationality": "ITA",
+            "points": 4
+        },
+        {
+            "name": "Audi",
+            "nationality": "GER",
+            "points": 2
+        },
+        {
+            "name": "Alpine",
+            "nationality": "FRA",
+            "points": 1
+        },
+        {
+            "name": "Williams",
+            "nationality": "GBR",
+            "points": 0
+        },
+        {
+            "name": "Cadillac",
+            "nationality": "USA",
+            "points": 0
+        },
+        {
+            "name": "Aston Martin",
+            "nationality": "GBR",
+            "points": 0
+        }
     ]
 }
