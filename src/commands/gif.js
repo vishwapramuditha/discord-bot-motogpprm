@@ -3,12 +3,12 @@ const { createBaseEmbed } = require("../utils/embedUtils");
 
 // A small collection of F1 GIFs since we don't have a GIPHY API key set up
 const f1Gifs = [
-    "https://media.giphy.com/media/3o7qDLkrKr034Z3hQI/giphy.gif", // Ricciardo shoey
-    "https://media.giphy.com/media/duzpaTbCUy9Vu/giphy.gif", // Kimi steering wheel
-    "https://media.giphy.com/media/fxO8q5g7Md0w5W0Q5Z/giphy.gif", // Toto Wolff smashing headphones
-    "https://media.giphy.com/media/J1G7rIvoyzTcNpXphr/giphy.gif", // Lando Norris laughing
-    "https://media.giphy.com/media/Up1g60KxK8weS6d492/giphy.gif", // Vettel finger
-    "https://media.giphy.com/media/hT4z5t8rUXrsg9o8eH/giphy.gif" // Hamilton crowd surf
+    "https://media.giphy.com/media/5nvGD8qzBOESH6OioE/giphy.gif", // Fernando Alonso wink/wave
+    "https://media.giphy.com/media/ehTz6odmTnLhSifWml/giphy.gif", // Charles Leclerc angry/fuming 
+    "https://media.giphy.com/media/UpExHeypPdNXcNwCSD/giphy.gif", // Max Verstappen celebrating a win
+    "https://media.giphy.com/media/RhEgeElqJM0W2GJTid/giphy.gif", // Max and Charles "Inchident" 
+    "https://media.giphy.com/media/9Rvy1KBQTdOntdm5W7/giphy.gif", // Carlos Sainz smooth operator "Yes"
+    "https://media.giphy.com/media/XBFjTfvDpBn78EEgGM/giphy.gif"  // Charles Leclerc looking lovingly
 ];
 
 module.exports = {
