@@ -107,14 +107,21 @@ module.exports = {
             const timestamp = timeMoment.isValid() ? `<t:${timeMoment.unix()}:f>` : "TBD"; // Use short date-time format
 
             // Check if upcoming
-            const isUpcoming = timeMoment.isValid() && timeMoment.isAfter(now);
+            const isUpcoming = timeMoment.isValid() && timeMoment.isAfter(now) && !race.cancelled;
+
+            let displayTimestamp = timestamp;
+            let displayRaceName = raceName;
+            if (race.cancelled) {
+                displayTimestamp = "~~Cancelled~~";
+                displayRaceName = `~~${raceName}~~`;
+            }
 
             // Mark Next Race specifically
             if (isUpcoming && !nextRaceFound) {
-                description += `**${round}. ${flag} ${raceName}**\nNext Up ➡️ <t:${timeMoment.unix()}:R> (<t:${timeMoment.unix()}:f>)\n\n`;
+                description += `**${round}. ${flag} ${displayRaceName}**\nNext Up ➡️ <t:${timeMoment.unix()}:R> (<t:${timeMoment.unix()}:f>)\n\n`;
                 nextRaceFound = true;
             } else {
-                description += `**${round}.** ${flag} **${raceName}**\n${timestamp}\n\n`;
+                description += `**${round}.** ${flag} **${displayRaceName}**\n${displayTimestamp}\n\n`;
             }
         });
 

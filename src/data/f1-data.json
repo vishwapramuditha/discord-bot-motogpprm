@@ -91,6 +91,7 @@
         {
             "round": 4,
             "name": "Bahrain Grand Prix",
+            "cancelled": true,
             "circuit": {
                 "circuitId": "bahrain",
                 "circuitName": "Bahrain International Circuit",
@@ -120,6 +121,7 @@
         {
             "round": 5,
             "name": "Saudi Arabian Grand Prix",
+            "cancelled": true,
             "circuit": {
                 "circuitId": "jeddah",
                 "circuitName": "Jeddah Corniche Circuit",

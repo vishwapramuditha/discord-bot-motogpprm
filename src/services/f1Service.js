@@ -65,6 +65,7 @@ async function getNextRace() {
         // Use local data for current season (2026)
         const now = moment();
         const nextRace = f1Data.races.find(race => {
+            if (race.cancelled) return false;
             const raceTime = moment(`${race.date}T${race.time}`);
             return raceTime.isAfter(now);
         });
