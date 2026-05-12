@@ -336,129 +336,129 @@
     "riders": [
         {
             "rank": 1,
-            "name": "🇪🇸 J. Martin",
+            "name": "🇮🇹 M. Bezzecchi",
             "team": "Aprilia Racing",
-            "points": 0
+            "points": 128
         },
         {
             "rank": 2,
-            "name": "🇮🇹 F. Bagnaia",
-            "team": "Ducati Lenovo Team",
-            "points": 0
+            "name": "🇪🇸 J. Martin",
+            "team": "Aprilia Racing",
+            "points": 127
         },
         {
             "rank": 3,
-            "name": "🇪🇸 M. Marquez",
-            "team": "Ducati Lenovo Team",
-            "points": 0
+            "name": "🇮🇹 F. Di Giannantonio",
+            "team": "Pertamina Enduro VR46",
+            "points": 84
         },
         {
             "rank": 4,
-            "name": "🇮🇹 E. Bastianini",
-            "team": "Red Bull KTM Tech3",
-            "points": 0
+            "name": "🇪🇸 P. Acosta",
+            "team": "Red Bull KTM Factory Racing",
+            "points": 83
         },
         {
             "rank": 5,
-            "name": "🇪🇸 P. Acosta",
-            "team": "Red Bull KTM Factory Racing",
-            "points": 0
+            "name": "🇯🇵 A. Ogura",
+            "team": "Trackhouse Aprilia",
+            "points": 67
         },
         {
             "rank": 6,
-            "name": "🇿🇦 B. Binder",
-            "team": "Red Bull KTM Factory Racing",
-            "points": 0
+            "name": "🇪🇸 R. Fernandez",
+            "team": "Trackhouse Aprilia",
+            "points": 62
         },
         {
             "rank": 7,
-            "name": "🇫🇷 F. Quartararo",
-            "team": "Monster Energy Yamaha",
-            "points": 0
+            "name": "🇪🇸 M. Marquez",
+            "team": "Ducati Lenovo Team",
+            "points": 57
         },
         {
             "rank": 8,
-            "name": "🇪🇸 A. Rins",
-            "team": "Monster Energy Yamaha",
-            "points": 0
+            "name": "🇪🇸 A. Marquez",
+            "team": "Gresini Racing",
+            "points": 55
         },
         {
             "rank": 9,
-            "name": "🇮🇹 M. Bezzecchi",
-            "team": "Aprilia Racing",
-            "points": 0
+            "name": "🇮🇹 F. Bagnaia",
+            "team": "Ducati Lenovo Team",
+            "points": 43
         },
         {
             "rank": 10,
-            "name": "🇮🇹 F. Di Giannantonio",
-            "team": "Pertamina Enduro VR46",
-            "points": 0
+            "name": "🇮🇹 E. Bastianini",
+            "team": "Red Bull KTM Tech3",
+            "points": 39
         },
         {
             "rank": 11,
-            "name": "🇮🇹 F. Morbidelli",
-            "team": "Pertamina Enduro VR46",
-            "points": 0
+            "name": "🇮🇹 L. Marini",
+            "team": "Repsol Honda Team",
+            "points": 33
         },
         {
             "rank": 12,
-            "name": "🇪🇸 A. Marquez",
-            "team": "Gresini Racing",
-            "points": 0
+            "name": "🇿🇦 B. Binder",
+            "team": "Red Bull KTM Factory Racing",
+            "points": 28
         },
         {
             "rank": 13,
-            "name": "🇪🇸 F. Aldeguer",
-            "team": "Gresini Racing",
-            "points": 0
+            "name": "🇮🇹 F. Morbidelli",
+            "team": "Pertamina Enduro VR46",
+            "points": 25
         },
         {
             "rank": 14,
-            "name": "🇹🇷 T. Razgatlioglu",
-            "team": "Prima Pramac Yamaha",
-            "points": 0
+            "name": "🇫🇷 F. Quartararo",
+            "team": "Monster Energy Yamaha",
+            "points": 18
         },
         {
             "rank": 15,
-            "name": "🇦🇺 J. Miller",
-            "team": "Prima Pramac Yamaha",
-            "points": 0
+            "name": "🇪🇸 A. Rins",
+            "team": "Monster Energy Yamaha",
+            "points": 15
         },
         {
             "rank": 16,
-            "name": "🇪🇸 R. Fernandez",
-            "team": "Trackhouse Aprilia",
-            "points": 0
+            "name": "🇪🇸 F. Aldeguer",
+            "team": "Gresini Racing",
+            "points": 12
         },
         {
             "rank": 17,
-            "name": "🇯🇵 A. Ogura",
-            "team": "Trackhouse Aprilia",
-            "points": 0
+            "name": "🇹🇷 T. Razgatlioglu",
+            "team": "Prima Pramac Yamaha",
+            "points": 10
         },
         {
             "rank": 18,
-            "name": "🇫🇷 J. Zarco",
-            "team": "LCR Honda",
-            "points": 0
+            "name": "🇦🇺 J. Miller",
+            "team": "Prima Pramac Yamaha",
+            "points": 8
         },
         {
             "rank": 19,
-            "name": "🇧🇷 D. Moreira",
+            "name": "🇫🇷 J. Zarco",
             "team": "LCR Honda",
-            "points": 0
+            "points": 6
         },
         {
             "rank": 20,
-            "name": "🇪🇸 J. Mir",
-            "team": "Repsol Honda Team",
-            "points": 0
+            "name": "🇧🇷 D. Moreira",
+            "team": "LCR Honda",
+            "points": 4
         },
         {
             "rank": 21,
-            "name": "🇮🇹 L. Marini",
+            "name": "🇪🇸 J. Mir",
             "team": "Repsol Honda Team",
-            "points": 0
+            "points": 2
         },
         {
             "rank": 22,
@@ -470,28 +470,28 @@
     "constructors": [
         {
             "rank": 1,
-            "name": "Ducati",
-            "points": 0
+            "name": "Aprilia",
+            "points": 137
         },
         {
             "rank": 2,
-            "name": "Aprilia",
-            "points": 0
+            "name": "Ducati",
+            "points": 115
         },
         {
             "rank": 3,
             "name": "KTM",
-            "points": 0
+            "points": 85
         },
         {
             "rank": 4,
-            "name": "Yamaha",
-            "points": 0
+            "name": "Honda",
+            "points": 43
         },
         {
             "rank": 5,
-            "name": "Honda",
-            "points": 0
+            "name": "Yamaha",
+            "points": 19
         }
     ]
 }

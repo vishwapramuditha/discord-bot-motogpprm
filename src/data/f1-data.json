@@ -702,53 +702,78 @@
     ],
     "drivers": [
         {
-            "name": "George Russell",
-            "nationality": "GBR",
-            "points": 25
-        },
-        {
             "name": "Andrea Kimi Antonelli",
             "nationality": "ITA",
-            "points": 18
+            "points": 100
+        },
+        {
+            "name": "George Russell",
+            "nationality": "GBR",
+            "points": 80
         },
         {
             "name": "Charles Leclerc",
             "nationality": "MCO",
-            "points": 15
-        },
-        {
-            "name": "Lewis Hamilton",
-            "nationality": "GBR",
-            "points": 12
+            "points": 59
         },
         {
             "name": "Lando Norris",
             "nationality": "GBR",
-            "points": 10
+            "points": 51
+        },
+        {
+            "name": "Lewis Hamilton",
+            "nationality": "GBR",
+            "points": 51
+        },
+        {
+            "name": "Oscar Piastri",
+            "nationality": "AUS",
+            "points": 43
         },
         {
             "name": "Max Verstappen",
             "nationality": "NLD",
-            "points": 8
+            "points": 26
         },
         {
             "name": "Oliver Bearman",
             "nationality": "GBR",
-            "points": 6
-        },
-        {
-            "name": "Arvid Lindblad",
-            "nationality": "GBR",
-            "points": 4
-        },
-        {
-            "name": "Gabriel Bortoleto",
-            "nationality": "BRA",
-            "points": 2
+            "points": 17
         },
         {
             "name": "Pierre Gasly",
             "nationality": "FRA",
+            "points": 16
+        },
+        {
+            "name": "Liam Lawson",
+            "nationality": "NZL",
+            "points": 10
+        },
+        {
+            "name": "Gabriel Bortoleto",
+            "nationality": "BRA",
+            "points": 8
+        },
+        {
+            "name": "Arvid Lindblad",
+            "nationality": "GBR",
+            "points": 6
+        },
+        {
+            "name": "Carlos Sainz",
+            "nationality": "ESP",
+            "points": 4
+        },
+        {
+            "name": "Sergio Pérez",
+            "nationality": "MEX",
+            "points": 2
+        },
+        {
+            "name": "Fernando Alonso",
+            "nationality": "ESP",
             "points": 1
         },
         {
@@ -762,33 +787,13 @@
             "points": 0
         },
         {
-            "name": "Liam Lawson",
-            "nationality": "NZL",
-            "points": 0
-        },
-        {
             "name": "Franco Colapinto",
             "nationality": "ARG",
             "points": 0
         },
         {
-            "name": "Carlos Sainz",
-            "nationality": "ESP",
-            "points": 0
-        },
-        {
-            "name": "Sergio Pérez",
-            "nationality": "MEX",
-            "points": 0
-        },
-        {
             "name": "Lance Stroll",
             "nationality": "CAN",
-            "points": 0
-        },
-        {
-            "name": "Fernando Alonso",
-            "nationality": "ESP",
             "points": 0
         },
         {
@@ -802,11 +807,6 @@
             "points": 0
         },
         {
-            "name": "Oscar Piastri",
-            "nationality": "AUS",
-            "points": 0
-        },
-        {
             "name": "Nico Hülkenberg",
             "nationality": "GER",
             "points": 0
@@ -816,42 +816,42 @@
         {
             "name": "Mercedes",
             "nationality": "GER",
-            "points": 43
+            "points": 180
         },
         {
             "name": "Ferrari",
             "nationality": "ITA",
-            "points": 27
+            "points": 110
         },
         {
             "name": "McLaren",
             "nationality": "GBR",
-            "points": 10
+            "points": 94
         },
         {
             "name": "Red Bull",
             "nationality": "AUT",
-            "points": 8
+            "points": 30
+        },
+        {
+            "name": "Alpine",
+            "nationality": "FRA",
+            "points": 23
         },
         {
             "name": "Haas",
             "nationality": "USA",
-            "points": 6
+            "points": 18
         },
         {
             "name": "Racing Bulls",
             "nationality": "ITA",
-            "points": 4
+            "points": 10
         },
         {
             "name": "Audi",
             "nationality": "GER",
             "points": 2
-        },
-        {
-            "name": "Alpine",
-            "nationality": "FRA",
-            "points": 1
         },
         {
             "name": "Williams",
